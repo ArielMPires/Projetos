@@ -1,0 +1,16 @@
+C:\Users\DELL\source\repos\VersãoAtt\VersãoAtt\obj\Debug\net5.0\VersãoAtt.csprojAssemblyReference.cache
+C:\Users\DELL\source\repos\VersãoAtt\VersãoAtt\obj\Debug\net5.0\VersãoAtt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\source\repos\VersãoAtt\VersãoAtt\obj\Debug\net5.0\VersãoAtt.AssemblyInfoInputs.cache
+C:\Users\DELL\source\repos\VersãoAtt\VersãoAtt\obj\Debug\net5.0\VersãoAtt.AssemblyInfo.cs
+C:\Users\DELL\source\repos\VersãoAtt\VersãoAtt\obj\Debug\net5.0\VersãoAtt.csproj.CoreCompileInputs.cache
+C:\Users\DELL\source\repos\VersãoAtt\VersãoAtt\bin\Debug\net5.0\VersãoAtt.exe
+C:\Users\DELL\source\repos\VersãoAtt\VersãoAtt\bin\Debug\net5.0\VersãoAtt.deps.json
+C:\Users\DELL\source\repos\VersãoAtt\VersãoAtt\bin\Debug\net5.0\VersãoAtt.runtimeconfig.json
+C:\Users\DELL\source\repos\VersãoAtt\VersãoAtt\bin\Debug\net5.0\VersãoAtt.runtimeconfig.dev.json
+C:\Users\DELL\source\repos\VersãoAtt\VersãoAtt\bin\Debug\net5.0\VersãoAtt.dll
+C:\Users\DELL\source\repos\VersãoAtt\VersãoAtt\bin\Debug\net5.0\ref\VersãoAtt.dll
+C:\Users\DELL\source\repos\VersãoAtt\VersãoAtt\bin\Debug\net5.0\VersãoAtt.pdb
+C:\Users\DELL\source\repos\VersãoAtt\VersãoAtt\obj\Debug\net5.0\VersãoAtt.dll
+C:\Users\DELL\source\repos\VersãoAtt\VersãoAtt\obj\Debug\net5.0\ref\VersãoAtt.dll
+C:\Users\DELL\source\repos\VersãoAtt\VersãoAtt\obj\Debug\net5.0\VersãoAtt.pdb
+C:\Users\DELL\source\repos\VersãoAtt\VersãoAtt\obj\Debug\net5.0\VersãoAtt.genruntimeconfig.cache

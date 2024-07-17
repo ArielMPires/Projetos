@@ -1,0 +1,9 @@
+C:\Users\Ariel\source\repos\WCS-Compras\WCS-Compras\obj\Debug\netcoreapp3.0\WCS-Compras.csproj.AssemblyReference.cache
+C:\Users\Ariel\source\repos\WCS-Compras\WCS-Compras\obj\Debug\netcoreapp3.0\WCS_Compras.Form1.resources
+C:\Users\Ariel\source\repos\WCS-Compras\WCS-Compras\obj\Debug\netcoreapp3.0\WCS_Compras.Form2.resources
+C:\Users\Ariel\source\repos\WCS-Compras\WCS-Compras\obj\Debug\netcoreapp3.0\WCS_Compras.Properties.Resources.resources
+C:\Users\Ariel\source\repos\WCS-Compras\WCS-Compras\obj\Debug\netcoreapp3.0\WCS-Compras.csproj.GenerateResource.cache
+C:\Users\Ariel\source\repos\WCS-Compras\WCS-Compras\obj\Debug\netcoreapp3.0\WCS-Compras.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ariel\source\repos\WCS-Compras\WCS-Compras\obj\Debug\netcoreapp3.0\WCS-Compras.AssemblyInfoInputs.cache
+C:\Users\Ariel\source\repos\WCS-Compras\WCS-Compras\obj\Debug\netcoreapp3.0\WCS-Compras.AssemblyInfo.cs
+C:\Users\Ariel\source\repos\WCS-Compras\WCS-Compras\obj\Debug\netcoreapp3.0\WCS-Compras.csproj.CoreCompileInputs.cache

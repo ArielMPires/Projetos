@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "yJynn1maldzdKkK6CBG8JUtiQY6hACSTMfopn7EhwaYwUeHc+ZphtfumKbofMIPfPC9UJH9E3jrjDFP286EvSA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ariel\\source\\repos\\WCS-Compras\\WCS-Compras\\WCS-Compras.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ariel\\.nuget\\packages\\mysqlconnector\\2.1.11\\mysqlconnector.2.1.11.nupkg.sha512"
+  ],
+  "logs": []
+}

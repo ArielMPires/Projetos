@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Oj7p/aAIF3wsk5u/m6JgIbDxxI3B4euVw+aj/eLteja/4EGuZ4nYqz8mmHRTaWM8730qxh3sBWE9IzzsfAZG3A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\DELL\\source\\repos\\BKU\\BKU\\BKU.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DELL\\.nuget\\packages\\mysqlconnector\\1.3.10\\mysqlconnector.1.3.10.nupkg.sha512"
+  ],
+  "logs": []
+}

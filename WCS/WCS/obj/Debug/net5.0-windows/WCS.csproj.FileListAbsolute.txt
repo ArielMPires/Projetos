@@ -1,0 +1,75 @@
+C:\Users\DELL\source\repos\WCS\WCS\bin\Debug\net5.0-windows\WCS.exe
+C:\Users\DELL\source\repos\WCS\WCS\bin\Debug\net5.0-windows\WCS.deps.json
+C:\Users\DELL\source\repos\WCS\WCS\bin\Debug\net5.0-windows\WCS.runtimeconfig.json
+C:\Users\DELL\source\repos\WCS\WCS\bin\Debug\net5.0-windows\WCS.runtimeconfig.dev.json
+C:\Users\DELL\source\repos\WCS\WCS\bin\Debug\net5.0-windows\WCS.dll
+C:\Users\DELL\source\repos\WCS\WCS\bin\Debug\net5.0-windows\ref\WCS.dll
+C:\Users\DELL\source\repos\WCS\WCS\bin\Debug\net5.0-windows\WCS.pdb
+C:\Users\DELL\source\repos\WCS\WCS\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\DELL\source\repos\WCS\WCS\bin\Debug\net5.0-windows\FluentFTP.dll
+C:\Users\DELL\source\repos\WCS\WCS\bin\Debug\net5.0-windows\itextsharp.dll
+C:\Users\DELL\source\repos\WCS\WCS\bin\Debug\net5.0-windows\MySqlConnector.dll
+C:\Users\DELL\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.csprojAssemblyReference.cache
+C:\Users\DELL\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.Login.resources
+C:\Users\DELL\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.csproj.GenerateResource.cache
+C:\Users\DELL\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.AssemblyInfoInputs.cache
+C:\Users\DELL\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.AssemblyInfo.cs
+C:\Users\DELL\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.csproj.CoreCompileInputs.cache
+C:\Users\DELL\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.csproj.CopyComplete
+C:\Users\DELL\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.dll
+C:\Users\DELL\source\repos\WCS\WCS\obj\Debug\net5.0-windows\ref\WCS.dll
+C:\Users\DELL\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.pdb
+C:\Users\DELL\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.genruntimeconfig.cache
+C:\Users\DELL\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.Properties.Resources.resources
+C:\Users\DELL\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.Principal.resources
+C:\Users\Ariel\source\repos\WCS\WCS\bin\Debug\net5.0-windows\WCS.exe
+C:\Users\Ariel\source\repos\WCS\WCS\bin\Debug\net5.0-windows\WCS.deps.json
+C:\Users\Ariel\source\repos\WCS\WCS\bin\Debug\net5.0-windows\WCS.runtimeconfig.json
+C:\Users\Ariel\source\repos\WCS\WCS\bin\Debug\net5.0-windows\WCS.runtimeconfig.dev.json
+C:\Users\Ariel\source\repos\WCS\WCS\bin\Debug\net5.0-windows\WCS.dll
+C:\Users\Ariel\source\repos\WCS\WCS\bin\Debug\net5.0-windows\WCS.pdb
+C:\Users\Ariel\source\repos\WCS\WCS\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\Ariel\source\repos\WCS\WCS\bin\Debug\net5.0-windows\FluentFTP.dll
+C:\Users\Ariel\source\repos\WCS\WCS\bin\Debug\net5.0-windows\itextsharp.dll
+C:\Users\Ariel\source\repos\WCS\WCS\bin\Debug\net5.0-windows\MySqlConnector.dll
+C:\Users\Ariel\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.csproj.AssemblyReference.cache
+C:\Users\Ariel\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.Login.resources
+C:\Users\Ariel\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.Principal.resources
+C:\Users\Ariel\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.Properties.Resources.resources
+C:\Users\Ariel\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.csproj.GenerateResource.cache
+C:\Users\Ariel\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ariel\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.AssemblyInfoInputs.cache
+C:\Users\Ariel\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.AssemblyInfo.cs
+C:\Users\Ariel\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.csproj.CoreCompileInputs.cache
+C:\Users\Ariel\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.csproj.CopyComplete
+C:\Users\Ariel\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.dll
+C:\Users\Ariel\source\repos\WCS\WCS\obj\Debug\net5.0-windows\refint\WCS.dll
+C:\Users\Ariel\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.pdb
+C:\Users\Ariel\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.genruntimeconfig.cache
+C:\Users\Ariel\source\repos\WCS\WCS\obj\Debug\net5.0-windows\ref\WCS.dll
+C:\Users\Rafael T.I\source\repos\WCS\WCS\bin\Debug\net5.0-windows\WCS.exe
+C:\Users\Rafael T.I\source\repos\WCS\WCS\bin\Debug\net5.0-windows\WCS.deps.json
+C:\Users\Rafael T.I\source\repos\WCS\WCS\bin\Debug\net5.0-windows\WCS.runtimeconfig.json
+C:\Users\Rafael T.I\source\repos\WCS\WCS\bin\Debug\net5.0-windows\WCS.runtimeconfig.dev.json
+C:\Users\Rafael T.I\source\repos\WCS\WCS\bin\Debug\net5.0-windows\WCS.dll
+C:\Users\Rafael T.I\source\repos\WCS\WCS\bin\Debug\net5.0-windows\WCS.pdb
+C:\Users\Rafael T.I\source\repos\WCS\WCS\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\Rafael T.I\source\repos\WCS\WCS\bin\Debug\net5.0-windows\FluentFTP.dll
+C:\Users\Rafael T.I\source\repos\WCS\WCS\bin\Debug\net5.0-windows\itextsharp.dll
+C:\Users\Rafael T.I\source\repos\WCS\WCS\bin\Debug\net5.0-windows\MySqlConnector.dll
+C:\Users\Rafael T.I\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.csproj.AssemblyReference.cache
+C:\Users\Rafael T.I\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.Login.resources
+C:\Users\Rafael T.I\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.Principal.resources
+C:\Users\Rafael T.I\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.Properties.Resources.resources
+C:\Users\Rafael T.I\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.csproj.GenerateResource.cache
+C:\Users\Rafael T.I\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rafael T.I\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.AssemblyInfoInputs.cache
+C:\Users\Rafael T.I\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.AssemblyInfo.cs
+C:\Users\Rafael T.I\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.csproj.CoreCompileInputs.cache
+C:\Users\Rafael T.I\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.csproj.CopyComplete
+C:\Users\Rafael T.I\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.dll
+C:\Users\Rafael T.I\source\repos\WCS\WCS\obj\Debug\net5.0-windows\refint\WCS.dll
+C:\Users\Rafael T.I\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.pdb
+C:\Users\Rafael T.I\source\repos\WCS\WCS\obj\Debug\net5.0-windows\WCS.genruntimeconfig.cache
+C:\Users\Rafael T.I\source\repos\WCS\WCS\obj\Debug\net5.0-windows\ref\WCS.dll
