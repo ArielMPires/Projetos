@@ -1,0 +1,153 @@
+﻿@page "/NE12/{Id:int}"
+@using NexuSys.DTOs.Equipment
+@using NexuSys.DTOs.Customers
+@using NexuSys.DTOs.Products
+@using NexuSys.Interfaces
+@using NexuSys.Helper
+@rendermode InteractiveServer
+
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@inject IProducts _service
+@inject IUserContext userContext
+
+<PageTitle>Editar Equipamento</PageTitle>
+
+<EditForm Model="Model" OnValidSubmit="Salvar">
+    <DataAnnotationsValidator />
+
+    <div class="container-fluid p-4">
+
+        <div class="d-flex align-items-center gap-2 mb-4">
+            <div>
+                <h3 class="fw-bold">Editar Equipamento</h3>
+                <small class="text-muted">
+                    Altere os dados do equipamento
+                </small>
+            </div>
+        </div>
+
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+
+                <h6 class="mb-3">Dados do Equipamento</h6>
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label class="form-label">Serial</label>
+                        <InputNumber class="form-control"
+                                     @bind-Value="Model.Serial" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Data de Fabricação</label>
+                        <InputDate class="form-control"
+                                   @bind-Value="Model.Manufacturing_Date" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Cliente</label>
+
+                        <InputSelect class="form-select"
+                                     @bind-Value="Model.Customer">
+                            <option value="0">Selecione um cliente</option>
+
+                            @if (Clientes != null)
+                            {
+                                @foreach (var c in Clientes)
+                                {
+                                    <option value="@c.ID">@c.Name</option>
+                                }
+                            }
+                        </InputSelect>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Produto</label>
+
+                        <InputSelect class="form-select"
+                                     @bind-Value="Model.Product">
+                            <option value="0">Selecione um produto</option>
+
+                            @if (Produtos != null)
+                            {
+                                @foreach (var p in Produtos)
+                                {
+                                    <option value="@p.ID">@p.SAP_Description</option>
+                                }
+                            }
+                        </InputSelect>
+                    </div>
+
+                    <div class="col-md-12">
+                        <InputText class="form-control"
+                                   placeholder="Observação"
+                                   @bind-Value="Model.Optional" />
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end gap-2">
+            <button type="button"
+                    class="btn btn-secondary"
+                    @onclick="Voltar">
+                Cancelar
+            </button>
+
+            <button type="submit"
+                    class="btn btn-success">
+                Salvar Alterações
+            </button>
+        </div>
+
+    </div>
+</EditForm>
+
+@code {
+
+    [Parameter] public int Id { get; set; }
+
+    private EditEquipmentDTO Model = new();
+
+    private List<CustomersDTO> Clientes;
+    private List<ProductsDTO> Produtos;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Clientes = await _service.CustomersList();
+        Produtos = await _service.ProductsList();
+
+        Model.ID = Id; // importante para saber qual equipamento atualizar
+    }
+
+    async Task Salvar()
+    {
+        try
+        {
+            var response = await _service.UpdateEquipment(Model);
+
+            if (response.Result)
+            {
+                await JS.InvokeVoidAsync("alert", response.Message);
+                Navigation.NavigateTo("/NE21");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("alert", response.Error);
+            }
+        }
+        catch (Exception ex)
+        {
+            await JS.InvokeVoidAsync("alert", ex.Message);
+        }
+    }
+
+    void Voltar()
+    {
+        Navigation.NavigateTo("/NE21");
+    }
+}

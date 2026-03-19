@@ -1,0 +1,1465 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\models\\setting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\models\\setting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\ss159.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\ss159.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\models\\pages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\models\\pages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sd001.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sd001.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sd001viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sd001viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\interfaces\\ipassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\interfaces\\ipassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\interfaces\\repositories\\passwordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\interfaces\\repositories\\passwordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sa559.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sa559.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sg737viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sg737viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sa559viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sa559viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sa559.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sa559.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sa278.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sa278.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sa337.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sa337.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\dto\\passwords\\newpassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\dto\\passwords\\newpassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\dto\\passwords\\passworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\dto\\passwords\\passworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sc001.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sc001.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\resources\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\resources\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sh908.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sh908.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sh908.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sh908.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sh908viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sh908viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sf852viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sf852viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sf731viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sf731viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sp823viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sp823viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sp794viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sp794viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sk991viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sk991viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sk172viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sk172viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sk872viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sk872viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sk472viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sk472viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sh492viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sh492viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sh474viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sh474viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sh261viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sh261viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sg897viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sg897viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sg884viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sg884viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sg842viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sg842viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sg429viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sg429viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sg351viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sg351viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sf136viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sf136viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sd641viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sd641viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sc683viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sc683viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sc273viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sc273viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sa227viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sa227viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sa191viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sa191viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sa191.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sa191.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\interfaces\\repositories\\patrimonyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\interfaces\\repositories\\patrimonyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sd001.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sd001.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sd641.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sd641.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sd641.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sd641.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sk323.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sk323.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sc683.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sc683.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sh261.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sh261.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sf852.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sf852.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sa961.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sa961.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sg737.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sg737.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sc273.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sc273.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\helpers\\tabcolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\helpers\\tabcolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\sc001viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\sc001viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\interfaces\\repositories\\requestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\interfaces\\repositories\\requestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\dto\\request\\requestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\dto\\request\\requestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sp823.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sp823.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sp794.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sp794.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sk991.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sk991.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sk872.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sk872.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sk472.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sk472.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sk172.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sk172.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sh492.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sh492.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sh474.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sh474.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sg897.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sg897.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sg429.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sg429.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sg351.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sg351.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sf731.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sf731.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sf136.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sf136.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\ss603viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\ss603viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sa227.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sa227.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\ss328viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\ss328viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\commands\\basecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\commands\\basecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sg842.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sg842.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\sg884.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\sg884.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\ss603.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\ss603.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\ss815.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\ss815.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\ss815viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\ss815viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\viewmodels\\ss573viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\viewmodels\\ss573viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\ss573.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\ss573.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|c:\\users\\ariel\\source\\repos\\agnus\\agnus\\agnus\\views\\ss328.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{10E86E61-5B42-4D10-81BF-B3C1CD9957EA}|Agnus\\Agnus.csproj|solutionrelative:agnus\\views\\ss328.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 177,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 42,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SS159.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SS159.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SS159.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SS159.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SS159.xaml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACAAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-01-06T13:10:41.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Pages.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Models\\Pages.cs",
+              "RelativeDocumentMoniker": "Agnus\\Models\\Pages.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Models\\Pages.cs",
+              "RelativeToolTip": "Agnus\\Models\\Pages.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAAFIAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T13:10:30.405Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\MainPage.xaml",
+              "RelativeDocumentMoniker": "Agnus\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\MainPage.xaml",
+              "RelativeToolTip": "Agnus\\MainPage.xaml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAYwCgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-01-06T13:10:22.483Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "Agnus\\MauiProgram.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\MauiProgram.cs",
+              "RelativeToolTip": "Agnus\\MauiProgram.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T15:05:38.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SA559ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SA559ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SA559ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SA559ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SA559ViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T15:05:12.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SA278.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SA278.xaml.cs",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SA278.xaml.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SA278.xaml.cs",
+              "RelativeToolTip": "Agnus\\Views\\SA278.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T15:04:37.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SA337.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SA337.xaml.cs",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SA337.xaml.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SA337.xaml.cs",
+              "RelativeToolTip": "Agnus\\Views\\SA337.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T15:04:34.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SA559.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SA559.xaml.cs",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SA559.xaml.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SA559.xaml.cs",
+              "RelativeToolTip": "Agnus\\Views\\SA559.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T15:04:31.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SA559.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SA559.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SA559.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SA559.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SA559.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-26T15:04:24.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAE4AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T15:01:50.51Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PasswordRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Interfaces\\Repositories\\PasswordRepository.cs",
+              "RelativeDocumentMoniker": "Agnus\\Interfaces\\Repositories\\PasswordRepository.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Interfaces\\Repositories\\PasswordRepository.cs",
+              "RelativeToolTip": "Agnus\\Interfaces\\Repositories\\PasswordRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAqwA0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T14:46:29.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IPassword.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Interfaces\\IPassword.cs",
+              "RelativeDocumentMoniker": "Agnus\\Interfaces\\IPassword.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Interfaces\\IPassword.cs",
+              "RelativeToolTip": "Agnus\\Interfaces\\IPassword.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T14:45:35.267Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "PasswordDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\DTO\\Passwords\\PasswordDTO.cs",
+              "RelativeDocumentMoniker": "Agnus\\DTO\\Passwords\\PasswordDTO.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\DTO\\Passwords\\PasswordDTO.cs",
+              "RelativeToolTip": "Agnus\\DTO\\Passwords\\PasswordDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T14:42:44.176Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "NewPasswordDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\DTO\\Passwords\\NewPasswordDTO.cs",
+              "RelativeDocumentMoniker": "Agnus\\DTO\\Passwords\\NewPasswordDTO.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\DTO\\Passwords\\NewPasswordDTO.cs",
+              "RelativeToolTip": "Agnus\\DTO\\Passwords\\NewPasswordDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T14:42:38.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\AppShell.xaml",
+              "RelativeDocumentMoniker": "Agnus\\AppShell.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\AppShell.xaml",
+              "RelativeToolTip": "Agnus\\AppShell.xaml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-26T14:32:14.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AppShell.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\AppShell.xaml.cs",
+              "RelativeDocumentMoniker": "Agnus\\AppShell.xaml.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\AppShell.xaml.cs",
+              "RelativeToolTip": "Agnus\\AppShell.xaml.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAcwGYAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T14:31:49.824Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "SH908.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SH908.xaml.cs",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SH908.xaml.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SH908.xaml.cs",
+              "RelativeToolTip": "Agnus\\Views\\SH908.xaml.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBMAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T19:31:16.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "SF852ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SF852ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SF852ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SF852ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SF852ViewModel.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T15:57:08.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "PatrimonyRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Interfaces\\Repositories\\PatrimonyRepository.cs",
+              "RelativeDocumentMoniker": "Agnus\\Interfaces\\Repositories\\PatrimonyRepository.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Interfaces\\Repositories\\PatrimonyRepository.cs",
+              "RelativeToolTip": "Agnus\\Interfaces\\Repositories\\PatrimonyRepository.cs",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T15:47:41.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "SD641.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SD641.xaml.cs",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SD641.xaml.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SD641.xaml.cs",
+              "RelativeToolTip": "Agnus\\Views\\SD641.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T15:23:14.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "SD001.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SD001.xaml.cs",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SD001.xaml.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SD001.xaml.cs",
+              "RelativeToolTip": "Agnus\\Views\\SD001.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T15:23:05.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SD001ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SD001ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SD001ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SD001ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SD001ViewModel.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAUwG8AAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T14:53:06.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "SD641ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SD641ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SD641ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SD641ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SD641ViewModel.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAxwEgAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T15:10:02.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "SD641.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SD641.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SD641.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SD641.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SD641.xaml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAADAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T15:05:11.058Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "SK323.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SK323.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SK323.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SK323.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SK323.xaml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADMAAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T15:04:37.847Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "SA961.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SA961.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SA961.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SA961.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SA961.xaml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T15:03:30.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "SF852.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SF852.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SF852.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SF852.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SF852.xaml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB0AAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T15:03:04.654Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SD001.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SD001.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SD001.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SD001.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SD001.xaml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAACsAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T14:59:27.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "TabColorConverter.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Helpers\\TabColorConverter.cs",
+              "RelativeDocumentMoniker": "Agnus\\Helpers\\TabColorConverter.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Helpers\\TabColorConverter.cs",
+              "RelativeToolTip": "Agnus\\Helpers\\TabColorConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T14:48:27.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "SC001.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SC001.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SC001.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SC001.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SC001.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T14:48:05.278Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "SC001ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SC001ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SC001ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SC001ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SC001ViewModel.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T14:47:57.654Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "Colors.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Resources\\Styles\\Colors.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Resources\\Styles\\Colors.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Resources\\Styles\\Colors.xaml",
+              "RelativeToolTip": "Agnus\\Resources\\Styles\\Colors.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T14:46:45.02Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Styles.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Resources\\Styles\\Styles.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Resources\\Styles\\Styles.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Resources\\Styles\\Styles.xaml",
+              "RelativeToolTip": "Agnus\\Resources\\Styles\\Styles.xaml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T14:46:40.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "RequestRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Interfaces\\Repositories\\RequestRepository.cs",
+              "RelativeDocumentMoniker": "Agnus\\Interfaces\\Repositories\\RequestRepository.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Interfaces\\Repositories\\RequestRepository.cs",
+              "RelativeToolTip": "Agnus\\Interfaces\\Repositories\\RequestRepository.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAcwFIAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T14:36:49.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "RequestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\DTO\\Request\\RequestDTO.cs",
+              "RelativeDocumentMoniker": "Agnus\\DTO\\Request\\RequestDTO.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\DTO\\Request\\RequestDTO.cs",
+              "RelativeToolTip": "Agnus\\DTO\\Request\\RequestDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T14:33:00.824Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "SH261ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SH261ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SH261ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SH261ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SH261ViewModel.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACoBAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T14:28:08.637Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "SH261.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SH261.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SH261.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SH261.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SH261.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAswCIAAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T14:28:02.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Setting.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Models\\Setting.cs",
+              "RelativeDocumentMoniker": "Agnus\\Models\\Setting.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Models\\Setting.cs",
+              "RelativeToolTip": "Agnus\\Models\\Setting.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:36:09.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "SP823.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SP823.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SP823.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SP823.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SP823.xaml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAADUAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T13:35:07.772Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "SP794.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SP794.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SP794.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SP794.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SP794.xaml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADcAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T13:35:01.701Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "SK991.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SK991.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SK991.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SK991.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SK991.xaml",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAADoAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T13:34:51.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "SK872.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SK872.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SK872.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SK872.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SK872.xaml",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAIEAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T13:34:18.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "SK472.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SK472.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SK472.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SK472.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SK472.xaml",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAIkAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T13:33:38.456Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "SK172.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SK172.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SK172.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SK172.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SK172.xaml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAADEAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T13:33:25.567Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "SH908.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SH908.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SH908.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SH908.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SH908.xaml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T13:31:58.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "SH492.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SH492.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SH492.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SH492.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SH492.xaml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADAAAAB1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T13:31:53.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "SH474.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SH474.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SH474.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SH474.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SH474.xaml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADAAAAB0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T13:31:46.586Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "SG351.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SG351.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SG351.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SG351.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SG351.xaml",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAI4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T13:30:56.313Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "SF731.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SF731.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SF731.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SF731.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SF731.xaml",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAHkAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T13:30:10.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "SF136.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SF136.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SF136.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SF136.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SF136.xaml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADQAAABvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T13:30:05.116Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "SC683.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SC683.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SC683.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SC683.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SC683.xaml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAuwDQAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T13:29:52.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "SC273.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SC273.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SC273.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SC273.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SC273.xaml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAGAAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T13:29:33.805Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "SH492ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SH492ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SH492ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SH492ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SH492ViewModel.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAADwv3wAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:28:18.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "SH908ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SH908ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SH908ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SH908ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SH908ViewModel.cs",
+              "ViewState": "AgIAAIcBAAAAAAAAAAAQwJUBAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:27:40.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "SH474ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SH474ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SH474ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SH474ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SH474ViewModel.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAowDMAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:27:11.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "SF731ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SF731ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SF731ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SF731ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SF731ViewModel.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwIwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:26:45.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "SF136ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SF136ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SF136ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SF136ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SF136ViewModel.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwKcAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:26:33.38Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "SK172ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SK172ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SK172ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SK172ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SK172ViewModel.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAFYAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:25:58.3Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "SG351ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SG351ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SG351ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SG351ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SG351ViewModel.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAQwKAAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:25:27.673Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "SK472ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SK472ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SK472ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SK472ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SK472ViewModel.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAADwv58AAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:24:51.046Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "SK872ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SK872ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SK872ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SK872ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SK872ViewModel.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAADwv4YAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:24:14.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "SK991ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SK991ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SK991ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SK991ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SK991ViewModel.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAswC8AAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:23:52.53Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "SP823ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SP823ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SP823ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SP823ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SP823ViewModel.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAxwC8AAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:23:32.316Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "SP794ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SP794ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SP794ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SP794ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SP794ViewModel.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAQwC8AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:23:19.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "SC683ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SC683ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SC683ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SC683ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SC683ViewModel.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAwwGUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:22:27.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "SC273ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SC273ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SC273ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SC273ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SC273ViewModel.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAxwDQAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:21:57.387Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "SA227ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SA227ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SA227ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SA227ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SA227ViewModel.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAADAAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:21:25.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "SA227.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SA227.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SA227.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SA227.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SA227.xaml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADYAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T13:21:21.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "SA191.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SA191.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SA191.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SA191.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SA191.xaml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAD8AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-14T13:21:05.461Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "SA191ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SA191ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SA191ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SA191ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SA191ViewModel.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwFQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:20:27.441Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 80,
+              "Title": "BaseCommand.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Commands\\BaseCommand.cs",
+              "RelativeDocumentMoniker": "Agnus\\Commands\\BaseCommand.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Commands\\BaseCommand.cs",
+              "RelativeToolTip": "Agnus\\Commands\\BaseCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T14:45:46.313Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "SG897.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SG897.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SG897.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SG897.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SG897.xaml",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAAJAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-11T14:24:33.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "SG897ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SG897ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SG897ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SG897ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SG897ViewModel.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwKkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T14:18:54.984Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "SG884ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SG884ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SG884ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SG884ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SG884ViewModel.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADEAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T14:14:31.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "SG842ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SG842ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SG842ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SG842ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SG842ViewModel.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADAAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T14:13:59.418Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 82,
+              "Title": "SG884.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SG884.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SG884.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SG884.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SG884.xaml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACcAAABuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-11T14:13:46.018Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 81,
+              "Title": "SG842.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SG842.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SG842.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SG842.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SG842.xaml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADwAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-11T14:13:31.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "SG737.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SG737.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SG737.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SG737.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SG737.xaml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-11T14:12:27.264Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SG737ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SG737ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SG737ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SG737ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SG737ViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKABAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T14:10:49.388Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "SG429ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SG429ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SG429ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SG429ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SG429ViewModel.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwGcAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T14:08:08.004Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "SG429.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SG429.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SG429.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SG429.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SG429.xaml",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAJAAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-11T14:06:23.099Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 83,
+              "Title": "SS603.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SS603.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SS603.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SS603.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SS603.xaml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAEQAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-11T14:05:19.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "SS603ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SS603ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SS603ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SS603ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SS603ViewModel.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAE8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T14:00:55.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 84,
+              "Title": "SS815.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SS815.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SS815.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SS815.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SS815.xaml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACoAAAByAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-11T14:00:25.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 85,
+              "Title": "SS815ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SS815ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SS815ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SS815ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SS815ViewModel.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAowHkAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T13:59:49.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 86,
+              "Title": "SS573ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SS573ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SS573ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SS573ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SS573ViewModel.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAowEgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T13:58:50.004Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 87,
+              "Title": "SS573.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SS573.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SS573.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SS573.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SS573.xaml",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAAJIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-11T13:58:26.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 88,
+              "Title": "SS328.xaml",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SS328.xaml",
+              "RelativeDocumentMoniker": "Agnus\\Views\\SS328.xaml",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\Views\\SS328.xaml",
+              "RelativeToolTip": "Agnus\\Views\\SS328.xaml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAG0AAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-11T13:57:29.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "SS328ViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SS328ViewModel.cs",
+              "RelativeDocumentMoniker": "Agnus\\ViewModels\\SS328ViewModel.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Agnus\\Agnus\\Agnus\\ViewModels\\SS328ViewModel.cs",
+              "RelativeToolTip": "Agnus\\ViewModels\\SS328ViewModel.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAwwH4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T13:57:07.99Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

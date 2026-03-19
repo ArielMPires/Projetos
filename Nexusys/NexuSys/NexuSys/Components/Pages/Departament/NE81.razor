@@ -1,0 +1,91 @@
+﻿@page "/NE81/{Id:int}"
+@using NexuSys.DTOs.Departament
+@using NexuSys.Helper
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IUsers _service
+@inject IJSRuntime JS
+@inject IUserContext UserContext
+
+@if (IsLoading)
+{
+    <div class="loading-overlay">
+        <div class="spinner-border text-light"></div>
+        <p class="mt-3 text-light">Salvando...</p>
+    </div>
+}
+
+<div class="container py-4 bg-white">
+
+    <h3 class="mb-4">Editar Departamento</h3>
+
+    
+        <div class="card shadow-sm p-3">
+
+    <EditForm Model="Model" OnValidSubmit="Salvar">
+        <fieldset disabled="@IsLoading">
+
+
+            <div class="mb-3">
+                <label class="form-label">Nome</label>
+                <InputText class="form-control" @bind-Value="Model.Name" />
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-secondary me-2" type="button" @onclick="Voltar" disabled="@IsLoading">
+                    Cancelar
+                </button>
+
+                <button class="btn btn-success" type="submit" disabled="@IsLoading">
+                    @(IsLoading ? "Salvando..." : "Salvar Alterações")
+                </button>
+            </div>
+
+        </fieldset>
+    </EditForm>
+      </div>
+  </div>
+
+
+@code {
+    [Parameter] public int Id { get; set; }
+
+    private EditDepartamentDTO Model = new();
+    private bool IsLoading = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var dept = await _service.DepartamentByID(Id);
+        Model.Name = dept.Name;
+        Model.ID = dept.ID;
+        Model.History = dept.History;
+        Model.CreateBy = dept.CreateBy;
+        Model.DateCreate = dept.DateCreate;
+    }
+
+    async Task Salvar()
+    {
+        if (IsLoading) return;
+        IsLoading = true;
+
+        Model.CreateBy = UserContext.UserId;
+        Model.DateCreate = DateTime.Now;
+        Model.ChangedBy = UserContext.UserId;
+        Model.DateChanged = DateTime.Now;
+
+        var response = await _service.UpdateDepartament(Model);
+        await JS.InvokeVoidAsync("alert", response.Result ? response.Message : response.Message);
+
+        if (response.Result)
+            Navigation.NavigateTo("/ND70");
+
+        IsLoading = false;
+    }
+
+    void Voltar()
+    {
+        if (!IsLoading)
+            Navigation.NavigateTo("/ND70");
+    }
+}

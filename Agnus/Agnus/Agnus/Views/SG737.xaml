@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Agnus.ViewModels"
+             x:Class="Agnus.Views.SG737"
+             Title="">
+
+    <Grid Padding="10">
+        <HorizontalStackLayout>
+            <Label Text="SG737"
+                 FontSize="20"
+                 Opacity="0.4"
+                 Rotation="0"
+                 TextColor="Gray"
+                 HorizontalOptions="EndAndExpand"
+                 VerticalOptions="End"
+                 InputTransparent="True"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="End" VerticalOptions="Start">
+            <SearchBar Text="{Binding Search, Mode=TwoWay}"
+Placeholder="Buscar Usuario..."
+    HeightRequest="10"
+    MaximumWidthRequest="1000"
+    HorizontalOptions="End"
+    />
+        </HorizontalStackLayout>
+
+        <Grid ColumnDefinitions="1*,15*">
+
+            <VerticalStackLayout Spacing="10" HorizontalOptions="Start" VerticalOptions="Start" Margin="10" >
+                <Button  Style="{StaticResource Circle}"  Command="{Binding TrocarAbaCommand}" CommandParameter="Category" BorderWidth="0" TextColor="DimGray"
+              BackgroundColor="{Binding AbaSelecionada, Converter={StaticResource TabColorConverter}, ConverterParameter=Category}">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="&#xf03a;" Color="{DynamicResource Tertiary}" FontFamily="FontAwesomeSolid" Size="24"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button Style="{StaticResource Circle}" Command="{Binding TrocarAbaCommand}" CommandParameter="Type"  BorderWidth="0" TextColor="DimGray"
+                    BackgroundColor="{Binding AbaSelecionada, Converter={StaticResource TabColorConverter}, ConverterParameter=Type}">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="&#xf071;" Color="{DynamicResource Tertiary}" FontFamily="FontAwesomeSolid" Size="24"/>
+                    </Button.ImageSource>
+                </Button>
+            </VerticalStackLayout>
+            <Grid IsVisible="{Binding IsCategory}" Grid.Column="1">
+                <!-- Desktop View -->
+                <CollectionView ItemsSource="{Binding Filter}" x:Name="DesktopList"
+                     IsVisible="{OnPlatform Android=False, WinUI=True, MacCatalyst=True}">
+                    <CollectionView.Header>
+                        <Border Padding="10" Style="{StaticResource HeaderBorder}">
+                            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto">
+
+                                <BoxView Grid.Row="0" Grid.Column="0" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+
+                                <Label Text="ID" Grid.Column="0" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Nome" Grid.Column="1" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                            </Grid>
+                        </Border>
+                    </CollectionView.Header>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Padding="10">
+                                <StackLayout>
+                                    <!-- Linha principal -->
+                                    <Grid ColumnDefinitions="*,*" RowDefinitions="Auto" BackgroundColor="Transparent">
+
+                                        <BoxView Grid.Row="0" Grid.Column="0" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+
+                                        <Label Text="{Binding value.ID}" Grid.Column="0" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Name}" Grid.Column="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </Grid>
+                                    <!-- Detalhes extras -->
+                                    <Grid Padding="10" BackgroundColor="Transparent"
+                           IsVisible="{Binding IsChecked}">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Button
+                                        Grid.Row="2"
+                                        Padding="1"
+                                        Margin="1"
+                                            IsEnabled="{Binding IsNotBusy}"
+                                        WidthRequest="50"
+                                        Style="{StaticResource Circle}"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._commandSG677}"
+                                        CommandParameter="{Binding value.ID}">
+                                            <Button.ImageSource>
+                                                <FontImageSource Glyph="&#xf304;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+                                            </Button.ImageSource>
+                                        </Button>
+                                    </Grid>
+
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BindingContext.ToggleExpandCommand, Source={x:Reference DesktopList}}"
+                           CommandParameter="{Binding .}"/>
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- Mobile View -->
+                <CollectionView ItemsSource="{Binding Filter}" x:Name="MobileList"
+                     IsVisible="{OnPlatform Android=True, WinUI=False, MacCatalyst=False}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10" Spacing="5" BackgroundColor="Transparent">
+                                <Border>
+                                    <Grid ColumnDefinitions="*,*" HeightRequest="30">
+                                        <Label Text="{Binding value.ID}" Grid.Column="0" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Name}" Grid.Column="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </Grid>
+                                </Border>
+                                <!-- Detalhes expansíveis -->
+                                <StackLayout IsVisible="{Binding IsChecked}" BackgroundColor="Transparent" Padding="5">
+                                    <Button
+                                        Grid.Row="3"
+                                        Grid.Column="1"
+                                        Padding="1"
+                                        Margin="1"
+                                        IsEnabled="{Binding IsNotBusy}"
+                                        WidthRequest="50"
+                                        Style="{StaticResource Circle}"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._commandSG677}"
+                                        CommandParameter="{Binding value.ID}">
+                                        <Button.ImageSource>
+                                            <FontImageSource Glyph="&#xf304;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+                                        </Button.ImageSource>
+                                    </Button>
+                                </StackLayout>
+
+                                <!-- Toque para expandir -->
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.ToggleExpandCommand, Source={x:Reference MobileList}}"
+                           CommandParameter="{Binding .}"/>
+                                </StackLayout.GestureRecognizers>
+
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                
+            </Grid>
+            <Grid IsVisible="{Binding IsType}"  Grid.Column="1">
+                <!-- Desktop View -->
+                <CollectionView ItemsSource="{Binding Type}" x:Name="DesktopListT"
+                     IsVisible="{OnPlatform Android=False, WinUI=True, MacCatalyst=True}">
+                    <CollectionView.Header>
+                        <Border Padding="10" Style="{StaticResource HeaderBorder}">
+                            <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="Auto">
+
+                                <BoxView Grid.Row="0" Grid.Column="0" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                <BoxView Grid.Row="0" Grid.Column="1" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                <BoxView Grid.Row="0" Grid.Column="2" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+
+                                <Label Text="ID" Grid.Column="0" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Nome" Grid.Column="1" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Categoria" Grid.Column="2" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Prioridade" Grid.Column="3" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                            </Grid>
+                        </Border>
+                    </CollectionView.Header>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Padding="10">
+                                <StackLayout>
+                                    <!-- Linha principal -->
+                                    <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="Auto" BackgroundColor="Transparent">
+
+                                        <BoxView Grid.Row="0" Grid.Column="0" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                        <BoxView Grid.Row="0" Grid.Column="1" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                        <BoxView Grid.Row="0" Grid.Column="2" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+
+                                        <Label Text="{Binding value.ID}" Grid.Column="0" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Name}" Grid.Column="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Category}" Grid.Column="2" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Priority, StringFormat='N{0}'}" Grid.Column="3" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </Grid>
+                                    <!-- Detalhes extras -->
+                                    <Grid Padding="10" BackgroundColor="Transparent"
+                           IsVisible="{Binding IsChecked}">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Button
+                                        Grid.Row="2"
+                                        Padding="1"
+                                        Margin="1"
+                                        WidthRequest="50"
+                                        Style="{StaticResource Circle}"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._commandSG884}"
+                                        CommandParameter="{Binding value.ID}">
+                                            <Button.ImageSource>
+                                                <FontImageSource Glyph="&#xf304;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+                                            </Button.ImageSource>
+                                        </Button>
+                                    </Grid>
+
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BindingContext.ToggleExpandCommand2, Source={x:Reference DesktopListT}}"
+                           CommandParameter="{Binding .}"/>
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- Mobile View -->
+                <CollectionView ItemsSource="{Binding Type}" x:Name="MobileListT"
+                     IsVisible="{OnPlatform Android=True, WinUI=False, MacCatalyst=False}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10" Spacing="5" BackgroundColor="Transparent">
+                                <Border>
+                                    <Grid ColumnDefinitions="*,*" HeightRequest="30">
+                                        <Label Text="{Binding value.ID}" Grid.Column="0" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Name}" Grid.Column="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </Grid>
+                                </Border>
+                                <!-- Detalhes expansíveis -->
+                                <StackLayout IsVisible="{Binding IsChecked}" BackgroundColor="Transparent" Padding="5">
+                                    <Label Text="{Binding value.Category,StringFormat='Categoria: {0}'}" Grid.Row="0" Grid.Column="1"/>
+                                    <Label Text="{Binding value.Priority,StringFormat='Prioridade: N{0}'}" Grid.Row="1" Grid.Column="1"/>
+                                    <Button
+                                        Grid.Row="3"
+                                        Grid.Column="1"
+                                        Padding="1"
+                                        Margin="1"
+                                        WidthRequest="50"
+                                        Style="{StaticResource Circle}"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._commandSG884}"
+                                        CommandParameter="{Binding value.ID}">
+                                        <Button.ImageSource>
+                                            <FontImageSource Glyph="&#xf304;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+                                        </Button.ImageSource>
+                                    </Button>
+                                </StackLayout>
+
+                                <!-- Toque para expandir -->
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.ToggleExpandCommand2, Source={x:Reference MobileListT}}"
+                           CommandParameter="{Binding .}"/>
+                                </StackLayout.GestureRecognizers>
+
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </Grid>
+        <VerticalStackLayout x:Name="FabBtnsContainer" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,-200,60" Spacing="5">
+            <Button Text="Categoria" IsEnabled="{Binding IsNotBusy}" Command="{Binding _commandSG970}"/>
+            <Button Text="Tipo" Command="{Binding _commandSG842}"/>
+        </VerticalStackLayout>
+        <Button 
+            Padding="10"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            Style="{StaticResource Circle}"
+            Margin="10"
+            x:Name="FabBtn"
+            Clicked="FabBtn_Clicked">
+            <Button.ImageSource>
+                <FontImageSource Glyph="&#x2b;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+            </Button.ImageSource>
+        </Button>
+    </Grid>
+</ContentPage>

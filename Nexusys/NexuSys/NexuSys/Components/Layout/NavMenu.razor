@@ -1,0 +1,171 @@
+﻿@rendermode InteractiveServer
+
+
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="img-fluid">
+        <img src="images/logoNS.png" width="200" height="150" />
+    </div>
+</div>
+
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+
+<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+    <nav class="nav flex-column">
+        <div class="nav-item px-0">
+            <NavLink class="nav-link" href="ND06">
+                <span aria-hidden="true"></span> <i class="bi bi-bar-chart-fill mb-4" style=" font-size: 23px"></i> Dashboard
+            </NavLink>
+        </div>
+
+
+        <div class="nav-item px-0">
+            <NavLink type="button" class="nav-link dropdown-toggle" aria-expanded="false" @onclick="() => OS = !OS">
+                <span aria-hidden="true"></span> <i class="bi bi-card-text mb-4" style=" font-size: 23px"></i>Ordem de Serviço
+            </NavLink>
+        </div>
+        @if (OS)
+        {
+            <div class="nav-item px-3 py-0">
+                <NavLink class="nav-link" href="NO01">
+                    <span aria-hidden="true"></span> <i class="bi bi-card-checklist mb-4" style=" font-size: 23px"></i>Ordens de Serviço
+                </NavLink>
+                <NavLink class="nav-link" href="NO99">
+                    <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Orçamento
+                </NavLink>
+            </div>
+        }
+
+
+        <div class="nav-item px-0">
+            <NavLink type="button" class="nav-link dropdown-toggle" aria-expanded="false" @onclick="() => Clientes = !Clientes">
+                <span aria-hidden="true"></span> <i class="bi bi-person-vcard-fill mb-4" style=" font-size: 23px"></i> Clientes
+            </NavLink>
+        </div>
+        @if (Clientes)
+        {
+            <div class="nav-item px-3 py-0">
+                <NavLink class="nav-link" href="NC75">
+                    <span aria-hidden="true"></span> <i class="bi bi-person-video mb-4" style=" font-size: 23px"></i> Clientes
+                </NavLink>
+            </div>
+            <div class="nav-item px-3 py-0">
+                <NavLink class="nav-link" href="NF05">
+                    <span aria-hidden="true"></span>  <i class="bi bi-person-video mb-4" style=" font-size: 23px"></i> Fornecedores
+                </NavLink>
+            </div>
+            
+        }
+
+        <div class="nav-item px-0">
+            <NavLink type="button" class="nav-link dropdown-toggle" aria-expanded="false" @onclick="() => equipamentos = !equipamentos">
+                <span aria-hidden="true"></span> <i class="bi bi-cpu-fill mb-4" style=" font-size: 23px"></i> Equipamentos
+            </NavLink>
+        </div>
+        @if (equipamentos)
+        {
+            <div class="nav-item px-3 py-0">
+                <NavLink class="nav-link" href="NE21">
+                    <span aria-hidden="true"></span>  <i class="bi bi-cpu mb-4" style=" font-size: 23px"></i>Equipamentos
+                </NavLink>
+                <NavLink class="nav-link" href="NA41">
+                    <span aria-hidden="true"></span>  <i class="bi bi-cpu mb-4" style=" font-size: 23px"></i>Atividades de Reparo
+                </NavLink>
+            </div>
+        }
+
+
+        <div class="nav-item px-0">
+            <NavLink type="button" class="nav-link dropdown-toggle" aria-expanded="false" @onclick="() => Produtos = !Produtos">
+                <span aria-hidden="true"></span> <i class="bi bi-box-fill mb-4" style=" font-size: 23px"></i>Produtos
+            </NavLink>
+        </div>
+        @if (Produtos)
+        {
+            <div class="nav-item px-3 py-0">
+                <NavLink class="nav-link" href="NP01">
+                    <span aria-hidden="true"></span>  <i class="bi bi-boxes mb-4" style=" font-size: 23px"></i>Produtos
+                </NavLink>
+                <NavLink class="nav-link" href="NN02">
+                    <span aria-hidden="true"></span>  <i class="bi bi-file-earmark-text mb-4" style=" font-size: 23px"></i>Notas Fiscais
+                </NavLink>
+            </div>
+        }
+        <div class="nav-item px-0">
+            <NavLink type="button" class="nav-link dropdown-toggle" aria-expanded="false" @onclick="() => compras = !compras">
+                <span aria-hidden="true"></span> <i class="bi bi-cart-fill mb-4" style=" font-size: 23px"></i>Compras
+            </NavLink>
+        </div>
+        @if (compras)
+        {
+            <div class="nav-item px-3 py-0">
+                <NavLink class="nav-link" href="NC83">
+                    <span aria-hidden="true"></span> <i class="bi bi-shop-window mb-4" style=" font-size: 23px"></i>Compras
+                </NavLink>
+            </div>
+        }
+
+        <div class="nav-item px-0">
+            <NavLink type="button" class="nav-link dropdown-toggle" aria-expanded="false" @onclick="() => Usuarios = !Usuarios">
+                <span aria-hidden="true"></span> <i class="bi bi-person-fill mb-4" style=" font-size: 23px"></i> Usuários
+            </NavLink>
+        </div>
+        @if (Usuarios)
+        {
+            <div class="nav-item px-3 py-0">
+                <NavLink class="nav-link" href="NU88">
+                    <span aria-hidden="true"></span> <i class="bi bi-person-gear mb-4" style=" font-size: 23px"></i>Usuários
+                </NavLink>
+                <NavLink class="nav-link" href="NS01">
+                    <span aria-hidden="true"></span> <i class="bi bi-person-gear mb-4" style=" font-size: 23px"></i> Vendedores
+                </NavLink>
+            </div>
+        }
+
+
+        <div class="nav-item px-0">
+            <NavLink type="button" class="nav-link dropdown-toggle" aria-expanded="false" @onclick="() => configuracao = !configuracao">
+                <span aria-hidden="true"></span> <i class="bi bi-gear-fill mb-4" style="font-size: 21px"></i>Configurações
+            </NavLink>
+        </div>
+        @if (configuracao)
+        {
+            <div class="nav-item px-3 py-0">
+                <NavLink class="nav-link" href="ND70">
+                    <span aria-hidden="true"></span> <i class="bi bi-building-gear mb-4" style=" font-size: 23px"></i>Departamentos
+                </NavLink>
+                <NavLink class="nav-link" href="NU57">
+                    <span aria-hidden="true"></span> <i class="bi bi-buildings mb-4" style=" font-size: 23px"></i>Unidades
+                </NavLink>
+                <NavLink class="nav-link" href="NP65">
+                    <span aria-hidden="true"></span> <i class="bi bi-exclamation-triangle mb-4" style=" font-size: 23px"></i>Defeitos
+                </NavLink>
+                <NavLink class="nav-link" href="NF01">
+                    <span aria-hidden="true"></span> <i class="bi bi-person-gear mb-4" style=" font-size: 23px"></i>Funções
+                </NavLink>
+                <NavLink class="nav-link" href="NT01">
+                    <span aria-hidden="true"></span> <i class="bi bi-screwdriver exclamation-triangle mb-4" style=" font-size: 23px"></i>Tipos de Serviço
+                </NavLink>
+                <NavLink class="nav-link" href="NS42">
+                    <span aria-hidden="true"></span> <i class="bi bi-exclamation-circle mb-4" style=" font-size: 23px"></i>Situações
+                </NavLink>
+            </div>
+        }
+
+        <div class="nav-item px-0">
+            <NavLink class="nav-link" href="NR01">
+                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Relatórios
+            </NavLink>
+        </div>
+    </nav>
+</div>
+@code {
+
+    private bool OS;
+    private bool Produtos;
+    private bool Clientes;
+    private bool Usuarios;
+    private bool configuracao;
+    private bool equipamentos;
+    private bool compras;
+
+}

@@ -1,0 +1,345 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\components\\pages\\purchase\\nc84.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\components\\pages\\purchase\\nc84.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\dtos\\products\\byproductsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\dtos\\products\\byproductsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\components\\pages\\products\\np03.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\components\\pages\\products\\np03.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\profiles\\productsprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\profiles\\productsprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\services\\productsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\services\\productsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\profiles\\purchaseprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\profiles\\purchaseprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\dtos\\nfs\\newnfsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\dtos\\nfs\\newnfsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\entities\\nfs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\entities\\nfs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\profiles\\purchase_itemsprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\profiles\\purchase_itemsprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\services\\nfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\services\\nfservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\components\\pages\\nfs\\nn02.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\components\\pages\\nfs\\nn02.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\components\\pages\\products\\np02.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\components\\pages\\products\\np02.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\dtos\\products\\newproductsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\dtos\\products\\newproductsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\entities\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\entities\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\components\\pages\\customers\\ne77.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\components\\pages\\customers\\ne77.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\interfaces\\iproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\interfaces\\iproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|c:\\users\\ariel\\source\\repos\\waldesagit\\nexusys\\nexusys\\nexusys\\components\\pages\\budget\\no99.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7AB7E2AA-0C7D-4731-8F89-7AC9389BEA4E}|NexuSys\\NexuSys.csproj|solutionrelative:nexusys\\components\\pages\\budget\\no99.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 257,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 12,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Program.cs",
+              "RelativeDocumentMoniker": "NexuSys\\Program.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Program.cs",
+              "RelativeToolTip": "NexuSys\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T19:20:42.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NFs.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Entities\\NFs.cs",
+              "RelativeDocumentMoniker": "NexuSys\\Entities\\NFs.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Entities\\NFs.cs",
+              "RelativeToolTip": "NexuSys\\Entities\\NFs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T19:12:54.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PurchaseProfile.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Profiles\\PurchaseProfile.cs",
+              "RelativeDocumentMoniker": "NexuSys\\Profiles\\PurchaseProfile.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Profiles\\PurchaseProfile.cs",
+              "RelativeToolTip": "NexuSys\\Profiles\\PurchaseProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T19:06:23.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Purchase_ItemsProfile.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Profiles\\Purchase_ItemsProfile.cs",
+              "RelativeDocumentMoniker": "NexuSys\\Profiles\\Purchase_ItemsProfile.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Profiles\\Purchase_ItemsProfile.cs",
+              "RelativeToolTip": "NexuSys\\Profiles\\Purchase_ItemsProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T19:06:22.174Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NewNFsDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\DTOs\\NFs\\NewNFsDTO.cs",
+              "RelativeDocumentMoniker": "NexuSys\\DTOs\\NFs\\NewNFsDTO.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\DTOs\\NFs\\NewNFsDTO.cs",
+              "RelativeToolTip": "NexuSys\\DTOs\\NFs\\NewNFsDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T19:04:52.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "NFService.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Services\\NFService.cs",
+              "RelativeDocumentMoniker": "NexuSys\\Services\\NFService.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Services\\NFService.cs",
+              "RelativeToolTip": "NexuSys\\Services\\NFService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T19:04:44.171Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "NN02.razor",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Components\\Pages\\NFs\\NN02.razor",
+              "RelativeDocumentMoniker": "NexuSys\\Components\\Pages\\NFs\\NN02.razor",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Components\\Pages\\NFs\\NN02.razor",
+              "RelativeToolTip": "NexuSys\\Components\\Pages\\NFs\\NN02.razor",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-13T19:04:36Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NC84.razor",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Components\\Pages\\Purchase\\NC84.razor",
+              "RelativeDocumentMoniker": "NexuSys\\Components\\Pages\\Purchase\\NC84.razor",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Components\\Pages\\Purchase\\NC84.razor",
+              "RelativeToolTip": "NexuSys\\Components\\Pages\\Purchase\\NC84.razor",
+              "ViewState": "AgIAAMUAAAAAAAAAAAASwNsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-13T19:03:44.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "NewProductsDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\DTOs\\Products\\NewProductsDTO.cs",
+              "RelativeDocumentMoniker": "NexuSys\\DTOs\\Products\\NewProductsDTO.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\DTOs\\Products\\NewProductsDTO.cs",
+              "RelativeToolTip": "NexuSys\\DTOs\\Products\\NewProductsDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T18:59:19.288Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Products.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Entities\\Products.cs",
+              "RelativeDocumentMoniker": "NexuSys\\Entities\\Products.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Entities\\Products.cs",
+              "RelativeToolTip": "NexuSys\\Entities\\Products.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T18:58:49.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ByProductsDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\DTOs\\Products\\ByProductsDTO.cs",
+              "RelativeDocumentMoniker": "NexuSys\\DTOs\\Products\\ByProductsDTO.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\DTOs\\Products\\ByProductsDTO.cs",
+              "RelativeToolTip": "NexuSys\\DTOs\\Products\\ByProductsDTO.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T18:52:39.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductsProfile.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Profiles\\ProductsProfile.cs",
+              "RelativeDocumentMoniker": "NexuSys\\Profiles\\ProductsProfile.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Profiles\\ProductsProfile.cs",
+              "RelativeToolTip": "NexuSys\\Profiles\\ProductsProfile.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwBsAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T18:52:07.585Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProductsService.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Services\\ProductsService.cs",
+              "RelativeDocumentMoniker": "NexuSys\\Services\\ProductsService.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Services\\ProductsService.cs",
+              "RelativeToolTip": "NexuSys\\Services\\ProductsService.cs",
+              "ViewState": "AgIAADwBAAAAAAAAAAAswEwBAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T18:49:05.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IProducts.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Interfaces\\IProducts.cs",
+              "RelativeDocumentMoniker": "NexuSys\\Interfaces\\IProducts.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Interfaces\\IProducts.cs",
+              "RelativeToolTip": "NexuSys\\Interfaces\\IProducts.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T18:51:42.909Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "NE77.razor",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Components\\Pages\\Customers\\NE77.razor",
+              "RelativeDocumentMoniker": "NexuSys\\Components\\Pages\\Customers\\NE77.razor",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Components\\Pages\\Customers\\NE77.razor",
+              "RelativeToolTip": "NexuSys\\Components\\Pages\\Customers\\NE77.razor",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAC4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-13T18:51:02.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NP03.razor",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Components\\Pages\\Products\\NP03.razor",
+              "RelativeDocumentMoniker": "NexuSys\\Components\\Pages\\Products\\NP03.razor",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Components\\Pages\\Products\\NP03.razor",
+              "RelativeToolTip": "NexuSys\\Components\\Pages\\Products\\NP03.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-13T18:48:41.058Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "NP02.razor",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Components\\Pages\\Products\\NP02.razor",
+              "RelativeDocumentMoniker": "NexuSys\\Components\\Pages\\Products\\NP02.razor",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Components\\Pages\\Products\\NP02.razor",
+              "RelativeToolTip": "NexuSys\\Components\\Pages\\Products\\NP02.razor",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAJwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-13T18:48:38.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "NO99.razor",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Components\\Pages\\Budget\\NO99.razor",
+              "RelativeDocumentMoniker": "NexuSys\\Components\\Pages\\Budget\\NO99.razor",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\Components\\Pages\\Budget\\NO99.razor",
+              "RelativeToolTip": "NexuSys\\Components\\Pages\\Budget\\NO99.razor",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAKkAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-13T18:46:18.349Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\appsettings.json",
+              "RelativeDocumentMoniker": "NexuSys\\appsettings.json",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\WaldesaGit\\Nexusys\\NexuSys\\NexuSys\\appsettings.json",
+              "RelativeToolTip": "NexuSys\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-13T18:45:38.513Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

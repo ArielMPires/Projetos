@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Agnus.MainPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:local="clr-namespace:Agnus.ViewModels">
+
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="{StaticResource Secondary}" StatusBarStyle="LightContent" />
+    </ContentPage.Behaviors>
+    
+    <!-- Grid Principal -->
+    <Grid x:Name="MainGrid" RowSpacing="20" Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Espaço Superior -->
+        <BoxView Grid.Row="0" HeightRequest="80" BackgroundColor="Transparent" />
+
+        <!-- Conteúdo Central -->
+        <StackLayout x:Name="Vertical" Grid.Row="1" Spacing="20">
+            <!-- Logo -->
+            <Border MaximumWidthRequest="600" MaximumHeightRequest="1000" Padding="10">
+            <VerticalStackLayout MaximumWidthRequest="500" >
+            <Image x:Name="LogoImage" MaximumHeightRequest="250" Source="Logo.png" />
+                <!-- Campos de Entrada -->
+                    <Label Text="ID do Usuario:" FontAttributes="Italic" />
+                    <Entry x:Name="UsernameEntry" Keyboard="Numeric" Placeholder="Usuário" Text="{Binding _users.Id}"  />
+                    <Label Text="Senha:" FontAttributes="Italic" />
+                    <Entry x:Name="PasswordEntry" Placeholder="Senha" Text="{Binding _users.Password}" IsPassword="True"  />
+                    <Label Text="Empresa:" FontAttributes="Italic"/>
+                    <Picker ItemsSource="{Binding Tenant}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding _SelectedTenant}"/>
+                <BoxView Margin="10"/>
+
+            <!-- Botão Entrar -->
+            <Button x:Name="LoginButton" Text="Entrar" Command="{Binding _logarCommand}" CornerRadius="3" MaximumWidthRequest="300"/>
+
+            <!-- Link Esqueceu a Senha -->
+                <Label  FontSize="14" TextColor="#0078D7" HorizontalOptions="Center" />
+            </VerticalStackLayout>
+            </Border>
+        </StackLayout>
+
+        <!-- Espaço Inferior -->
+        <BoxView Grid.Row="2" BackgroundColor="Transparent" />
+    </Grid>
+
+</ContentPage>

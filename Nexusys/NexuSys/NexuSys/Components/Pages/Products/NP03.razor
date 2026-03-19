@@ -1,0 +1,118 @@
+﻿@page "/NP03/{id:int}"
+@using NexuSys.DTOs.Products
+@using NexuSys.Helper
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@inject IProducts _service
+@inject IUserContext UserContext
+
+        
+<EditForm Model="Model" OnInvalidSubmit="SalvarProduto">
+<div class="container py-4 bg-white">
+    <h3 class="fw-bold mb-4">Editar Produto</h3>
+
+    @if (Model != null)
+    {
+                    <div class="mb-3">
+                        <label class="form-label">ID </label>
+                        <InputNumber class="form-control" @bind-Value="Model.ID" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Familia</label>
+                        <InputText class="form-control" @bind-Value="Model.Family" />
+                    </div>
+
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Código de Barra</label>
+                        <InputText class="form-control" @bind-Value="Model.Barcode" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">NCM</label>
+                        <InputNumber class="form-control" @bind-Value="Model.NCM" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Comprimento</label>
+                        <InputNumber class="form-control" @bind-Value="Model.Length" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Largura</label>
+                        <InputNumber class="form-control" @bind-Value="Model.Width" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Altura</label>
+                        <InputNumber class="form-control" @bind-Value="Model.Height" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Unidade de Peso</label>
+                        <InputText class="form-control" @bind-Value="Model.Weight_Unit" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Peso Líquido</label>
+                        <InputNumber class="form-control" @bind-Value="Model.Gross_Weight" />
+                    </div>
+
+                   <div class="card shadow-sm p-3">
+                        <h5 class="fw-bold">Descrição SAP</h5>
+                        <InputTextArea class="form-control" rows="4" @bind-Value="Model.SAP_Description" />
+                    </div>
+
+            <button type="submit" class="btn btn-success" @onclick="SalvarProduto">Salvar</button>
+            <button type="button" class="btn btn-secondary ms-2" @onclick="Voltar">Cancelar</button>
+    }
+    else
+    {
+        <div class="alert alert-danger">Produto não encontrado!</div>
+    }
+
+</div>
+
+</EditForm>
+
+
+@code {
+
+
+
+    [Parameter] public int Id { get; set; }
+
+    private ByProductsDTO Model = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Model = await _service.ProductsByID(Id);
+    }
+
+    async void SalvarProduto()
+    {
+        Model.ChangedBy = UserContext.UserId;
+        Model.DateChanged = DateTime.Now;
+
+        try
+        {
+            var response = await _service.UpdateProducts(Model);
+            if (response.Result)
+            {
+                await JS.InvokeVoidAsync("alert", response.Message);
+                Navigation.NavigateTo("/NP01");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("alert", $"{response.Error}");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.InnerException.Message);
+        }
+    }
+
+    private void Voltar()
+    {
+        Navigation.NavigateTo("/NP01");
+    }
+}

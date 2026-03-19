@@ -1,0 +1,222 @@
+﻿@page "/ND06"
+@using NexuSys.Helper
+@using System.Security.Claims
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IUserContext userContext
+@inject IJSRuntime JS
+
+<PageTitle>Dashboard</PageTitle>
+
+<div class="container-fluid p-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="mb-0">Dashboard</h3>
+
+        <button type="button"
+                class="btn btn-success d-flex align-items-center gap-2"
+                @onclick="IrParaNovaOS">
+            <span class="fw-bold fs-5">+</span>
+            Nova OS
+        </button>
+    </div>
+
+    <div class="row g-3">
+
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <small class="text-muted">Ordens de Serviço</small>
+                    <h2>@TotalOS</h2>
+                    <span class="text-success">↑ @OSAndamento em andamento</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <small class="text-muted">Equipamentos</small>
+                    <h2>@Equipamentos</h2>
+                    <span class="text-muted">4 inversores • 2 soft-starters</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <small class="text-muted">Clientes Ativos</small>
+                    <h2>@ClientesAtivos</h2>
+                    <span class="text-success">+2 este mês</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <small class="text-muted">Faturamento</small>
+                    <h2>R$ @Faturamento</h2>
+                    <span class="text-success">+12% vs mês anterior</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row g-3 mt-4">
+
+        <div class="col-md-4">
+            <div class="card text-white" style="background:linear-gradient(90deg,#0d9488,#14b8a6);">
+                <div class="card-body">
+                    <h6>Taxa de Conclusão</h6>
+                    <h2>@TaxaConclusao%</h2>
+                    <small>@OSConcluidas de @TotalOS ordens concluídas</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-warning">
+                <div class="card-body">
+                    <h6>Ticket Médio</h6>
+                    <h2>R$ @TicketMedio</h2>
+                    <small>Valor médio por OS</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white" style="background:#a855f7;">
+                <div class="card-body">
+                    <h6>Aguardando Aprovação</h6>
+                    <h2>@AguardandoAprovacao</h2>
+                    <small>R$ 5.800 em orçamentos</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row g-4 mt-4">
+
+        <div class="col-md-7">
+            <div class="card border-0 shadow-sm p-3">
+                <h6 class="fw-semibold mb-3">Faturamento Mensal</h6>
+
+                <div class="d-flex justify-content-between align-items-end" style="height:180px">
+                    @foreach (var mes in new[] { "Jan", "Fev", "Mar", "Abr", "Mai", "Jun" })
+                    {
+                        <div class="text-center w-100 mx-1">
+                            <div class="rounded"
+                                 style="height:120px;background:linear-gradient(180deg,#14b8a6,#0d9488);">
+                            </div>
+                            <small class="text-muted">@mes</small>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="card border-0 shadow-sm p-3">
+                <h6 class="fw-semibold mb-3">Distribuição por Status</h6>
+
+                @Status("Aberto", "14%", "#64748b")
+                @Status("Em Andamento", "43%", "#3b82f6")
+                @Status("Aguardando Peças", "14%", "#f97316")
+                @Status("Aguardando Aprovação", "14%", "#a855f7")
+                @Status("Concluído", "14%", "#22c55e")
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row g-4 mt-4">
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm p-3">
+                <h6 class="fw-semibold mb-3">Desempenho por Técnico</h6>
+
+                @Tecnico("João", "0/2 OS")
+                @Tecnico("Maria", "0/1 OS")
+                @Tecnico("Pedro", "1/2 OS", true)
+                @Tecnico("Ana", "0/1 OS")
+                @Tecnico("Carlos", "0/1 OS")
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="card border-0 shadow-sm p-3">
+                <h6 class="fw-semibold">Ordens de Serviço Recentes</h6>
+
+                <table class="table table-borderless align-middle">
+                    <tbody>
+                        @LinhaOS("OS-2024-001", "Indústria ABC", "WEG CFW11", "João", "Em Andamento", "primary")
+                        @LinhaOS("OS-2024-002", "Metalúrgica XYZ", "Siemens 3RW44", "Maria", "Aguardando Peças", "warning")
+                        @LinhaOS("OS-2024-003", "Fábrica Delta", "Schneider ATV320", "Pedro", "Concluído", "success")
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+@code {
+    int TotalOS = 7;
+    int OSAndamento = 5;
+    int Equipamentos = 6;
+    int ClientesAtivos = 5;
+    int OSConcluidas = 1;
+
+    decimal Faturamento = 850;
+    decimal TicketMedio = 850;
+    int AguardandoAprovacao = 1;
+
+    int TaxaConclusao => (int)((double)OSConcluidas / TotalOS * 100);
+
+    void IrParaNovaOS()
+    {
+        Navigation.NavigateTo("/NO55", forceLoad: true);
+    }
+
+    RenderFragment Status(string nome, string pct, string cor) => @<div class="mb-2">
+        <small>@nome</small>
+        <div class="d-flex align-items-center gap-2">
+            <div class="progress w-100" style="height:10px">
+                <div class="progress-bar" style="width:@pct;background:@cor"></div>
+            </div>
+            <small>@pct</small>
+        </div>
+    </div>
+    ;
+
+    RenderFragment Tecnico(string nome, string os, bool destaque = false) => @<div class="mb-3">
+        <div class="d-flex justify-content-between small">
+            <span>@nome</span>
+            <span>@os</span>
+        </div>
+        <div class="progress" style="height:6px">
+            <div class="progress-bar bg-success" style="width:@(destaque ? "60%" : "10%")"></div>
+        </div>
+    </div>
+    ;
+
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        //await JS.InvokeVoidAsync("alert", $"Bem Vindo {userContext.UserName}");
+    }
+
+    RenderFragment LinhaOS(string os, string cliente, string eq, string tecnico, string status, string cor)
+    => @<tr>
+        <td class="text-success">@os</td>
+        <td>@cliente</td>
+        <td>@eq</td>
+        <td>@tecnico</td>
+        <td><span class="badge bg-@cor">@status</span></td>
+    </tr>;
+}

@@ -1,0 +1,139 @@
+﻿@page "/NC75"
+
+@using NexuSys.DTOs.Customers
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@inject IProducts _service
+
+<PageTitle>Clientes</PageTitle>
+
+<div class="container py-4 bg-white">
+
+    
+    <div class="d-flex justify-content-between align-items-start mb-4">
+        
+        <div>
+            <h3 class="fw-bold">Clientes</h3>
+            <small class="text-muted">Gerencie o cadastro de clientes</small>
+        </div>
+
+
+          <button class="btn btn-success" @onclick="NovoCliente">
+             <i class="bi bi-plus-circle"></i> Novo Cliente
+             </button>
+    </div>
+
+    <!-- Área de Pesquisa -->
+    <div class="input-group mb-3">
+        <span class="input-group-text">
+            <i class="bi bi-search"></i>
+        </span>
+        <input type="text"
+               class="form-control"
+               placeholder="Pesquisar Cliente..."
+               @bind="Filtro"
+               @bind:event="oninput" />
+    </div>
+
+    <!-- TABELA -->
+    <div class="card shadow-sm p-3">  
+            <table class="table align-middle">
+            <thead class="table-light p-0 align-middle">
+                    <tr>
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>CNPJ / CPF</th>
+                        <th>Cidade</th>
+                        <th>Endereço</th>
+                        <th class="text-end pe-4">Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var c in ClientesFiltrados)
+                    {
+                        <tr>
+                            <td>@c.ID</td>
+                            <td>@c.Name</td>
+                            <td>@c.CNPJ_CPF</td>
+                            <td>@c.City</td>
+                            <td>@c.Address</td>
+
+                            <td class="text-end pe-3">
+                                <button class="btn btn-sm btn-outline-primary me-1"
+                                        title="Editar"
+                                        @onclick="() => Editar(c.ID)">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+
+                                <button class="btn btn-sm btn-outline-danger"
+                                        title="Excluir"
+                                        @onclick="() => ConfirmarExclusao(c.ID)">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+
+                    @if (!ClientesFiltrados.Any())
+                    {
+                        <tr>
+                            <td colspan="6" class="text-center text-muted py-4">
+                                Nenhum cliente encontrado
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+</div>
+   
+
+
+@code {
+
+    private string Filtro = "";
+    private List<CustomersDTO> Clientes = new();
+
+    IEnumerable<CustomersDTO> ClientesFiltrados =>
+        Clientes.Where(c =>
+            string.IsNullOrWhiteSpace(Filtro) ||
+            c.Name.Contains(Filtro, StringComparison.OrdinalIgnoreCase) ||
+            c.CNPJ_CPF.ToString().Contains(Filtro)
+        );
+
+    protected override async Task OnInitializedAsync()
+    {
+        Clientes = await _service.CustomersList();
+    }
+
+    void NovoCliente() =>
+        Navigation.NavigateTo("/NC66");
+
+    void Editar(int id) =>
+        Navigation.NavigateTo($"/NE77/{id}");
+
+    async Task ConfirmarExclusao(int id)
+    {
+        bool confirmar = await JS.InvokeAsync<bool>(
+            "confirm",
+            "Deseja excluir este cliente?"
+        );
+
+        if (confirmar)
+        {
+            var result = await _service.DeleteCustomers(id);
+
+            if (result.Result)
+            {
+                Clientes.RemoveAll(c => c.ID == id);
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("alert", result.Message);
+            }
+        }
+    }
+}

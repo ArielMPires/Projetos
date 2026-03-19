@@ -1,0 +1,56 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.Components
+@using NexuSys.DTOs.Users
+@using NexuSys.Entities
+@using NexuSys.Interfaces
+@using System.Security.Claims
+@inject HttpClient Http
+@inject IUsers _service
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@rendermode InteractiveServer
+<PageTitle>NexuSys</PageTitle>
+
+<div class="d-flex justify-content-center align-items-center"
+     style="min-height:100vh;">
+
+    <form method="post" action="/internallogin" data-enhance="false">
+
+        <div class="card shadow-lg p-4 align-content-center"
+             style="border-radius:18px; width:100%; max-width:400px;">
+
+            <div class="img-fluid">
+                <img src="images/logoNS.png" width="350" height="250"/>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Usuário</label>
+                <input name="ID" type="number"
+                       class="form-control"
+                       placeholder="Digite seu Usuário" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Senha</label>
+                <input name="Password"
+                       type="password"
+                       class="form-control"
+                       placeholder="Digite sua senha" />
+            </div>
+
+            <button type="submit"
+                    class="btn btn-primary w-100 text-white">
+                Entrar
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+@code {
+
+
+
+}

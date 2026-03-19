@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Agnus.ViewModels"
+             x:Class="Agnus.Views.SF136"
+             Title="">
+
+    <Grid Padding="10">
+        <HorizontalStackLayout >
+            <Button
+            IsVisible="{OnPlatform Android=true, iOS=true, WinUI=false}"
+            Command="{Binding _ReturnCommand}"
+            TextColor="#0078D7"
+            Padding="10"
+            HorizontalOptions="StartAndExpand"
+            VerticalOptions="Start"
+            Margin="10">
+                <Button.ImageSource>
+                    <FontImageSource Glyph="&#xf060;" FontFamily="FontAwesomeSolid" Size="24"/>
+                </Button.ImageSource>
+            </Button>
+            <Label Text="SF136"
+               FontSize="20"
+               Opacity="0.4"
+               Rotation="0"
+               TextColor="Gray"
+               HorizontalOptions="End"
+               VerticalOptions="End"
+               InputTransparent="True"/>
+        </HorizontalStackLayout>
+        <ScrollView Margin="50" IsVisible="{Binding IsInfo}">
+            <Grid RowDefinitions="*,*" ColumnDefinitions="*,auto" >
+                <Border Grid.Column="0" Padding="10" Margin="10">
+                    <VerticalStackLayout Padding="10">
+                        <Label Text="Informações" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center"/>
+                        <Label Text="Nº NF:" FontAttributes="Italic"/>
+                        <Entry Placeholder="NF" Text="{Binding Input.Numero}" Keyboard="Numeric"/>
+                        <BoxView Margin="10"/>
+                        <Label Text="Fornecedor:" FontAttributes="Italic"/>
+                        <Picker  ItemsSource="{Binding Supplier}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding _SelectedSupplier}"/>
+                        <BoxView Margin="10"/>
+                        <Label Text="Valor Total:" FontAttributes="Italic"/>
+                        <Entry  Placeholder="Valor Total" IsEnabled="False" Keyboard="Numeric" Text="{Binding Input.Total_Value}"/>
+                        <BoxView Margin="10"/>
+                        <HorizontalStackLayout HorizontalOptions="Start">
+                            <Button Text="Selecionar PDF"  Command="{Binding _SelectImagesCommand}" Margin="3" >
+                                <Button.ImageSource>
+                                    <FontImageSource Glyph="&#xf2c2;" FontFamily="FontAwesomeSolid" Size="24"/>
+                                </Button.ImageSource>
+                            </Button>
+                            <Label Text="{Binding count, StringFormat='Você Selecionou {0} PDF'}" VerticalOptions="Center" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
+                        </HorizontalStackLayout>
+                        <Button Text="Enviar" Command="{Binding _commandAddNF}" IsEnabled="{Binding IsNotBusy}" HorizontalOptions="Center" WidthRequest="200"/>
+                    </VerticalStackLayout>
+                </Border>
+                <Border Grid.Column="{OnPlatform Android=0,WinUI=1}" Grid.Row="{OnPlatform Android=1,WinUI=0}" Padding="10" Margin="10">
+                    <VerticalStackLayout Padding="10">
+                        <Button 
+            Command="{Binding TrocarAbaCommand}" CommandParameter="ItemAdd"
+            TextColor="#0078D7"
+            Padding="10"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+             Style="{StaticResource Circle}"
+            Margin="10"
+            x:Name="FabBtn">
+                            <Button.ImageSource>
+                                <FontImageSource Glyph="&#x2b;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+                            </Button.ImageSource>
+                        </Button>
+                        <ScrollView>
+                        <CollectionView ItemsSource="{Binding Items}">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Padding="5" BackgroundColor="Transparent">
+                                        <Frame>
+                                            <Grid ColumnDefinitions="*,*,*" HeightRequest="50" RowDefinitions="*,*">
+                                                <Label Text="{Binding ProductFK.Description, StringFormat='{0} - '}" Grid.Column="0" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                                <Label Text="{Binding Amount, StringFormat=' {0}Pçs'}" Grid.Column="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                                <Label Text="{Binding Purchase_Value,StringFormat='R${0} Un'}" Grid.Column="0" Grid.Row="1" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                                <Button
+                                                    Grid.Column="
+                                                    2"
+                                                    HorizontalOptions="End"
+                                                    BackgroundColor="Transparent"                                  
+                                                    Padding="1"                                        
+                                                    Margin="2"                                       
+                                                    WidthRequest="50"                                        
+                                                    Style="{StaticResource Circle}"                                        
+                                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._commandDelItem}"                                        
+                                                    CommandParameter="{Binding Product}">
+                                                    <Button.ImageSource>
+                                                        <FontImageSource Glyph="&#xf00d;" FontFamily="FontAwesomeSolid" Size="24" Color="Red"/>
+                                                    </Button.ImageSource>
+                                                </Button>
+                                            </Grid>
+                                        </Frame>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                        </ScrollView>
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+        </ScrollView>
+        <Grid IsVisible="{Binding IsItemADD}" Grid.Column="1" VerticalOptions="Start">
+            <Border Grid.Column="0" Padding="10" Margin="10">
+                <VerticalStackLayout Padding="10">
+                    <Label Text="Informações " FontAttributes="Bold" FontSize="24" HorizontalOptions="Center"/>
+                    <Label Text="Produto:" FontAttributes="Italic"/>
+                    <Picker Title="" ItemsSource="{Binding Products}" ItemDisplayBinding="{Binding Description}" SelectedIndex="{Binding _IndexProduct}" SelectedItem="{Binding _SelectedProduct}"/>
+                    <BoxView Margin="10"/>
+                    <Label Text="Quantidade:" FontAttributes="Italic"/>
+                    <Entry  Placeholder="Quantidade" Text="{Binding NewItem.Amount}"/>
+                    <BoxView Margin="10"/>
+                    <Label Text="Valor Unitário:" FontAttributes="Italic"/>
+                    <Entry  Placeholder="Valor Unitário" Text="{Binding NewItem.Purchase_Value}"/>
+                    <BoxView Margin="10"/>
+
+                    <Button Text="Enviar" Command="{Binding _commandADDItem}" HorizontalOptions="Center" WidthRequest="200"/>
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,76 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Agnus.Views"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:Agnus.ViewModels"
+             x:Class="Agnus.Views.SD001"
+             Title="">
+
+    <ScrollView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{OnIdiom Phone='60', Desktop='240'}"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <HorizontalStackLayout HorizontalOptions="EndAndExpand" Grid.Column="1">
+                <Label Text="SD001"
+               FontSize="20"
+               Opacity="0.4"
+               Rotation="0"
+               TextColor="Gray"
+               HorizontalOptions="EndAndExpand"
+               VerticalOptions="End"
+               InputTransparent="True"/>
+            </HorizontalStackLayout>
+
+            <!-- Sidebar -->
+            <Border>
+                <StackLayout 
+                     Padding="5"
+                     Spacing="20"
+                     Grid.Column="0">
+                    <BoxView Margin="5"/>
+
+                    <!-- Logo -->
+                    <toolkit:AvatarView ImageSource="{Binding Photo, FallbackValue='logo.png'}"
+                                        HeightRequest="100"
+                                        WidthRequest="100"
+                                        HorizontalOptions="Center"/>
+
+                    <!-- Menu Items -->
+                    <StackLayout Spacing="10">
+                        <Label Style="{StaticResource HeaderText}" Text="{Binding _credencial.Nome}" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Button
+                            Text="Trocar Senha"
+                            Padding="1"
+                            Margin="1"
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._SwitchCommand}">
+                        </Button>
+                        <Button
+                            Text="Personalizar"
+                            Command="{Binding _commandSD641}"/>
+                    </StackLayout>
+
+                    <!-- User Info (Desktop only) -->
+                    <StackLayout Orientation="Horizontal"
+                         VerticalOptions="EndAndExpand"
+                                 HorizontalOptions="Center"
+                         IsVisible="{OnIdiom Phone=true, Desktop=true}">
+                        <Picker 
+                            TextColor="LightGray"
+                            BackgroundColor="{AppThemeBinding Light=Transparent, Dark=Transparent}"         
+                            ItemsSource="{Binding Tenant}"    
+                            ItemDisplayBinding="{OnPlatform Android={Binding Id}, WinUI={Binding Name}}"         
+                            SelectedItem="{Binding _SelectedTenant}"
+                            FontSize="16" />
+                    </StackLayout>
+                </StackLayout>
+            </Border>
+
+            <!-- Main Content Area -->
+            <ContentView Grid.Column="1">
+
+            </ContentView>
+        </Grid>
+    </ScrollView>
+</ContentPage>

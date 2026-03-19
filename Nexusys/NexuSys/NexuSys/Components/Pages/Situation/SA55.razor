@@ -1,0 +1,119 @@
+﻿@page "/SA55"
+@using NexuSys.DTOs.SItuation
+@using NexuSys.Helper
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@inject IService _service
+@inject IUserContext UserContext
+
+<PageTitle>Nova Situação</PageTitle>
+
+<EditForm Model="Model" OnValidSubmit="Salvar">
+    <fieldset disabled="@IsLoading">
+
+        <div class="container-fluid p-4 position-relative">
+
+            @if (IsLoading)
+            {
+                <div class="loading-overlay">
+                    <div class="spinner-border text-primary" role="status"></div>
+                </div>
+            }
+
+            <h3 class="fw-bold mb-2">Nova Situação</h3>
+            <p class="text-muted mb-4">
+                Preencha o campo abaixo para cadastrar uma nova Situação
+            </p>
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+
+                    <div class="mb-3">
+                        <label class="form-label">Nome da Situação</label>
+                        <InputText class="form-control"
+                                   @bind-Value="Model.Name"
+                                   placeholder="Digite aqui o nome da Situação" />
+                    </div>
+
+                    <div class="d-flex justify-content-end mt-4">
+                        <button type="button"
+                                class="btn btn-secondary me-2"
+                                disabled="@IsLoading"
+                                @onclick="Voltar">
+                            Cancelar
+                        </button>
+
+                        <button type="submit"
+                                class="btn btn-success"
+                                disabled="@IsLoading">
+                            @if (IsLoading)
+                            {
+                                <span class="spinner-border spinner-border-sm me-2"></span>
+                             
+                            }
+                            else
+                            {
+                                <span>Cadastrar Situação</span>
+                            }
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </fieldset>
+</EditForm>
+
+@code {
+
+    private NewSituationDTO Model = new();
+    private bool IsLoading = false;
+
+    private async Task Salvar()
+    {
+        if (IsLoading)
+            return;
+
+        IsLoading = true;
+        StateHasChanged();
+
+        Model.CreateBy = UserContext.UserId;
+        Model.DateCreate = DateTime.Now;
+
+        try
+        {
+            var response = await _service.NewSituation(Model);
+
+            if (response.Result)
+            {
+                await JS.InvokeVoidAsync("alert", response.Message);
+                Navigation.NavigateTo("/NS42");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("alert", response.Error);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.InnerException?.Message ?? ex.Message);
+        }
+        finally
+        {
+            IsLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    private void Voltar()
+    {
+        if (IsLoading)
+            return;
+
+        Navigation.NavigateTo("/NS42");
+    }
+}

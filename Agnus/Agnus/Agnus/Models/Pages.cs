@@ -1,0 +1,91 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Agnus.Models
+{
+    public class Pages
+    {
+        public string Codigo { get; set; }
+        public string Description { get; set; }
+        public static List<Pages> pages { get; } = new List<Pages>
+        {
+            new Pages{Codigo = "SD001",Description = "Dashboard"},
+            new Pages{Codigo = "SA001",Description = "Dashboard ADM"},
+            new Pages{Codigo = "SA264",Description = "Novo Patrimonio"},
+            new Pages{Codigo = "SA713",Description = "Novo Categoria de Patrimonio "},
+            new Pages{Codigo = "SA961",Description = "Patrimonio & Categoria"},
+            new Pages{Codigo = "SC001",Description = "Chamados Internos"},
+            new Pages{Codigo = "SF001",Description = "Dashboard Financeiro"},
+            new Pages{Codigo = "SG001",Description = "Dashboard Gerencial"},
+            new Pages{Codigo = "SH001",Description = "Dashboard Compras"},
+            new Pages{Codigo = "SK001",Description = "Dashboard Estoque"},
+            new Pages{Codigo = "SM001",Description = "Dashboard Serviços"},
+            new Pages{Codigo = "SP001",Description = "Fornecedores"},
+            new Pages{Codigo = "SS001",Description = "Usuarios"},
+            new Pages{Codigo = "SS328",Description = "Departamentos"},
+            new Pages{Codigo = "SS751",Description = "Novo Departamentos"},
+            new Pages{Codigo = "SS573",Description = "Funções"},
+            new Pages{Codigo = "SS159",Description = "Novo Usuario"},
+            new Pages{Codigo = "SS815",Description = "Editar Usuario"},
+            new Pages{Codigo = "SS617",Description = "Editar Departamento"},
+            new Pages{Codigo = "SS582",Description = "Editar Função"},
+            new Pages{Codigo = "SS634",Description = "Nova Função"},
+            new Pages{Codigo = "SG429",Description = "Tipos de Serviços"},
+            new Pages{Codigo = "SG472",Description = "Novo Tipo de Serviço"},
+            new Pages{Codigo = "SG737",Description = "Categorias & Tipos de Chamados"},
+            new Pages{Codigo = "SG970",Description = "Nova Categoria de Chamado"},
+            new Pages{Codigo = "SG842",Description = "Novo Tipo de Chamado"},
+            new Pages{Codigo = "SG677",Description = "Editar Categoria de Chamado"},
+            new Pages{Codigo = "SG884",Description = "Editar Tipo de Chamado"},
+            new Pages{Codigo = "SG897",Description = "Usos"},
+            new Pages{Codigo = "SG699",Description = "Novo Uso"},
+            new Pages{Codigo = "SG974",Description = "Editar Uso"},
+            new Pages{Codigo = "SA173",Description = "Editar Categoria de Chamado"},
+            new Pages{Codigo = "SA337",Description = "Editar Patrimonio"},
+            new Pages{Codigo = "SA803",Description = "Computadores"},
+            new Pages{Codigo = "SA191",Description = "Novo Computador"},
+            new Pages{Codigo = "SA227",Description = "Editar Computador"},
+            new Pages{Codigo = "SC683",Description = "Editar Chamado Interno"},
+            new Pages{Codigo = "SC273",Description = "Novo Chamado"},
+            new Pages{Codigo = "SP794",Description = "Novo Fornecedor"},
+            new Pages{Codigo = "SP823",Description = "Editar Fornecedor"},
+            new Pages{Codigo = "SK538",Description = "Produtos"},
+            new Pages{Codigo = "SK991",Description = "Novo Produto"},
+            new Pages{Codigo = "SK872",Description = "Marcas"},
+            new Pages{Codigo = "SK771",Description = "Nova Marca"},
+            new Pages{Codigo = "SK392",Description = "Editar Marca"},
+            new Pages{Codigo = "SK472",Description = "Categorias de Produto"},
+            new Pages{Codigo = "SK918",Description = "Nova Categoria de Produto"},
+            new Pages{Codigo = "SK522",Description = "Editar Categoria de Produto"},
+            new Pages{Codigo = "SG351",Description = "Check-List"},
+            new Pages{Codigo = "SG741",Description = "Novo Check-List"},
+            new Pages{Codigo = "SG211",Description = "Editar Check-List"},
+            new Pages{Codigo = "SK172",Description = "Editar Produto"},
+            new Pages{Codigo = "SK323",Description = "Descrição Completa Produto"},
+            new Pages{Codigo = "SK669",Description = "Produto X Fornecedor"},
+            new Pages{Codigo = "SF852",Description = "Movimentações"},
+            new Pages{Codigo = "SF136",Description = "Entrada NF"},
+            new Pages{Codigo = "SF731",Description = "Saida NF"},
+            new Pages{Codigo = "SH853",Description = "Reposição de Produto"},
+            new Pages{Codigo = "SA221",Description = "Prestadores"},
+            new Pages{Codigo = "SA278",Description = "Manuais"},
+            new Pages{Codigo = "SH261",Description = "Solicitações & Pedidos de Compra"},
+            new Pages{Codigo = "SH474",Description = "Nova Solicitação de Compra"},
+            new Pages{Codigo = "SH771",Description = "Aprovar Solicitação"},
+            new Pages{Codigo = "SH492",Description = "Editar Pedido de Compra"},
+            new Pages{Codigo = "SH908",Description = "Editar Solicitação de Compra"},
+            new Pages{Codigo = "SS603",Description = "Permissões"},
+            new Pages{Codigo = "SG644",Description = "Editar Tipos de Serviços"},
+            new Pages{Codigo = "SC023",Description = "Permissão de Todos os Chamados"},
+            new Pages{Codigo = "SS023",Description = "Resetar Senha"},
+            new Pages{Codigo = "SA559",Description = "Senhas"},
+            new Pages{Codigo = "SA465",Description = "Novo Tipo de Senha"},
+            new Pages{Codigo = "SA328",Description = "Editar Tipo de Senha"},
+            new Pages{Codigo = "SA568",Description = "Nova Senha"},
+            new Pages{Codigo = "SA645",Description = "Editar Senha"},
+        };
+    }
+}

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Agnus.ViewModels"
+             x:Class="Agnus.Views.SC273"
+             Title="">
+
+    <Grid Padding="10">
+
+        <HorizontalStackLayout>
+            <Label Text="SC273"
+                   FontSize="20"
+                   Opacity="0.4"
+                   Rotation="0"
+                   TextColor="Gray"
+           HorizontalOptions="EndAndExpand"
+    VerticalOptions="End"
+    InputTransparent="True"/>
+        </HorizontalStackLayout>
+
+        <ScrollView Margin="50">
+            <VerticalStackLayout Spacing="20">
+
+           
+                <Label Text="Novo Chamados" 
+                       HorizontalOptions="Center" 
+                       FontSize="28" 
+                       FontAttributes="Bold"/>
+
+           
+                <Grid ColumnDefinitions="*,*"
+                      ColumnSpacing="20">
+
+
+
+                    <Border Padding="10" Margin="10">
+
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="Informações do Chamado" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center" />
+                            <Label Text="Solicitante:" FontAttributes="Italic"/>
+                            <Picker ItemsSource="{Binding User}" 
+                                    ItemDisplayBinding="{Binding Name}" 
+                                    SelectedItem="{Binding _SelectedUser}"/>
+
+                            <Label Text="PC:" FontAttributes="Italic"/>
+                            <Picker ItemsSource="{Binding PC}" SelectedItem="{Binding _SelectedPC}">
+                                <Picker.ItemDisplayBinding>
+                                    <MultiBinding StringFormat="{}{0} - {1}">
+                                        <Binding Path="ID"/>
+                                        <Binding Path="Description"/>
+                                    </MultiBinding>
+                                </Picker.ItemDisplayBinding>
+                            </Picker>
+
+                            <Label Text="Categoria:" FontAttributes="Italic"/>
+                            <Picker ItemsSource="{Binding Category}" 
+                                    ItemDisplayBinding="{Binding Name}" 
+                                    SelectedItem="{Binding _SelectedCat}"/>
+
+                            <Label Text="Tipo de Serviço:" FontAttributes="Italic"/>
+                            <Picker ItemsSource="{Binding Type}" 
+                                    ItemDisplayBinding="{Binding Name}" 
+                                    SelectedItem="{Binding _SelectedType}"/>
+
+                      
+                            <HorizontalStackLayout HorizontalOptions="Start">
+                                <Button Text="Selecionar Fotos"  
+                                        Command="{Binding _SelectImagesCommand}" 
+                                        Margin="3">
+                                    <Button.ImageSource>
+                                        <FontImageSource Glyph="&#xf2c2;" 
+                                                         FontFamily="FontAwesomeSolid" 
+                                                         Size="24"/>
+                                    </Button.ImageSource>
+                                </Button>
+                                <Label Text="{Binding count, StringFormat='Você Selecionou {0} Imagens'}" 
+                                       VerticalOptions="Center" 
+                                       TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border Grid.Column="{OnPlatform Android=0,WinUI=1}" Grid.Row="{OnPlatform Android=1,WinUI=0}" Padding="10" Margin="10">
+
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="Informações do Problema" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center" />
+                            <Label Text="Problema:" FontAttributes="Italic"/>
+                            <Entry Placeholder="Descreva o problema" 
+                                   Text="{Binding _order.Problem}"/>
+
+                            <Label Text="Observações:" FontAttributes="Italic"/>
+                            <Entry Placeholder="Observações adicionais" 
+                                   Text="{Binding _order.Note}"/>
+
+                      
+                            <Button Text="Enviar" 
+                                    Command="{Binding _NewOSCommand}" 
+                                    IsEnabled="{Binding IsNotBusy}"
+                                    HorizontalOptions="Center" 
+                                    WidthRequest="200"
+                                    Margin="20,30,20,0"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </Grid>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Agnus.ViewModels"
+             x:Class="Agnus.Views.SA264"
+             Title="">
+
+    <Grid Padding="10">
+
+        <HorizontalStackLayout>
+            <Button
+                IsVisible="{OnPlatform Android=true, iOS=true, WinUI=false}"
+                Command="{Binding _ReturnCommand}"
+                TextColor="#0078D7"
+                Padding="10"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="Start"
+                Margin="10">
+                <Button.ImageSource>
+                    <FontImageSource Glyph="&#xf060;" FontFamily="FontAwesomeSolid" Size="24"/>
+                </Button.ImageSource>
+            </Button>
+
+            <Label Text="SA264"
+                   FontSize="20"
+                   Opacity="0.4"
+                   TextColor="Gray"
+                   HorizontalOptions="End"
+                   VerticalOptions="Start"
+                   InputTransparent="True"/>
+        </HorizontalStackLayout>
+
+        <ScrollView>
+            <StackLayout Padding="20" Margin="10,50,10,0" VerticalOptions="Start">
+
+
+                <Grid ColumnSpacing="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+
+                    <Border Grid.Column="0"   Padding="15" >
+                        <VerticalStackLayout>
+                            <Label Text="Informações" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center"/>
+                            <Label Text="Descrição:" FontAttributes="Italic"/>
+                            <Entry Placeholder="Drescrição do Patrimonio" Text="{Binding _patrimony.Description}"/>
+                            <BoxView Margin="10"/>
+                            <Label Text="Categoria:" FontAttributes="Italic"/>
+                            <Picker ItemsSource="{Binding Category}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding _SelectedCat}"/>
+                            <BoxView Margin="10"/>
+                            <Label Text="SERIAL/MAC/IMEI:" FontAttributes="Italic"/>
+                            <Entry Placeholder="SERIAL/MAC/IMEI" Text="{Binding _patrimony.Serial}"/>
+                            <BoxView Margin="10"/>
+                            <Label Text="SERIAL/MAC/IMEI Secundario OPT:" FontAttributes="Italic"/>
+                            <Entry Placeholder="SERIAL/MAC/IMEI Secundario OPT" Text="{Binding _patrimony.SerialSecondary}"/>
+                            <BoxView Margin="10"/>
+
+                            <HorizontalStackLayout HorizontalOptions="Start">
+                                <Button Text="Selecionar Fotos" Command="{Binding _SelectImagesCommand}" Margin="3">
+                                    <Button.ImageSource>
+                                        <FontImageSource Glyph="&#xf2c2;" FontFamily="FontAwesomeSolid" Size="24"/>
+                                    </Button.ImageSource>
+                                </Button>
+                                <Label Text="{Binding count, StringFormat='Você Selecionou {0} Imagens'}" VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Grid.Column="1" Padding="15">
+                        <VerticalStackLayout>
+                            <Label Text="Valor:" FontAttributes="Italic"/>
+                            <Entry Placeholder="Valor" Text="{Binding _patrimony.Value}"/>
+                            <BoxView Margin="10"/>
+                            <Label Text="Departamento:" FontAttributes="Italic"/>
+                            <Picker  ItemsSource="{Binding Departments}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding _SelectedDept}"/>
+                            <BoxView Margin="10"/>
+                            <Label Text="Atual Dono:" FontAttributes="Italic"/>
+                            <Picker ItemsSource="{Binding User}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding _SelectedUser}"/>
+                            <Button Text="Enviar" Command="{Binding _NewPatrimonyCommand}" IsEnabled="{Binding IsNotBusy}"
+                        HorizontalOptions="Center" WidthRequest="200" Margin="0,20,0,0"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </Grid>
+
+
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

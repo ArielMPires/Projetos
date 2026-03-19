@@ -1,0 +1,174 @@
+﻿@page "/NE98/{Id:int}"
+@using NexuSys.DTOs.Departament
+@using NexuSys.DTOs.Role
+@using NexuSys.DTOs.Users
+@using NexuSys.Helper
+@using NexuSys.Interfaces
+@using System.Threading.Tasks
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@inject IUsers _service
+@inject IUserContext UserContext
+
+<PageTitle>Editar Usuário</PageTitle>
+
+@if (IsLoading)
+{
+    <div class="loading-overlay">
+        <div class="spinner-border text-light" role="status">
+            <span class="visually-hidden">Carregando...</span>
+        </div>
+        <p class="mt-3 text-light fw-bold">Salvando alterações...</p>
+    </div>
+}
+
+<div class="container-fluid p-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3>Editar Usuário</h3>
+    </div>
+
+    <div class="card shadow-sm p-3">
+     
+            <EditForm Model="Model" OnValidSubmit="Salvar">
+
+                <fieldset disabled="@IsLoading">
+
+                    <div class="mb-3">
+                        <label class="form-label">Usuário:</label>
+                        <InputText class="form-control"
+                                   @bind-Value="Model.Name"
+                                   placeholder="Digite aqui o nome do usuário" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email:</label>
+                        <InputText class="form-control"
+                                   @bind-Value="Model.Email"
+                                   placeholder="Digite aqui o email" />
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Departamento:</label>
+                            <InputSelect class="form-select"
+                                         @bind-Value="Model.Department">
+                                <option value="">Selecione o Departamento</option>
+                                @foreach (var item in departments)
+                                {
+                                    <option value="@item.ID">@item.Name</option>
+                                }
+                            </InputSelect>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Função:</label>
+                            <InputSelect class="form-select"
+                                         @bind-Value="Model.Role">
+                                <option value="">Selecione a Função</option>
+                                @foreach (var item in roles)
+                                {
+                                    <option value="@item.ID">@item.Name</option>
+                                }
+                            </InputSelect>
+                        </div>
+                    </div>
+
+                    <div class="text-end">
+
+                    <button class="btn btn-secondary me-2" @onclick="Voltar" disabled="@IsLoading">
+                        Cancelar
+                    </button>
+
+                        <button class="btn btn-success" type="submit" disabled="@IsLoading">
+                            @if (IsLoading)
+                            {
+                                <span class="spinner-border spinner-border-sm me-2"></span>
+                            }
+                            else
+                            {
+                                <span>Salvar</span>
+                            }
+                        </button>
+                    </div>
+
+                </fieldset>
+
+            </EditForm>
+
+        </div>
+    </div>
+
+
+
+@code {
+
+    [Parameter] public int Id { get; set; }
+
+    private List<DepartamentDTO> departments = new();
+    private List<RoleDTO> roles = new();
+    private EditUserDTO Model = new();
+
+    private bool IsLoading = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        departments = await _service.DepartamentList();
+        roles = await _service.RoleList();
+
+        var usuario = await _service.UserByID(Id);
+
+        Model.ID = usuario.ID;
+        Model.Name = usuario.Name;
+        Model.Email = usuario.Email ?? "";
+        Model.Password = usuario.Password;
+        Model.Department = usuario.Department;
+        Model.Role = usuario.Role;
+    }
+
+    async Task Salvar()
+    {
+        if (IsLoading)
+            return;
+
+        IsLoading = true;
+        StateHasChanged();
+
+        Model.CreateBy = UserContext.UserId;
+        Model.DateCreate = DateTime.Now;
+        Model.ChangedBy = UserContext.UserId;
+        Model.DateChanged = DateTime.Now;
+
+        try
+        {
+            var user1 = await _service.UpdateUser(Model);
+
+            if (user1.Result)
+            {
+                await JS.InvokeVoidAsync("alert", user1.Message);
+                Navigation.NavigateTo("/NU88");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("alert", user1.Error);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+            await JS.InvokeVoidAsync("alert", "Erro ao salvar os dados.");
+        }
+        finally
+        {
+            IsLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    void Voltar()
+    {
+        if (!IsLoading)
+            Navigation.NavigateTo("/NU88");
+    }
+}

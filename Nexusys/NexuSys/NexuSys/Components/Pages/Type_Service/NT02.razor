@@ -1,0 +1,112 @@
+﻿@page "/NT02"
+@using NexuSys.DTOs.Type_Service
+@using NexuSys.Helper
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@inject IService _service
+@inject IUserContext UserContext
+
+<PageTitle>Adicionar Serviço</PageTitle>
+
+
+<div class="container py-4 bg-white">
+
+    <h3>Adicionar Serviço</h3>
+    <p class="text-muted">Preencha o campo abaixo para cadastrar um novo Serviço</p>
+
+    <div class="card shadow-sm p-3">
+
+        <EditForm Model="Model" OnValidSubmit="Salvar">
+
+            <fieldset disabled="@IsLoading">
+
+                <div class="mb-3">
+                    <label class="form-label">Nome do Serviço</label>
+                    <InputText class="form-control"
+                               @bind-Value="Model.Name"
+                               placeholder="Digite aqui o nome do serviço" />
+                </div>
+
+                <div class="d-flex justify-content-end">
+
+                    <button type="button"
+                            class="btn btn-secondary me-2"
+                            @onclick="Cancelar"
+                            disabled="@IsLoading">
+                        Cancelar
+                    </button>
+
+                    <button type="submit"
+                            class="btn btn-success"
+                            disabled="@IsLoading">
+                        @if (IsLoading)
+                        {
+                            <span class="spinner-border spinner-border-sm me-2"></span>
+                           
+                        }
+                        else
+                        {
+                            <span>Cadastrar Serviço</span>
+                        }
+                    </button>
+
+                </div>
+
+            </fieldset>
+
+        </EditForm>
+
+    </div>
+
+</div>
+
+@code {
+
+    private NewType_ServiceDTO Model = new();
+    private bool IsLoading = false;
+
+    async Task Salvar()
+    {
+        if (IsLoading)
+            return;
+
+        IsLoading = true;
+        StateHasChanged();
+
+        Model.CreateBy = UserContext.UserId;
+        Model.DateCreate = DateTime.Now;
+
+        try
+        {
+            var response = await _service.NewType_Service(Model);
+
+            if (response.Result)
+            {
+                await JS.InvokeVoidAsync("alert", response.Message);
+                Navigation.NavigateTo("/NT01");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("alert", response.Error);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+            await JS.InvokeVoidAsync("alert", "Erro ao salvar o serviço.");
+        }
+        finally
+        {
+            IsLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    void Cancelar()
+    {
+        if (!IsLoading)
+            Navigation.NavigateTo("/NT01");
+    }
+}

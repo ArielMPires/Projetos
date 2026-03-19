@@ -1,0 +1,65 @@
+﻿@page "/NW01"
+@rendermode InteractiveServer
+
+<div class="container py-4 bg-light">
+    <h2 class="fw-bold mb-4">Pesquisa de Equipamentos</h2>
+
+    <!-- Campo de busca -->
+    <div class="mb-3">
+        <InputText class="form-control" placeholder="Digite o código ou nome do equipamento..."
+                   @bind-Value="busca" @oninput="FiltrarEquipamentos" />
+    </div>
+
+    <!-- Lista de resultados -->
+    <div class="list-group">
+        @if (resultados.Any())
+        {
+            @foreach (var eq in resultados)
+            {
+                <a class="list-group-item list-group-item-action"
+                   href="@($"/NW02/{eq.Codigo}")">
+                    <strong>@eq.Nome</strong> - @eq.Tipo
+                </a>
+            }
+        }
+        else
+        {
+            <div class="list-group-item text-muted">Nenhum equipamento encontrado.</div>
+        }
+    </div>
+</div>
+
+@code {
+    private string busca = "";
+    private List<Equipamento> todosEquipamentos = new();
+    private List<Equipamento> resultados = new();
+
+    public class Equipamento
+    {
+        public string Codigo { get; set; }
+        public string Nome { get; set; }
+        public string Tipo { get; set; }
+    }
+
+    protected override void OnInitialized()
+    {
+        // Simulação de base de equipamentos
+        todosEquipamentos = new List<Equipamento>
+        {
+            new Equipamento { Codigo="MOT01", Nome="Motor Principal", Tipo="Motor" },
+            new Equipamento { Codigo="INV02", Nome="Inversor Linha 2", Tipo="Inversor" },
+            new Equipamento { Codigo="SS03", Nome="Soft Starter Linha 3", Tipo="Soft Starter" }
+        };
+
+        resultados = todosEquipamentos; // mostra todos inicialmente
+    }
+
+    private void FiltrarEquipamentos(ChangeEventArgs e)
+    {
+        busca = e.Value?.ToString() ?? "";
+        resultados = todosEquipamentos
+            .Where(eq => eq.Nome.Contains(busca, StringComparison.OrdinalIgnoreCase)
+                      || eq.Codigo.Contains(busca, StringComparison.OrdinalIgnoreCase))
+            .ToList();
+    }
+}

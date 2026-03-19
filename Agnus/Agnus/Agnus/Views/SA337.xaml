@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Agnus.ViewModels"
+             x:Class="Agnus.Views.SA337"
+             Title="">
+
+    <Grid Padding="10">
+        <HorizontalStackLayout>
+            <Button
+            IsVisible="{OnPlatform Android=true, iOS=true, WinUI=false}"
+            Command="{Binding _ReturnCommand}"
+            TextColor="#0078D7"
+            Padding="10"
+            HorizontalOptions="StartAndExpand"
+            VerticalOptions="Start"
+            Margin="10">
+                <Button.ImageSource>
+                    <FontImageSource Glyph="&#xf060;" FontFamily="FontAwesomeSolid" Size="24"/>
+                </Button.ImageSource>
+            </Button>
+            <Label Text="SA337"
+               FontSize="20"
+               Opacity="0.4"
+               Rotation="0"
+               TextColor="Gray"
+               HorizontalOptions="End"
+               VerticalOptions="Start"
+               InputTransparent="True"/>
+        </HorizontalStackLayout>
+        <ScrollView>
+        <StackLayout Padding="20" Margin="10,50,10,0" VerticalOptions="Start">
+            <Frame>
+                    <VerticalStackLayout>
+
+                        <Label TextColor="Black" Text="Descrição"/>
+                        <Entry  Placeholder="Descrição do Patrimonio" Text="{Binding Patrimony.Description}"/>
+                    <BoxView Margin="10"/>
+                    <Picker Title="Categoria" ItemsSource="{Binding Category}" ItemDisplayBinding="{Binding Name}" SelectedIndex="{Binding _SelectedCatIndex, Mode=TwoWay}"  SelectedItem="{Binding _SelectedCat}"/>
+                    <BoxView Margin="10"/>
+
+                        <Label TextColor="Black" Text="Descrição"/>
+                        <Entry  Placeholder="SERIAL/MAC/IMEI" Text="{Binding Patrimony.Serial}"/>
+                    <BoxView Margin="10"/>
+
+                        <Label TextColor="Black" Text="Descrição"/>
+                        <Entry  Placeholder="SERIAL/MAC/IMEI Secundario OPT" Text="{Binding Patrimony.SerialSecondary}"/>
+                    <BoxView Margin="10"/>
+
+                        <Label TextColor="Black" Text="Valor"/>
+                        <Entry  Placeholder="Valor" Text="{Binding Patrimony.Value}"/>
+                    <BoxView Margin="10"/>
+                    <Picker Title="Departamento" ItemsSource="{Binding Departments}" ItemDisplayBinding="{Binding Name}" SelectedIndex="{Binding _SelectedDeptIndex, Mode=TwoWay}"  SelectedItem="{Binding _SelectedDept}"/>
+                    <BoxView Margin="10"/>
+                    <Picker Title="Atual Dono" ItemsSource="{Binding User}" ItemDisplayBinding="{Binding Name}" SelectedIndex="{Binding _SelectedUserIndex, Mode=TwoWay}"  SelectedItem="{Binding _SelectedUser}"/>
+                    <BoxView Margin="10"/>
+                    <HorizontalStackLayout HorizontalOptions="Start">
+                        <Button Text="Selecionar Fotos"  Command="{Binding _SelectImagesCommand}" Margin="3" >
+                            <Button.ImageSource>
+                                <FontImageSource Glyph="&#xf2c2;" FontFamily="FontAwesomeSolid" Size="24"/>
+                            </Button.ImageSource>
+                        </Button>
+                        <Label Text="{Binding count, StringFormat='Você Selecionou {0} Imagens'}" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                        <Button Text="Enviar" Command="{Binding _EditPatrimonyCommand}" IsEnabled="{Binding IsNotBusy}" HorizontalOptions="Center" WidthRequest="200"/>
+                </VerticalStackLayout>
+            </Frame>
+        </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

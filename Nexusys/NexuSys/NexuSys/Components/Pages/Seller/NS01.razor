@@ -1,0 +1,125 @@
+﻿@page "/NS01"
+@using NexuSys.DTOs.Seller
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IUsers _service
+@inject IJSRuntime JS
+
+<div class="container py-4 bg-white">
+
+
+    <div class="d-flex justify-content-between align-items-start mb-4">
+
+        <div>
+            <h3 class="fw-bold">Vendedores</h3>
+            <small class="text-muted">Gerencie o cadastro de vendedores</small>
+        </div>
+
+         <button class="btn btn-success" @onclick="Novo">
+                 <i class="bi bi-plus-circle"></i>  Adicionar Vendedor
+             </button>
+    </div>
+
+    <!-- Área de Pesquisa -->
+    <div class="input-group mb-3">
+        <span class="input-group-text">
+            <i class="bi bi-search"></i>
+        </span>
+        <input type="text"
+               class="form-control"
+               placeholder="Pesquisar Vendedor..."
+               @bind="Filtro"
+               @bind:event="oninput" />
+       
+    </div>
+
+    <!-- Tabela -->
+    <div class="card shadow-sm p-3">
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome dos Vendedores</th>
+                    <th class="text-end pe-4">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (VendedoresFiltrados.Any())
+                {
+                    @foreach (var vendedor in VendedoresFiltrados)
+                    {
+                        <tr>
+                            <td>@vendedor.ID</td>
+                            <td>@vendedor.Name</td>
+                            <td class="text-end pe-3">
+                                <button class="btn btn-sm btn-outline-primary me-1"
+                                        @onclick="() => Editar(vendedor.ID)">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+
+                                <button class="btn btn-sm btn-outline-danger"
+                                        @onclick="() => Excluir(vendedor.ID)">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="3" class="text-center text-muted">
+                            Nenhum vendedor encontrado
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-3 text-muted">
+        Quantidade de Vendedores: @VendedoresFiltrados.Count()
+    </div>
+
+</div>
+
+@code {
+
+    List<SellerDTO> Sellers = new();
+    string Filtro = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        Sellers = await _service.SellerList();
+    }
+
+    IEnumerable<SellerDTO> VendedoresFiltrados =>
+        string.IsNullOrWhiteSpace(Filtro)
+        ? Sellers
+        : Sellers.Where(x => x.Name.Contains(Filtro, StringComparison.OrdinalIgnoreCase));
+
+    void Novo() => Navigation.NavigateTo("/NS02");
+
+    void Editar(int id) => Navigation.NavigateTo($"/NS03/{id}");
+
+    async Task Excluir(int id)
+    {
+        var confirmar = await JS.InvokeAsync<bool>("confirm", "Deseja excluir?");
+
+        if (!confirmar)
+            return;
+
+        var response = await _service.DeleteSeller(id);
+
+        await JS.InvokeVoidAsync("alert", response.Message);
+
+        if (response.Result)
+            Sellers = await _service.SellerList();
+    }
+
+    void Pesquisar()
+    {
+        // já filtra automaticamente pelo bind
+    }
+}

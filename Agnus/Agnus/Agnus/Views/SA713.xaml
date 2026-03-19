@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Agnus.ViewModels"
+             x:Class="Agnus.Views.SA713"
+             Title="">
+
+    <Grid Padding="10">
+        <HorizontalStackLayout>
+            <Button
+            IsVisible="{OnPlatform Android=true, iOS=true, WinUI=false}"
+            Command="{Binding _ReturnCommand}"
+            TextColor="#0078D7"
+            Padding="10"
+            HorizontalOptions="StartAndExpand"
+            VerticalOptions="Start"
+            Margin="10">
+                <Button.ImageSource>
+                    <FontImageSource Glyph="&#xf060;" FontFamily="FontAwesomeSolid" Size="24"/>
+                </Button.ImageSource>
+            </Button>
+            <Label Text="SA713"
+               FontSize="20"
+               Opacity="0.4"
+               Rotation="0"
+               TextColor="Gray"
+               HorizontalOptions="End"
+               VerticalOptions="Start"
+               InputTransparent="True"/>
+        </HorizontalStackLayout>
+        <StackLayout Padding="20" Margin="10,150,10,0" VerticalOptions="Start">
+            <Frame>
+                <VerticalStackLayout>
+                    <Entry  Placeholder="Nome da Categoria" Text="{Binding _newCategory.Name}"/>
+                    <BoxView Margin="10"/>
+                    <Button Text="Enviar" Command="{Binding _NewCategoryCommand}" HorizontalOptions="Center" WidthRequest="200"/>
+                </VerticalStackLayout>
+            </Frame>
+        </StackLayout>
+    </Grid>
+</ContentPage>

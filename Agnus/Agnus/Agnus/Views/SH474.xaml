@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Agnus.ViewModels"
+             x:Class="Agnus.Views.SH474"
+             Title="">
+
+    <Grid Padding="1">
+        <HorizontalStackLayout>
+            <Button
+            IsVisible="{OnPlatform Android=true, iOS=true, WinUI=false}"
+            Command="{Binding _ReturnCommand}"
+            TextColor="#0078D7"
+            Padding="10"
+            HorizontalOptions="StartAndExpand"
+            VerticalOptions="Start"
+            Margin="10">
+                <Button.ImageSource>
+                    <FontImageSource Glyph="&#xf060;" FontFamily="FontAwesomeSolid" Size="24"/>
+                </Button.ImageSource>
+            </Button>
+            <Label Text="SH474"
+               FontSize="20"
+               Opacity="0.4"
+               Rotation="0"
+               TextColor="Gray"
+               HorizontalOptions="End"
+               VerticalOptions="End"
+               InputTransparent="True"/>
+        </HorizontalStackLayout>
+        <Label Margin="10" Text="Nova Solicitação" HorizontalOptions="Center" FontSize="28" FontAttributes="Bold"/>
+        <ScrollView Margin="50" IsVisible="{Binding IsInfo}">
+            <Grid RowDefinitions="*,*" ColumnDefinitions="*,auto" >
+                <Border Grid.Column="0" Padding="10" Margin="10">
+                    <VerticalStackLayout Padding="10">
+                        <Label Text="Informações" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center"/>
+                        <Label Text="Solicitante:" FontAttributes="Italic"/>
+                        <Picker  ItemsSource="{Binding User}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding _SelectedUser}"/>
+                        <BoxView Margin="10"/>
+                        <Label Text="Departamento:" FontAttributes="Italic"/>
+                        <Picker  ItemsSource="{Binding Departments}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding _SelectedDept}"/>
+                        <BoxView Margin="10"/>
+                        <Label Text="Uso:" FontAttributes="Italic"/>
+                        <Picker  ItemsSource="{Binding Use}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding _SelectedUse}"/>
+                        <BoxView Margin="10"/>
+                        <Label Text="Observações:" FontAttributes="Italic"/>
+                        <Entry  Placeholder="Obs" Text="{Binding _request.Note}"/>
+                        <BoxView Margin="10"/>
+                        <Button Text="Enviar" Command="{Binding _NewRequestCommand}" IsEnabled="{Binding IsNotBusy}" HorizontalOptions="Center" WidthRequest="200"/>
+                    </VerticalStackLayout>
+                </Border>
+                <Border Grid.Column="{OnPlatform Android=0,WinUI=1}" Grid.Row="{OnPlatform Android=1,WinUI=0}" Padding="10" Margin="10">
+                    <VerticalStackLayout Padding="10">
+                        <CollectionView ItemsSource="{Binding Items}">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Padding="10" Spacing="5" BackgroundColor="Transparent">
+                                        <Frame>
+                                            <Grid ColumnDefinitions="*,*,*" HeightRequest="50" RowDefinitions="*,*">
+                                                <Label Text="{Binding Product,StringFormat='Cod. {0}'}" Grid.Column="0" Grid.Row="0" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                                <Label Text="{Binding ProductFK.Description, StringFormat='{0} - '}" Grid.Column="0" Grid.Row="1" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                                <Label Text="{Binding Amount, StringFormat=' {0}Pçs'}" Grid.Column="1" Grid.Row="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                                <Button
+                                                    Grid.Column="
+                                                    2"
+                                                    HorizontalOptions="End"
+                                                    BackgroundColor="Transparent"                                  
+                                                    Padding="1"                                        
+                                                    Margin="2"                                       
+                                                    WidthRequest="50"                                        
+                                                    Style="{StaticResource Circle}"                                        
+                                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._commandDelItem}"                                        
+                                                    CommandParameter="{Binding ID}">
+                                                    <Button.ImageSource>
+                                                        <FontImageSource Glyph="&#xf00d;" FontFamily="FontAwesomeSolid" Size="24" Color="Red"/>
+                                                    </Button.ImageSource>
+                                                </Button>
+                                            </Grid>
+                                        </Frame>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                        <Button 
+            Command="{Binding TrocarAbaCommand}" CommandParameter="InfoAdd"
+            TextColor="#0078D7"
+            Padding="10"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+             Style="{StaticResource Circle}"
+            Margin="10"
+            x:Name="FabBtn">
+                            <Button.ImageSource>
+                                <FontImageSource Glyph="&#x2b;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+                            </Button.ImageSource>
+                        </Button>
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+        </ScrollView>
+        <Grid IsVisible="{Binding IsInfoAdd}" VerticalOptions="Center">
+            <Border Padding="10" Margin="10">
+                <VerticalStackLayout>
+                    <Label Text="Produto:" FontAttributes="Italic"/>
+                    <Picker ItemsSource="{Binding Products}" ItemDisplayBinding="{Binding Description}" SelectedItem="{Binding _SelectedProduct}"/>
+                    <BoxView Margin="10"/>
+                    <Label Text="Quantidade:" FontAttributes="Italic"/>
+                    <Entry  Placeholder="Quantidade" Text="{Binding NewItem.Amount}" Keyboard="Numeric"/>
+                    <BoxView Margin="10"/>
+                    <Label Text="Valor Unit:" FontAttributes="Italic"/>
+                    <Entry  Placeholder="Valor" Text="{Binding NewItem.Unit_Value}" Keyboard="Numeric"/>
+                    <BoxView Margin="10"/>
+                    <HorizontalStackLayout HorizontalOptions="Center">
+                        <Button Text="Enviar" Command="{Binding _commandADDItem}" HorizontalOptions="Center" WidthRequest="200"/>
+                        <BoxView Margin="10"/>
+                        <Button Text="Cancelar" Command="{Binding TrocarAbaCommand}" BackgroundColor="Red" CommandParameter="Information" HorizontalOptions="Center" WidthRequest="200"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+    </Grid>
+</ContentPage>

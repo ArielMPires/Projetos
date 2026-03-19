@@ -1,0 +1,191 @@
+﻿@page "/NO01"
+@using NexuSys.DTOs.Customers
+@using NexuSys.DTOs.ServiceOrder
+@using NexuSys.Helper
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IService _service
+@inject IProducts _show
+@inject IJSRuntime JS
+@inject IUserContext UserContext
+
+<PageTitle>Ordens de Serviço</PageTitle>
+
+<div class="container py-4 bg-white">
+
+    <div class="d-flex justify-content-between align-items-start mb-4">
+
+        <div>
+            <h3 class="fw-bold mb-4">Ordens de Serviço</h3>
+            <small class="text-muted">Gerencie o cadastro de ordens de serviço</small>
+        </div>
+
+        <button class="btn btn-success" @onclick="NovoOrcamento">
+            <i class="bi bi-plus-circle"></i> Nova OS
+        </button>
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">
+            <i class="bi bi-search"></i>
+        </span>
+        <input type="text"
+               class="form-control"
+               placeholder="Pesquisar OS..."
+               @bind="Filtro"
+               @bind:event="oninput" />
+    </div>
+
+    <div class="card shadow-sm p-3">
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Nº OS</th>
+                    <th>Cliente</th>
+                    <th>Unidade</th>
+                    <th>Técnico</th>
+                    <th>Status</th>
+                    <th class="text-end pe-3">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var os in OSFiltradas)
+                {
+                    <tr class="@cor(os.Priority)">
+                        <td>@os.ID</td>
+                        <td>@os.Customer</td>
+                        <td>@os.Unit</td>
+
+                        @if (os.Technical != null)
+                        {
+                            <td>@os.Technical</td>
+                        }
+                        else
+                        {
+                            <td>
+                                <button class="btn btn-sm btn-secondary"
+                                        @onclick="() => Catch(os.ID)">
+                                    Pegar OS
+                                </button>
+                            </td>
+                        }
+
+                        <td>
+                            <span class="badge bg-secondary">
+                                @os.Situation
+                            </span>
+                        </td>
+
+                        <td class="text-end">
+                            <button class="btn btn-sm btn-outline-primary"
+                                    @onclick="() => Orcamento(os.ID)">
+                                <i class="bi bi-file-earmark-medical"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-primary"
+                                    @onclick="() => Editar(os.ID)">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-danger ms-1"
+                                    @onclick="() => Excluir(os.ID)">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                }
+
+                @if (!OSFiltradas.Any())
+                {
+                    <tr>
+                        <td colspan="6" class="text-center text-muted py-4">
+                            Nenhuma ordem de serviço encontrada
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-3 text-muted">
+        Quantidade de OS: @OSFiltradas.Count()
+    </div>
+
+</div>
+
+@code {
+
+
+
+    private string cor(int id)
+    {
+        switch (id)
+        {
+            case 0:
+                return "table-danger";
+                break;
+            case 1:
+                return "table-warning";
+                break;
+            case 2:
+                return "table-success";
+                break;
+            case 3:
+                return "table-info";
+                break;
+        }
+        return "";
+    }
+
+
+    string Filtro = "";
+
+    private List<ServiceOrderDTO> OS = new();
+
+    void NovoOrcamento() => Navigation.NavigateTo("/NO55");
+
+    protected override async Task OnInitializedAsync()
+    {
+        OS = await _service.ServiceOrderList();
+    }
+
+    IEnumerable<ServiceOrderDTO> OSFiltradas =>
+        OS.Where(o =>
+            string.IsNullOrWhiteSpace(Filtro) ||
+            o.Customer.Contains(Filtro, StringComparison.OrdinalIgnoreCase) ||
+            o.Note.Contains(Filtro, StringComparison.OrdinalIgnoreCase));
+
+    void NovaOS() => Navigation.NavigateTo("/NO02");
+
+    void Editar(int id) => Navigation.NavigateTo($"/NO02/{id}");
+    void Orcamento(int id) => Navigation.NavigateTo($"/NE11/{id}");
+
+    async Task Excluir(int id)
+    {
+        bool confirmar = await JS.InvokeAsync<bool>(
+            "confirm", "Deseja excluir esta Ordem de Serviço?");
+
+        if (confirmar)
+        {
+            await _service.DeleteServiceOrder(id);
+            OS = await _service.ServiceOrderList();
+            StateHasChanged();
+        }
+    }
+
+    private async Task Catch(int id)
+    {
+        var result = await _service.CatchOS(id, UserContext.UserId);
+
+        var os = OS.FirstOrDefault(e => e.ID == id);
+        if (os != null)
+        {
+            os.Technical = UserContext.UserName;
+        }
+
+        StateHasChanged();
+        await JS.InvokeVoidAsync("alert", result.Message);
+    }
+}

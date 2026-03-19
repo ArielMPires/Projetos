@@ -1,0 +1,172 @@
+﻿@page "/NO99"
+@using NexuSys.DTOs.Budget
+@using NexuSys.Helper
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@inject IBudget _service
+@inject IService _serviceOS
+@inject PDFService _pdf
+
+<PageTitle>Orçamentos</PageTitle>
+
+<div class="container-fluid p-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="fw-bold">Orçamentos</h3>
+    </div>
+
+
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card text-bg-primary">
+                <div class="card-body">
+                    <h6>Total</h6>
+                    <h3>@Budgets.Count</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="input-group mb-3">
+        <span class="input-group-text"><i class="bi bi-search"></i></span>
+        <input type="text" class="form-control" placeholder="Pesquisar produto..." />
+    </div>
+
+
+    <div class="card">
+        <div class="card-body p-0">
+            <table class="table table-hover mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>OS</th>
+                        <th>Data</th>
+                        <th>Tipo</th>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Situação</th>
+                        <th class="text-end">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var b in BudgetsFiltrados)
+                    {
+                        <tr>
+                            <td>@b.ID</td>
+                            <td>@b.OS</td>
+                            <td>@b.Date.ToShortDateString()</td>
+                            <td>
+                                @if (b.Type == 1)
+                                {
+                                    @type1
+                                }
+                                else
+                                {
+
+                                    @type2
+                                }
+                            </td>
+                            <td>@b.Description</td>
+                            <td>@b.Value.ToString("C")</td>
+                            <td>
+                                @if (b.Situation != null && b.Situation == true)
+                                {
+                                    <span class="badge bg-success">
+                                        @situation1
+                                    </span>
+                                }
+                                else if (b.Situation != null && b.Situation == false)
+                                {
+                                    <span class="badge bg-danger">
+                                        @situation2
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">
+                                        @situation
+                                    </span>
+                                }
+                            </td>
+                            <td class="text-end">
+                                <button class="btn btn-sm btn-outline-primary"
+                                @onclick="() => GerarPDF(b.OS)">
+                                    <i class="bi bi-file-earmark-medical"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-primary me-2"
+                                        @onclick="() => Editar(b.OS)">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+
+                    @if (!BudgetsFiltrados.Any())
+                    {
+                        <tr>
+                            <td colspan="7" class="text-center text-muted py-4">
+                                Nenhum orçamento encontrado
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+@code {
+
+    string Filtro = "";
+    string type1 = "Assistencia tecnica";
+    string type2 = "Paineis";
+    string situation1 = "Aprovado";
+    string situation2 = "Reprovado";
+    string situation = "Em andamento";
+
+    List<BudgetDTO> Budgets = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Budgets = await _service.BudgetList();
+    }
+
+    IEnumerable<BudgetDTO> BudgetsFiltrados =>
+        string.IsNullOrWhiteSpace(Filtro)
+        ? Budgets
+        : Budgets.Where(b =>
+            b.Description.Contains(Filtro, StringComparison.OrdinalIgnoreCase) ||
+            b.OS.ToString().Contains(Filtro));
+
+    void NovoOrcamento() => Navigation.NavigateTo("/ND98");
+
+    void Editar(int id) => Navigation.NavigateTo($"/NE11/{id}");
+
+    async Task Excluir(int id)
+    {
+        var confirmar = await JS.InvokeAsync<bool>("confirm", "Deseja excluir?");
+
+        if (!confirmar)
+            return;
+
+        var response = await _service.DeleteBudget(id);
+
+        await JS.InvokeVoidAsync("alert", response.Message);
+
+        if (response.Result)
+            Budgets = await _service.BudgetList();
+    }
+
+    async Task GerarPDF(int id)
+    {
+        var orcamento = await _serviceOS.ServiceOrderByIDDetails(id);
+
+        var link = await _pdf.GerarOrçamentoAssistencia(orcamento);
+
+        await JS.InvokeVoidAsync("open", $"http://nexussys.ddns.net:5254/PDForcamento/{link}", "_blank");
+    }
+}

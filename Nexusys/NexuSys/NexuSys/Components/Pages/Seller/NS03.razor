@@ -1,0 +1,123 @@
+﻿@page "/NS03/{Id:int}"
+@using NexuSys.DTOs.Seller
+@using NexuSys.Helper
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@inject IUsers _service
+@inject IUserContext UserContext
+
+<PageTitle>Editar Vendedor</PageTitle>
+
+@if (IsLoading)
+{
+    <div class="loading-overlay">
+        <div class="spinner-border text-light" role="status"></div>
+        <p class="mt-3 text-light fw-bold">Salvando alterações...</p>
+    </div>
+}
+
+<div class="container py-4 bg-white">
+
+    <h3 class="fw-bold mb-4">Editar Vendedor</h3>
+
+    <div class="card shadow-sm p-3">
+
+        <fieldset disabled="@IsLoading">
+
+            <div class="mb-3">
+                <label class="form-label">Nome do Vendedor</label>
+                <InputText class="form-control"
+                           @bind-Value="Model.Name" />
+            </div>
+
+            <div class="d-flex justify-content-end mt-3">
+                <button class="btn btn-secondary me-2"
+                        @onclick="Voltar"
+                        disabled="@IsLoading">
+                    Cancelar
+                </button>
+
+                <button class="btn btn-success"
+                        @onclick="Salvar"
+                        disabled="@IsLoading">
+                    @if (IsLoading)
+                    {
+                        <span class="spinner-border spinner-border-sm me-2"></span>
+
+                    }
+                    else
+                    {
+                        <span>Salvar Alterações</span>
+                    }
+                </button>
+            </div>
+
+        </fieldset>
+
+    </div>
+
+</div>
+
+@code {
+
+    [Parameter] public int Id { get; set; }
+
+    private BySellerDTO Model = new();
+    private bool IsLoading = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var vend = await _service.SellerByID(Id);
+
+        Model.ID = vend.ID;
+        Model.Name = vend.Name;
+        Model.History = vend.History;
+        Model.CreateBy = vend.CreateBy;
+        Model.DateCreate = vend.DateCreate;
+    }
+
+    async Task Salvar()
+    {
+        if (IsLoading)
+            return;
+
+        IsLoading = true;
+        StateHasChanged();
+
+        Model.ChangedBy = UserContext.UserId;
+        Model.DateChanged = DateTime.Now;
+
+        try
+        {
+            var response = await _service.UpdateSeller(Model);
+
+            if (response.Result)
+            {
+                await JS.InvokeVoidAsync("alert", response.Message);
+                Navigation.NavigateTo("/NS01");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("alert", response.Error);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+            await JS.InvokeVoidAsync("alert", "Erro ao salvar os dados.");
+        }
+        finally
+        {
+            IsLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    void Voltar()
+    {
+        if (!IsLoading)
+            Navigation.NavigateTo("/NS01");
+    }
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:Agnus.ViewModels"
+             xmlns:local="clr-namespace:Agnus.Commands"
+             xmlns:models="clr-namespace:Agnus.Models"
+             x:Class="Agnus.Views.SH853"
+             Title="">
+
+    <Grid Padding="10">
+        <HorizontalStackLayout VerticalOptions="Start">
+            <Button
+                IsVisible="{OnPlatform Android=true, iOS=true, WinUI=false}"
+            Command="{Binding _ReturnCommand}"
+            Padding="10"
+            HorizontalOptions="Start"
+            VerticalOptions="Start"
+            Style="{StaticResource Circle}"
+            Margin="10">
+                <Button.ImageSource>
+                    <FontImageSource Glyph="&#xf060;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+                </Button.ImageSource>
+            </Button>
+            <Label Text="SH853"
+               FontSize="20"
+               Opacity="0.4"
+               Rotation="0"
+               TextColor="Gray"
+               HorizontalOptions="End"
+               VerticalOptions="Start"
+               InputTransparent="True"/>
+        </HorizontalStackLayout>
+
+        <ScrollView Margin="0,60,0,0" >
+
+            <CollectionView ItemsSource="{Binding Products}">
+                <CollectionView.Header>
+                    <Border Padding="10" Margin="4" Style="{StaticResource HeaderBorder}">
+                        <Grid ColumnDefinitions="2*,2*,3*,3*,6*,3*,3*">
+                            <Label Text="#" Grid.Column="0" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                            <Label Text="Cod." Grid.Column="1" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                            <Label Text="Descrição" Grid.Column="2" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                            <Label Text="Marca" Grid.Column="3" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                            <Label Text="Estoque Minimo" Grid.Column="4" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                            <Label Text="Quantidade Atual" Grid.Column="5" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                        </Grid>
+                    </Border>
+                </CollectionView.Header>
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="1"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Padding="5" Margin="4">
+                            <Grid ColumnDefinitions="2*,2*,3*,3*,6*,3*,3*" HeightRequest="50">
+                                <Label Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding IsChecked,Converter={StaticResource ButtonConverter}, ConverterParameter=invertido}">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="&#xf00c; " FontFamily="FASolid" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Button Text="Comprar" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding Checked,Converter={StaticResource ButtonConverter}}" 
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._commandChecked}"
+                                            CommandParameter="{Binding ID}"/>
+                                <Label Text="{Binding ID}" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label Text="{Binding Description}" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label Text="{Binding MarkFK.Name}" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label Text="{Binding Minimum_Stock}" Grid.Column="4" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label Text="{Binding ProductsFK.Amount}" Grid.Column="5" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </ScrollView>
+        <Button 
+            Padding="10"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+                Style="{StaticResource Circle}"
+            Margin="10"
+            x:Name="FabBtn"
+            Command="{Binding _commandSS159}">
+            <Button.ImageSource>
+                <FontImageSource Glyph="&#x2b;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+            </Button.ImageSource>
+        </Button>
+    </Grid>
+</ContentPage>

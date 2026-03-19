@@ -1,0 +1,114 @@
+﻿@page "/NP65"
+@using NexuSys.DTOs.Possible_Defects
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IBudget _service
+@inject IJSRuntime JS
+
+<PageTitle>Possíveis Defeitos</PageTitle>
+
+<div class="container py-4 bg-white">
+
+    <div class="d-flex justify-content-between align-items-start mb-4">
+
+        <div>
+           <h3 class="fw-bold">Possíveis Defeitos</h3>
+            <small class="text-muted">Gerencie o cadastro de possíveis defeitos</small>
+        </div>
+
+        <!-- Botões de Adicionar Defeito -->
+        <button class="btn btn-success" @onclick="Novo">
+            <i class="bi bi-plus-circle"></i> Adicionar Defeito
+        </button>
+    </div>
+
+    <!-- Área de Pesquisa -->
+    <div class="input-group mb-3 ">
+        <span class="input-group-text"><i class="bi bi-search"></i></span>
+        <input type="text" class="form-control w-50" placeholder="Pesquisar Defeito..." @bind="Filtro" @bind:event="oninput" />
+    </div>
+
+    <div class="card shadow-sm p-3">
+    <table class="table table-hover align-middle">
+        <thead class="table-light">
+            <tr>
+                <th>Nome do Defeito</th>
+                    <th class="text-end pe-4">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var defeito in DefeitosFiltrados)
+            {
+                <tr>
+                    <td>@defeito.Name</td>
+                        <td class="text-end pe-3">
+                        <button class="btn btn-sm btn-outline-primary me-1"
+                                @onclick="() => Editar(defeito.ID)">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-danger"
+                                @onclick="() => Excluir(defeito.ID)">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            }
+
+            @if (!DefeitosFiltrados.Any())
+            {
+                <tr>
+                    <td colspan="2" class="text-center text-muted py-4">
+                        Nenhum defeito encontrado
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+
+    <div class="mt-3 text-muted">
+        Quantidade de Defeitos: @DefeitosFiltrados.Count()
+    </div>
+
+</div>
+
+@code {
+
+    string Filtro = "";
+
+    private List<Possible_DefectsDTO> Defeitos = new();
+
+    IEnumerable<Possible_DefectsDTO> DefeitosFiltrados =>
+        Defeitos.Where(d =>
+            string.IsNullOrWhiteSpace(Filtro) ||
+            (d.Name != null &&
+             d.Name.Contains(Filtro, StringComparison.OrdinalIgnoreCase)));
+
+    void Novo() => Navigation.NavigateTo("/NA85");
+
+    void Editar(int id) => Navigation.NavigateTo($"/NE22/{id}");
+
+    async Task Excluir(int id)
+    {
+        bool confirmar = await JS.InvokeAsync<bool>(
+            "confirm",
+            "Deseja excluir este Defeito?"
+        );
+
+        if (confirmar)
+        {
+            await _service.DeletePossible_Defects(id);
+
+            Defeitos = await _service.Possible_DefectsList();
+
+            StateHasChanged();
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Defeitos = await _service.Possible_DefectsList();
+    }
+}

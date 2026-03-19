@@ -1,0 +1,181 @@
+﻿@page "/NV44/{Id:int}"
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+
+<PageTitle>Visualizar Equipamento</PageTitle>
+
+<div class="container-fluid p-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3>Detalhes do Equipamento</h3>
+            <small class="text-muted">Visualização completa</small>
+        </div>
+
+        <div class="d-flex gap-2">
+            <button class="btn btn-outline-secondary"
+                    @onclick="Voltar">
+                Voltar
+            </button>
+
+            <button class="btn btn-outline-primary"
+                    @onclick="Editar">
+                Editar
+            </button>
+
+            <button class="btn btn-outline-success"
+                    @onclick="ExportarPdf">
+                Exportar PDF
+            </button>
+        </div>
+    </div>
+
+    <div class="row g-3 mb-4">
+
+        <div class="col-md-3">
+            <div class="card text-white bg-primary shadow-sm">
+                <div class="card-body">
+                    <h4>@TotalOS</h4>
+                    <small>Total de OS</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-white bg-success shadow-sm">
+                <div class="card-body">
+                    <h4>@Concluidas</h4>
+                    <small>Concluídas</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-white bg-warning shadow-sm">
+                <div class="card-body">
+                    <h4>@EmAndamento</h4>
+                    <small>Em Andamento</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-white bg-danger shadow-sm">
+                <div class="card-body">
+                    <h4>R$ @TotalGasto</h4>
+                    <small>Total Gasto</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <div class="card shadow-sm border-0 mb-4">
+        <div class="card-body">
+
+            <h6 class="fw-semibold mb-3">Dados do Equipamento</h6>
+
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <strong>Modelo:</strong><br />
+                    @Equipamento.Modelo
+                </div>
+
+                <div class="col-md-4">
+                    <strong>Tipo:</strong><br />
+                    @Equipamento.Tipo
+                </div>
+
+                <div class="col-md-4">
+                    <strong>Status:</strong><br />
+                    <span class="badge bg-secondary">@Equipamento.Status</span>
+                </div>
+
+                <div class="col-md-6">
+                    <strong>Cliente:</strong><br />
+                    @Equipamento.Cliente
+                </div>
+
+                <div class="col-md-6">
+                    <strong>Localização:</strong><br />
+                    Planta Industrial
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Linha do tempo -->
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+
+            <h6 class="fw-semibold mb-3">Linha do Tempo</h6>
+
+            <ul class="list-group list-group-flush">
+
+                <li class="list-group-item">
+                    🟢 Equipamento cadastrado
+                    <small class="text-muted d-block">01/02/2024</small>
+                </li>
+
+                <li class="list-group-item">
+                    🟡 OS em andamento
+                    <small class="text-muted d-block">05/02/2024</small>
+                </li>
+
+                <li class="list-group-item">
+                    🔵 OS concluída
+                    <small class="text-muted d-block">10/02/2024</small>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+</div>
+
+@code {
+
+    [Parameter] public int Id { get; set; }
+
+    EquipamentoModel Equipamento = new();
+
+    int TotalOS = 4;
+    int Concluidas = 2;
+    int EmAndamento = 1;
+    decimal TotalGasto = 7800;
+
+    protected override void OnInitialized()
+    {
+        Equipamento = new EquipamentoModel
+            {
+                Id = Id,
+                Modelo = "WEG CFW11",
+                Tipo = "Inversor",
+                Cliente = "Indústria ABC",
+                Status = "Ativo"
+            };
+    }
+
+    void Voltar()
+        => Navigation.NavigateTo("/NE21");
+
+    void Editar()
+        => Navigation.NavigateTo($"/NE12/{Id}");
+
+    void ExportarPdf()
+    {
+      
+    }
+
+    class EquipamentoModel
+    {
+        public int Id { get; set; }
+        public string Modelo { get; set; } = "";
+        public string Tipo { get; set; } = "";
+        public string Cliente { get; set; } = "";
+        public string Status { get; set; } = "";
+    }
+}

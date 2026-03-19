@@ -1,0 +1,180 @@
+﻿@page "/NE47"
+@using NexuSys.DTOs.Equipment
+@using NexuSys.DTOs.Customers
+@using NexuSys.DTOs.Products
+@using NexuSys.Interfaces
+@using NexuSys.Helper
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@inject IProducts _service
+@inject IUserContext userContext
+
+<PageTitle>Novo Equipamento</PageTitle>
+
+<EditForm Model="Model" OnValidSubmit="Salvar">
+    <DataAnnotationsValidator />
+
+    <div class="container-fluid p-4">
+
+        <div class="d-flex align-items-center gap-2 mb-4">
+            <div>
+                <h3 class="fw-bold">Novo Equipamento</h3>
+                <small class="text-muted">
+                    Preencha os dados para cadastrar um novo equipamento
+                </small>
+            </div>
+        </div>
+
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+
+                <h6 class="mb-3">Dados do Equipamento</h6>
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label class="form-label">Serial</label>
+                        <InputNumber class="form-control"
+                        accesskey="" @bind-Value="Model.Serial"/>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Data de Fabricação</label>
+                        <InputDate class="form-control"
+                         @bind-Value="Model.Manufacturing_Date" />
+                    </div>
+
+                    <!-- SELECT CLIENTE -->
+                    <div class="col-md-6">
+                        <label class="form-label">Cliente</label>
+
+                        <InputSelect class="form-select"
+                                     @bind-Value="Model.Customer">
+                            <option value="0">Selecione um cliente</option>
+
+                            @if (Clientes != null)
+                            {
+                                @foreach (var c in Clientes)
+                                {
+                                    <option value="@c.ID">
+                                        @c.Name
+                                    </option>
+                                }
+                            }
+                        </InputSelect>
+                    </div>
+
+
+                    <!-- SELECT PRODUTO -->
+                    <div class="col-md-6">
+                        <label class="form-label">Produto</label>
+                        <input class="form-control"
+                               list="produtos"
+                               @bind="ProdutoSelecionadoTexto"
+                               @bind:event="oninput"
+                               @onchange="AtualizarProduto"
+                               placeholder="Digite para buscar produto..." />
+
+                        <datalist id="produtos">
+                            @if (Produtos != null)
+                            {
+                                @foreach (var p in Produtos)
+                                {
+                                    <option value="@p.ID">@p.ID - @p.SAP_Description</option>
+                                }
+                            }
+                        </datalist>
+                    </div>
+
+                    <div class="col-md-12">
+                        <InputText class="form-control"
+                                   placeholder="Observação"
+                                   @bind-Value="Model.Optional" />
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+       
+        <div class="d-flex justify-content-end gap-2">
+            <button type="button"
+                    class="btn btn-secondary"
+                    @onclick="Voltar">
+                Cancelar
+            </button>
+
+            <button type="submit"
+                    class="btn btn-success">
+                Cadastrar Equipamento
+            </button>
+        </div>
+
+    </div>
+</EditForm>
+
+@code {
+    string searchTerm = "";
+
+    string ProdutoSelecionadoTexto;
+
+    ProductsDTO ProdutoSelecionado;
+
+    void AtualizarProduto()
+    {
+        ProdutoSelecionado = Produtos
+            .FirstOrDefault(p => p.ID == Convert.ToInt32(ProdutoSelecionadoTexto));
+
+        if (ProdutoSelecionado != null)
+        {
+            Model.Product = ProdutoSelecionado.ID;
+        }
+    }
+
+
+    private NewEquipmentDTO Model = new()
+        {
+            Manufacturing_Date = DateTime.Today
+        };
+
+    private List<CustomersDTO> Clientes;
+    private List<ProductsDTO> Produtos = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Clientes = await _service.CustomersList();
+        Produtos = await _service.ProductsList();
+    }
+
+    async Task Salvar()
+    {
+        try
+        {
+            Model.CreateBy = userContext.UserId;
+            Model.DateCreate = DateTime.Now;
+
+            var response = await _service.NewEquipment(Model);
+
+            if (response.Result)
+            {
+                await JS.InvokeVoidAsync("alert", response.Message);
+                Navigation.NavigateTo("/NE21");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("alert", response.Error);
+            }
+        }
+        catch (Exception ex)
+        {
+            await JS.InvokeVoidAsync("alert", ex.Message);
+        }
+    }
+
+    void Voltar()
+    {
+        Navigation.NavigateTo("/NE21");
+    }
+}

@@ -1,0 +1,826 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\database\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\database\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\db\\type_passwords.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\db\\type_passwords.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\dto\\passwords\\newpassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\dto\\passwords\\newpassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\dto\\passwords\\passworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\dto\\passwords\\passworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\controllers\\passwordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\controllers\\passwordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\db\\nf_input.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\db\\nf_input.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\repositories\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\repositories\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\repositories\\filesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\repositories\\filesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\repositories\\interfaces\\iproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\repositories\\interfaces\\iproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\repositories\\serviceorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\repositories\\serviceorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\db\\service_order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\db\\service_order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\repositories\\patrimonyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\repositories\\patrimonyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\db\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\db\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\repositories\\interfaces\\ipatrimony.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\repositories\\interfaces\\ipatrimony.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\db\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\db\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\controllers\\filescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\controllers\\filescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\db\\files.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\db\\files.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\db\\computer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\db\\computer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\repositories\\interfaces\\ifiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\repositories\\interfaces\\ifiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\return.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\return.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\db\\brands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\db\\brands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\controllers\\serviceordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\controllers\\serviceordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\repositories\\requestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\repositories\\requestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\db\\purchase_order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\db\\purchase_order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\services\\pdf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\services\\pdf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\services\\sender_email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\services\\sender_email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\db\\patrimony.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\db\\patrimony.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\db\\request_approval.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\db\\request_approval.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\db\\nf_output.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\db\\nf_output.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\repositories\\provider_orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\repositories\\provider_orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\controllers\\patrimonycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\controllers\\patrimonycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\controllers\\requestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\controllers\\requestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\db\\request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\db\\request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\switchpass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\switchpass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\controllers\\nf_inputcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\controllers\\nf_inputcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\db\\suppliers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\db\\suppliers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\db\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\db\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\repositories\\nf_inputrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\repositories\\nf_inputrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\db\\patrimony_category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\db\\patrimony_category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\models\\db\\services.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\models\\db\\services.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\repositories\\interfaces\\iusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\repositories\\interfaces\\iusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\repositories\\interfaces\\irequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\repositories\\interfaces\\irequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\controllers\\checklistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\controllers\\checklistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|c:\\users\\ariel\\source\\repos\\domus\\domus\\domus\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FC0EBE60-3CEF-45FB-832A-59B0EDFA0299}|Domus\\Domus.csproj|solutionrelative:domus\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 47,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\DataBase\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Domus\\DataBase\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\DataBase\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Domus\\DataBase\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.005Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Type_Passwords.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Type_Passwords.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\DB\\Type_Passwords.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Type_Passwords.cs",
+              "RelativeToolTip": "Domus\\Models\\DB\\Type_Passwords.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NewPasswordDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\DTO\\Passwords\\NewPasswordDTO.cs",
+              "RelativeDocumentMoniker": "Domus\\DTO\\Passwords\\NewPasswordDTO.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\DTO\\Passwords\\NewPasswordDTO.cs",
+              "RelativeToolTip": "Domus\\DTO\\Passwords\\NewPasswordDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PasswordDTO.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\DTO\\Passwords\\PasswordDTO.cs",
+              "RelativeDocumentMoniker": "Domus\\DTO\\Passwords\\PasswordDTO.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\DTO\\Passwords\\PasswordDTO.cs",
+              "RelativeToolTip": "Domus\\DTO\\Passwords\\PasswordDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IProducts.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\Interfaces\\IProducts.cs",
+              "RelativeDocumentMoniker": "Domus\\Repositories\\Interfaces\\IProducts.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\Interfaces\\IProducts.cs",
+              "RelativeToolTip": "Domus\\Repositories\\Interfaces\\IProducts.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAABRwAgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Return.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\Return.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\Return.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\Return.cs",
+              "RelativeToolTip": "Domus\\Models\\Return.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.147Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FilesRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\FilesRepository.cs",
+              "RelativeDocumentMoniker": "Domus\\Repositories\\FilesRepository.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\FilesRepository.cs",
+              "RelativeToolTip": "Domus\\Repositories\\FilesRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwBcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.15Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IFiles.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\Interfaces\\IFiles.cs",
+              "RelativeDocumentMoniker": "Domus\\Repositories\\Interfaces\\IFiles.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\Interfaces\\IFiles.cs",
+              "RelativeToolTip": "Domus\\Repositories\\Interfaces\\IFiles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.153Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Brands.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Brands.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\DB\\Brands.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Brands.cs",
+              "RelativeToolTip": "Domus\\Models\\DB\\Brands.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Products.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Products.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\DB\\Products.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Products.cs",
+              "RelativeToolTip": "Domus\\Models\\DB\\Products.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Files.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Files.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\DB\\Files.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Files.cs",
+              "RelativeToolTip": "Domus\\Models\\DB\\Files.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "PatrimonyController.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Controllers\\PatrimonyController.cs",
+              "RelativeDocumentMoniker": "Domus\\Controllers\\PatrimonyController.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Controllers\\PatrimonyController.cs",
+              "RelativeToolTip": "Domus\\Controllers\\PatrimonyController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAIBJwD0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.165Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IPatrimony.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\Interfaces\\IPatrimony.cs",
+              "RelativeDocumentMoniker": "Domus\\Repositories\\Interfaces\\IPatrimony.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\Interfaces\\IPatrimony.cs",
+              "RelativeToolTip": "Domus\\Repositories\\Interfaces\\IPatrimony.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.167Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "RequestRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\RequestRepository.cs",
+              "RelativeDocumentMoniker": "Domus\\Repositories\\RequestRepository.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\RequestRepository.cs",
+              "RelativeToolTip": "Domus\\Repositories\\RequestRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Sender_Email.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Services\\Sender_Email.cs",
+              "RelativeDocumentMoniker": "Domus\\Services\\Sender_Email.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Services\\Sender_Email.cs",
+              "RelativeToolTip": "Domus\\Services\\Sender_Email.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAUwEQAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "PDF.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Services\\PDF.cs",
+              "RelativeDocumentMoniker": "Domus\\Services\\PDF.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Services\\PDF.cs",
+              "RelativeToolTip": "Domus\\Services\\PDF.cs",
+              "ViewState": "AgIAAK4BAAAAAAAAAIBJwLoBAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ServiceOrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\ServiceOrderRepository.cs",
+              "RelativeDocumentMoniker": "Domus\\Repositories\\ServiceOrderRepository.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\ServiceOrderRepository.cs",
+              "RelativeToolTip": "Domus\\Repositories\\ServiceOrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UsersRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\UsersRepository.cs",
+              "RelativeDocumentMoniker": "Domus\\Repositories\\UsersRepository.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\UsersRepository.cs",
+              "RelativeToolTip": "Domus\\Repositories\\UsersRepository.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAQwCwBAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.306Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Domus\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Domus\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAIBJwBsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "RequestController.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Controllers\\RequestController.cs",
+              "RelativeDocumentMoniker": "Domus\\Controllers\\RequestController.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Controllers\\RequestController.cs",
+              "RelativeToolTip": "Domus\\Controllers\\RequestController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAawB0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ServiceOrderController.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Controllers\\ServiceOrderController.cs",
+              "RelativeDocumentMoniker": "Domus\\Controllers\\ServiceOrderController.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Controllers\\ServiceOrderController.cs",
+              "RelativeToolTip": "Domus\\Controllers\\ServiceOrderController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAIBJwBoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Purchase_Order.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Purchase_Order.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\DB\\Purchase_Order.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Purchase_Order.cs",
+              "RelativeToolTip": "Domus\\Models\\DB\\Purchase_Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "NF_InputController.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Controllers\\NF_InputController.cs",
+              "RelativeDocumentMoniker": "Domus\\Controllers\\NF_InputController.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Controllers\\NF_InputController.cs",
+              "RelativeToolTip": "Domus\\Controllers\\NF_InputController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAABRwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Request.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Request.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\DB\\Request.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Request.cs",
+              "RelativeToolTip": "Domus\\Models\\DB\\Request.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAABQwAcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "SwitchPass.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\SwitchPass.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\SwitchPass.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\SwitchPass.cs",
+              "RelativeToolTip": "Domus\\Models\\SwitchPass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.329Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "NF_Output.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\NF_Output.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\DB\\NF_Output.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\NF_Output.cs",
+              "RelativeToolTip": "Domus\\Models\\DB\\NF_Output.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Unit.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Unit.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\DB\\Unit.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Unit.cs",
+              "RelativeToolTip": "Domus\\Models\\DB\\Unit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.334Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Suppliers.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Suppliers.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\DB\\Suppliers.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Suppliers.cs",
+              "RelativeToolTip": "Domus\\Models\\DB\\Suppliers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "Domus\\Repositories\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\ProductRepository.cs",
+              "RelativeToolTip": "Domus\\Repositories\\ProductRepository.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAwwB8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "Domus\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "Domus\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwBsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Service_Order.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Service_Order.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\DB\\Service_Order.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Service_Order.cs",
+              "RelativeToolTip": "Domus\\Models\\DB\\Service_Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.345Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Services.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Services.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\DB\\Services.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Services.cs",
+              "RelativeToolTip": "Domus\\Models\\DB\\Services.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Patrimony.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Patrimony.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\DB\\Patrimony.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Patrimony.cs",
+              "RelativeToolTip": "Domus\\Models\\DB\\Patrimony.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Patrimony_Category.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Patrimony_Category.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\DB\\Patrimony_Category.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Patrimony_Category.cs",
+              "RelativeToolTip": "Domus\\Models\\DB\\Patrimony_Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Computer.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Computer.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\DB\\Computer.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Computer.cs",
+              "RelativeToolTip": "Domus\\Models\\DB\\Computer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NF_Input.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\NF_Input.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\DB\\NF_Input.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\NF_Input.cs",
+              "RelativeToolTip": "Domus\\Models\\DB\\NF_Input.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "NF_InputRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\NF_InputRepository.cs",
+              "RelativeDocumentMoniker": "Domus\\Repositories\\NF_InputRepository.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\NF_InputRepository.cs",
+              "RelativeToolTip": "Domus\\Repositories\\NF_InputRepository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAABRwBkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Users.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\DB\\Users.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Users.cs",
+              "RelativeToolTip": "Domus\\Models\\DB\\Users.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAIBJwBYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Program.cs",
+              "RelativeDocumentMoniker": "Domus\\Program.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Program.cs",
+              "RelativeToolTip": "Domus\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAC8AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "IRequest.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\Interfaces\\IRequest.cs",
+              "RelativeDocumentMoniker": "Domus\\Repositories\\Interfaces\\IRequest.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\Interfaces\\IRequest.cs",
+              "RelativeToolTip": "Domus\\Repositories\\Interfaces\\IRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "IUsers.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\Interfaces\\IUsers.cs",
+              "RelativeDocumentMoniker": "Domus\\Repositories\\Interfaces\\IUsers.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\Interfaces\\IUsers.cs",
+              "RelativeToolTip": "Domus\\Repositories\\Interfaces\\IUsers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "CheckListController.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Controllers\\CheckListController.cs",
+              "RelativeDocumentMoniker": "Domus\\Controllers\\CheckListController.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Controllers\\CheckListController.cs",
+              "RelativeToolTip": "Domus\\Controllers\\CheckListController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.376Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\appsettings.json",
+              "RelativeDocumentMoniker": "Domus\\appsettings.json",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\appsettings.json",
+              "RelativeToolTip": "Domus\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-19T17:19:50.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Provider_OrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\Provider_OrderRepository.cs",
+              "RelativeDocumentMoniker": "Domus\\Repositories\\Provider_OrderRepository.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\Provider_OrderRepository.cs",
+              "RelativeToolTip": "Domus\\Repositories\\Provider_OrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "FilesController.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Controllers\\FilesController.cs",
+              "RelativeDocumentMoniker": "Domus\\Controllers\\FilesController.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Controllers\\FilesController.cs",
+              "RelativeToolTip": "Domus\\Controllers\\FilesController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAIBJwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.397Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PatrimonyRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\PatrimonyRepository.cs",
+              "RelativeDocumentMoniker": "Domus\\Repositories\\PatrimonyRepository.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Repositories\\PatrimonyRepository.cs",
+              "RelativeToolTip": "Domus\\Repositories\\PatrimonyRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.399Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Request_Approval.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Request_Approval.cs",
+              "RelativeDocumentMoniker": "Domus\\Models\\DB\\Request_Approval.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Models\\DB\\Request_Approval.cs",
+              "RelativeToolTip": "Domus\\Models\\DB\\Request_Approval.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.403Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PasswordController.cs",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Controllers\\PasswordController.cs",
+              "RelativeDocumentMoniker": "Domus\\Controllers\\PasswordController.cs",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Controllers\\PasswordController.cs",
+              "RelativeToolTip": "Domus\\Controllers\\PasswordController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:19:50.407Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Domus\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\ariel\\source\\repos\\Domus\\Domus\\Domus\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Domus\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-19T17:19:50.41Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Agnus.ViewModels"
+             x:Class="Agnus.Views.SP794"
+             Title="">
+
+
+    <Grid Padding="10">
+        <Label Text="SP794"
+                 FontSize="20"
+                 Opacity="0.4"
+                 Rotation="0"
+                 TextColor="Gray"
+         HorizontalOptions="Start"
+  VerticalOptions="End"
+  InputTransparent="True"/>
+
+        <!-- Título -->
+        <Label Margin="10" 
+               Text="Novo Fornecedor" 
+               HorizontalOptions="Center" 
+               FontSize="28" 
+               FontAttributes="Bold"/>
+
+        <ScrollView Margin="50">
+            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto">
+
+                <Border Grid.Column="0" Padding="10" Margin="10">
+                    <ScrollView>
+                        <VerticalStackLayout Padding="10" Spacing="10">
+                            <Label Text="Informações Pessoais" 
+                                   FontAttributes="Bold" 
+                                   FontSize="24" 
+                                   HorizontalOptions="Center"/>
+
+                            <Label Text="Telefone:" FontAttributes="Italic"/>
+                            <Entry Placeholder="Telefone" Text="{Binding _supplier.Telefone}"/>
+
+                            <Label Text="Celular:" FontAttributes="Italic"/>
+                            <Entry Placeholder="Celular" Text="{Binding _supplier.Celular}"/>
+
+                            <Label Text="Endereço:" FontAttributes="Italic"/>
+                            <Entry Placeholder="Endereço" Text="{Binding _supplier.Endereco}"/>
+
+                            <Label Text="Número:" FontAttributes="Italic"/>
+                            <Entry Placeholder="Número" Keyboard="Numeric" Text="{Binding _supplier.Numero}"/>
+
+                            <Label Text="Bairro:" FontAttributes="Italic"/>
+                            <Entry Placeholder="Bairro" Text="{Binding _supplier.Bairro}"/>
+
+                            <Label Text="CEP:" FontAttributes="Italic"/>
+                            <Entry Placeholder="CEP" Keyboard="Numeric" Text="{Binding _supplier.Cep}"/>
+
+                            <Button Text="Enviar" 
+                                    IsEnabled="{Binding IsNotBusy}"
+                                    Command="{Binding _NewSupplierCommand}" 
+                                    HorizontalOptions="Center" 
+                                    WidthRequest="200"
+                                    Margin="20,30,20,0"/>
+                        </VerticalStackLayout>
+                    </ScrollView>
+                </Border>
+
+                <Border Grid.Column="{OnPlatform Android=0,WinUI=1}" Grid.Row="{OnPlatform Android=1,WinUI=0}" Padding="10" Margin="10">
+                    <ScrollView>
+                        <VerticalStackLayout Padding="10" Spacing="10">
+
+                            <Label Text="Informações da Empresa" 
+                                   FontAttributes="Bold" 
+                                   FontSize="24" 
+                                   HorizontalOptions="Center"/>
+
+                            <Label Text="CNPJ/CPF:" FontAttributes="Italic"/>
+                            <Entry Placeholder="CNPJ/CPF" Keyboard="Numeric" Text="{Binding _supplier.CNPJ_CPF}"/>
+
+                            <Label Text="Razão Social:" FontAttributes="Italic"/>
+                            <Entry Placeholder="Razão Social" Text="{Binding _supplier.Razao_Social}"/>
+
+                            <Label Text="Nome Fantasia:" FontAttributes="Italic"/>
+                            <Entry Placeholder="Nome Fantasia" Text="{Binding _supplier.Name}"/>
+
+                            <Label Text="Agência:" FontAttributes="Italic"/>
+                            <Entry Placeholder="Agência" Text="{Binding _supplier.Agencia}"/>
+
+                            <Label Text="Banco:" FontAttributes="Italic"/>
+                            <Entry Placeholder="Banco" Text="{Binding _supplier.Banco}"/>
+
+                            <Label Text="Número da Conta:" FontAttributes="Italic"/>
+                            <Entry Placeholder="Número da Conta" Text="{Binding _supplier.Numero_conta}"/>
+
+                            <Label Text="Vendedor:" FontAttributes="Italic"/>
+                            <Entry Placeholder="Vendedor" Text="{Binding _supplier.Vendedor}"/>
+
+                        </VerticalStackLayout>
+                    </ScrollView>
+                </Border>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

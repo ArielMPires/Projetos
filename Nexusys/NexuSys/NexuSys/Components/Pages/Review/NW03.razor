@@ -1,0 +1,42 @@
+﻿@page "/NW03/{Codigo}"
+@rendermode InteractiveServer
+
+<div class="container py-4 bg-light">
+    <h2 class="fw-bold mb-4">Registro de Revisão</h2>
+
+    <div class="card shadow-sm p-3 mb-4">
+        <h5 class="fw-bold">Equipamento: @Codigo</h5>
+
+        <div class="mb-3">
+            <label class="form-label">Situação</label>
+            <InputSelect class="form-control" @bind-Value="revisao.Situacao">
+                <option value="Operacional">Operacional</option>
+                <option value="Em Manutenção">Em Manutenção</option>
+                <option value="Necessita Reparo">Necessita Reparo</option>
+            </InputSelect>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Observações</label>
+            <InputTextArea class="form-control" @bind-Value="revisao.Observacoes" Rows="4" />
+        </div>
+
+        <button class="btn btn-success" @onclick="SalvarRevisao">Salvar Revisão</button>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string Codigo { get; set; }
+    private Revisao revisao = new();
+
+    public class Revisao
+    {
+        public string Situacao { get; set; }
+        public string Observacoes { get; set; }
+    }
+
+    private void SalvarRevisao()
+    {
+        // Lógica para salvar revisão
+    }
+}

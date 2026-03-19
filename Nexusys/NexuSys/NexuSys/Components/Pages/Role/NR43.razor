@@ -1,0 +1,251 @@
+﻿@page "/nr43/{RoleId:int}"
+@rendermode InteractiveServer
+
+@using NexuSys.DTOs.Permissions
+@using NexuSys.Helper
+@using NexuSys.Interfaces
+
+@inject IUsers _users
+@inject NavigationManager Navigation
+@inject IUserContext UserContext
+@inject IJSRuntime JS
+
+<h3>Permissões da Role</h3>
+
+@if (pages == null)
+{
+    <p>Carregando...</p>
+}
+else
+{
+    <EditForm Model="pages"
+              OnValidSubmit="Salvar"
+              FormName="FormPermissoes">
+
+        <div class="container mt-4">
+
+            <div class="row">
+
+                <div class="col-md-4">
+
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white">
+                            👥 Clientes
+                        </div>
+
+                        <div class="card-body">
+                            @foreach (var perm in pages.Where(p => p.value.Codigo.StartsWith("NC") || p.value.Codigo.StartsWith("NE77")))
+                            {
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" @bind="perm.IsChecked" />
+                                    <label class="form-check-label">@perm.value.Name</label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-success text-white">
+                            📦 Produtos
+                        </div>
+
+                        <div class="card-body">
+                            @foreach (var perm in pages.Where(p => p.value.Codigo.StartsWith("NP")))
+                            {
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" @bind="perm.IsChecked" />
+                                    <label class="form-check-label">@perm.value.Name</label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-warning text-dark">
+                            🛠 Equipamentos
+                        </div>
+
+                        <div class="card-body">
+                            @foreach (var perm in pages.Where(p => p.value.Codigo.StartsWith("NE4") || p.value.Codigo.StartsWith("NV") || p.value.Codigo.StartsWith("NE1")))
+                            {
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" @bind="perm.IsChecked" />
+                                    <label class="form-check-label">@perm.value.Name</label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-info text-white">
+                            📄 Orçamentos / OS
+                        </div>
+
+                        <div class="card-body">
+                            @foreach (var perm in pages.Where(p => p.value.Codigo.StartsWith("NO")))
+                            {
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" @bind="perm.IsChecked" />
+                                    <label class="form-check-label">@perm.value.Name</label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-secondary text-white">
+                            👤 Usuários
+                        </div>
+
+                        <div class="card-body">
+                            @foreach (var perm in pages.Where(p => p.value.Codigo.StartsWith("NU")))
+                            {
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" @bind="perm.IsChecked" />
+                                    <label class="form-check-label">@perm.value.Name</label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-dark text-white">
+                            ⚙️ Configurações
+                        </div>
+
+                        <div class="card-body">
+                            @foreach (var perm in pages.Where(p => p.value.Codigo.StartsWith("ND") || p.value.Codigo.StartsWith("NR") || p.value.Codigo.StartsWith("NW")))
+                            {
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" @bind="perm.IsChecked" />
+                                    <label class="form-check-label">@perm.value.Name</label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="text-end mt-3">
+
+                <button type="submit" class="btn btn-success px-4">
+                    💾 Salvar Permissões
+                </button>
+
+                <button type="button"
+                        class="btn btn-outline-secondary ms-2 px-4"
+                        @onclick="Voltar">
+                    Voltar
+                </button>
+
+            </div>
+
+        </div>
+
+    </EditForm>
+}
+
+@code {
+
+    [Parameter] public int RoleId { get; set; }
+
+    List<PermissionsDTO> permissions;
+    List<CheckBoxGeneric<Pages>> pages;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        permissions = await _users.PermissionByRole(RoleId);
+
+        var list = new List<Pages>(Pages.pages);
+        var Page = new List<CheckBoxGeneric<Pages>>();
+
+        foreach (var item in list)
+        {
+            bool isChecked = permissions.Any(e => e.Page == item.Codigo);
+
+            var checkbox = new CheckBoxGeneric<Pages>
+                {
+                    IsChecked = isChecked,
+                    value = item
+                };
+
+            Page.Add(checkbox);
+        }
+
+        pages = Page;
+    }
+
+
+    async Task Salvar()
+    {
+        try
+        {
+            List<NewPermissionsDTO> NewPages = new();
+            List<int> DeletePages = new();
+
+            foreach (var page in pages)
+            {
+                if (page.IsChecked)
+                {
+                    var comp = permissions.FirstOrDefault(e => e.Page == page.value.Codigo);
+
+                    if (comp == null)
+                    {
+                        NewPages.Add(new NewPermissionsDTO
+                            {
+                                Role = RoleId,
+                                Page = page.value.Codigo,
+                                CreateBy = UserContext.UserId,
+                                DateCreate = DateTime.Now
+                            });
+                    }
+                }
+                else
+                {
+                    var comp = permissions.FirstOrDefault(e => e.Page == page.value.Codigo);
+
+                    if (comp != null)
+                    {
+                        DeletePages.Add(comp.ID);
+                    }
+                }
+            }
+
+            if (NewPages.Any())
+                await _users.NewPermissionAll(NewPages);
+
+            if (DeletePages.Any())
+                await _users.DeletePermissionsAll(DeletePages);
+
+
+            await JS.InvokeVoidAsync("alert", "Permissões alteradas com sucesso!");
+
+            Navigation.NavigateTo("/NF01");
+        }
+        catch (Exception ex)
+        {
+            await JS.InvokeVoidAsync("alert", ex.Message);
+        }
+    }
+
+
+    void Voltar()
+    {
+        Navigation.NavigateTo("/NF01");
+    }
+
+}

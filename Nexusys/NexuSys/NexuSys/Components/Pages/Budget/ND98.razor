@@ -1,0 +1,59 @@
+﻿@page "/ND98"
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+
+<PageTitle>Novo Orçamento</PageTitle>
+
+<div class="container-fluid p-4">
+
+    <h3 class="fw-bold mb-4">Cadastrar Novo Orçamento</h3>
+
+    <div class="card">
+        <div class="card-body">
+
+            <div class="mb-3">
+                <label class="form-label">Cliente</label>
+                <input class="form-control" @bind="Cliente" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Descrição</label>
+                <textarea class="form-control" rows="3" @bind="Descricao"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Valor (R$)</label>
+                <input type="number" class="form-control" @bind="Valor" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Status</label>
+                <select class="form-select" @bind="Status">
+                    <option value="">Selecione</option>
+                    <option>Pendente</option>
+                    <option>Aprovado</option>
+                    <option>Rejeitado</option>
+                </select>
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-secondary me-2" @onclick="Voltar">Cancelar</button>
+                <button class="btn btn-success" @onclick="Salvar">Cadastrar Orçamento</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+@code {
+    string Cliente = "";
+    string Descricao = "";
+    decimal Valor = 0;
+    string Status = "";
+
+    void Salvar() => Navigation.NavigateTo("/NO99");
+    void Voltar() => Navigation.NavigateTo("/NO99");
+
+
+}

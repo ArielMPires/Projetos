@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Agnus.ViewModels"
+             x:Class="Agnus.Views.SC683"
+             Title="">
+
+    <Grid Padding="10">
+        <HorizontalStackLayout >
+            <Button
+            IsVisible="{OnPlatform Android=true, iOS=true, WinUI=false}"
+            Command="{Binding _ReturnCommand}"
+            TextColor="#0078D7"
+            Padding="10"
+            HorizontalOptions="StartAndExpand"
+            VerticalOptions="Start"
+            Margin="10">
+                <Button.ImageSource>
+                    <FontImageSource Glyph="&#xf060;" FontFamily="FontAwesomeSolid" Size="24"/>
+                </Button.ImageSource>
+            </Button>
+            <Label Text="SC683"
+               FontSize="20"
+               Opacity="0.4"
+               Rotation="0"
+               TextColor="Gray"
+               HorizontalOptions="End"
+               VerticalOptions="End"
+               InputTransparent="True"/>
+        </HorizontalStackLayout>
+        <ScrollView>
+            <Grid ColumnDefinitions="*,15*">
+                <VerticalStackLayout Spacing="10" VerticalOptions="Start" HorizontalOptions="Start" Margin="10">
+                    <Button  Style="{StaticResource Circle}" Command="{Binding TrocarAbaCommand}" CommandParameter="Images"   
+            BackgroundColor="{Binding AbaSelecionada, Converter={StaticResource TabColorConverter}, ConverterParameter=Images}">
+                        <Button.ImageSource>
+                            <FontImageSource Glyph="&#xf03e;" Color="{DynamicResource Tertiary}" FontFamily="FontAwesomeSolid" Size="24"/>
+                        </Button.ImageSource>
+                    </Button>
+                    <Button  Style="{StaticResource Circle}"  Command="{Binding TrocarAbaCommand}" CommandParameter="Information"
+            BackgroundColor="{Binding AbaSelecionada, Converter={StaticResource TabColorConverter}, ConverterParameter=Information}">
+                        <Button.ImageSource>
+                            <FontImageSource Glyph="&#xf05a;" Color="{DynamicResource Tertiary}" FontFamily="FontAwesomeSolid" Size="24"/>
+                        </Button.ImageSource>
+                    </Button>
+                    <Button  Style="{StaticResource Circle}" Command="{Binding TrocarAbaCommand}" CommandParameter="Services"   
+            BackgroundColor="{Binding AbaSelecionada, Converter={StaticResource TabColorConverter}, ConverterParameter=Services}">
+                        <Button.ImageSource>
+                            <FontImageSource Glyph="&#xf233;" Color="{DynamicResource Tertiary}" FontFamily="FontAwesomeSolid" Size="24"/>
+                        </Button.ImageSource>
+                    </Button>
+                    <Button  Style="{StaticResource Circle}" Command="{Binding TrocarAbaCommand}" CommandParameter="CheckList"   
+            BackgroundColor="{Binding AbaSelecionada, Converter={StaticResource TabColorConverter}, ConverterParameter=CheckList}">
+                        <Button.ImageSource>
+                            <FontImageSource Glyph="&#xf560;" Color="{DynamicResource Tertiary}" FontFamily="FontAwesomeSolid" Size="24"/>
+                        </Button.ImageSource>
+                    </Button>
+                </VerticalStackLayout>
+
+                <Grid Grid.Column="1" IsVisible="{Binding IsImages}">
+                    <CarouselView ItemsSource="{Binding Images}" IndicatorView="indicatorV">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout HeightRequest="300" WidthRequest="300">
+                                    <Image Source="{Binding .}"
+                               HeightRequest="250"
+                               WidthRequest="250"
+                               HorizontalOptions="Center" />
+                                </StackLayout>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                    <IndicatorView x:Name="indicatorV" Margin="5"/>
+                </Grid>
+                <Grid Grid.Column="1" IsVisible="{Binding IsInfo}" VerticalOptions="Start">
+                    <Grid RowDefinitions="*,*" ColumnDefinitions="*,auto" >
+                        <Border Grid.Column="0" Padding="10" Margin="10">
+                            <VerticalStackLayout Padding="10" Spacing="10">
+                                <Label Text="Informações" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center"/>
+                                <Label Text="PC ID:" FontAttributes="Italic"/>
+                                <Entry Placeholder="PC" IsEnabled="False" Text="{Binding OS.Computer}" Keyboard="Numeric"/>
+                                <Label Text="Solicitante:" FontAttributes="Italic"/>
+                                <Entry Text="{Binding OS.RequestFK.Name}" IsEnabled="False"/>
+                                <Label Text="Tecnico:" FontAttributes="Italic"/>
+                                <Entry  Placeholder="Tecnico" IsEnabled="False" Keyboard="Numeric" Text="{Binding OS.TechnicalFK.Name}"/>
+                                <Label Text="Tipo de Chamado:" FontAttributes="Italic"/>
+                                <Entry  Placeholder="Tipo de Chamado" IsEnabled="False" Keyboard="Numeric" Text="{Binding OS.TypeFK.Name}"/>
+                                <Label Text="Problema Relatado:" FontAttributes="Italic"/>
+                                <Entry  Placeholder="Problema Relatado" IsEnabled="False" Keyboard="Numeric" Text="{Binding OS.Problem}"/>
+                                <Label Text="Data de Contato:" FontAttributes="Italic"/>
+                                <Entry  Placeholder="Data de Contato" IsEnabled="False" Keyboard="Numeric" Text="{Binding OS.Contact_Date}"/>
+                                <Label Text="Atendimento:" FontAttributes="Italic"/>
+                                <Entry  Placeholder="Atendimento" Text="{Binding OS.Service}"/>
+                                <Label Text="Obserações:" FontAttributes="Italic"/>
+                                <Entry  Placeholder="Observações"  Text="{Binding OS.Note}"/>
+                                <HorizontalStackLayout HorizontalOptions="Start">
+                                    <Button Text="Selecionar Fotos"  Command="{Binding _SelectImagesCommand}" Margin="3" >
+                                        <Button.ImageSource>
+                                            <FontImageSource Glyph="&#xf2c2;" FontFamily="FontAwesomeSolid" Size="24"/>
+                                        </Button.ImageSource>
+                                    </Button>
+                                    <Label Text="{Binding count, StringFormat='Você Selecionou {0} Fotos'}" VerticalOptions="Center" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
+                                </HorizontalStackLayout>
+                                <Button Text="Enviar" Command="{Binding _EditOSCommand}" IsEnabled="{Binding IsNotBusy}" HorizontalOptions="Center" WidthRequest="200"/>
+                            </VerticalStackLayout>
+                        </Border>
+                        <Border Grid.Column="{OnPlatform Android=0,WinUI=1}" Grid.Row="{OnPlatform Android=1,WinUI=0}" Padding="10" Margin="10">
+                            <VerticalStackLayout Padding="10">
+                                <Button 
+            Command="{Binding TrocarAbaCommand}" CommandParameter="ItemAdd"
+            TextColor="#0078D7"
+            Padding="10"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+             Style="{StaticResource Circle}"
+            Margin="10"
+            x:Name="FabBtn">
+                                    <Button.ImageSource>
+                                        <FontImageSource Glyph="&#x2b;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+                                    </Button.ImageSource>
+                                </Button>
+                                <ScrollView>
+                                    <CollectionView ItemsSource="{Binding Items}">
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackLayout Padding="5" BackgroundColor="Transparent">
+                                                    <Frame>
+                                                        <Grid ColumnDefinitions="*,*,*" HeightRequest="50" RowDefinitions="*,*">
+                                                            <Label Text="{Binding Product,StringFormat='Cod. {0}'}" Grid.Column="0" Grid.Row="0" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                                            <Label Text="{Binding ProductFK.Description, StringFormat='{0} - '}" Grid.Column="0" Grid.Row="1" FontSize="18" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                                            <Label Text="{Binding Amount, StringFormat=' {0}Pçs'}" Grid.Column="1" Grid.Row="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                                            <Button
+                                                    Grid.Column="
+                                                    2"
+                                                    HorizontalOptions="End"
+                                                    BackgroundColor="Transparent"                                  
+                                                    Padding="1"                                        
+                                                    Margin="2"                                       
+                                                    WidthRequest="50"                                        
+                                                    Style="{StaticResource Circle}"                                        
+                                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._commandDelItem}"                                        
+                                                    CommandParameter="{Binding ID}">
+                                                                <Button.ImageSource>
+                                                                    <FontImageSource Glyph="&#xf00d;" FontFamily="FontAwesomeSolid" Size="24" Color="Red"/>
+                                                                </Button.ImageSource>
+                                                            </Button>
+                                                        </Grid>
+                                                    </Frame>
+                                                </StackLayout>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </ScrollView>
+                            </VerticalStackLayout>
+                        </Border>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1" IsVisible="{Binding IsItemADD}">
+                    <Border Padding="10" Margin="10" VerticalOptions="Center" MaximumWidthRequest="600" MaximumHeightRequest="1000">
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="Adicionar Produto" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center"/>
+                            <Label Text="Produto:" FontAttributes="Italic"/>
+                            <Picker ItemsSource="{Binding Products}" ItemDisplayBinding="{Binding Description}" SelectedIndex="{Binding _IndexProduct}" SelectedItem="{Binding _SelectedProduct}"/>
+                            <Label Text="Quantidade:" FontAttributes="Italic"/>
+                            <Entry  Placeholder="Quantidade" Text="{Binding NewItem.Amount}" Keyboard="Numeric"/>
+                            <Button Text="Enviar" Command="{Binding _commandADDItem}" HorizontalOptions="Center" WidthRequest="200"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="1" IsVisible="{Binding IsService}">
+                    <ScrollView>
+                        <CollectionView ItemsSource="{Binding Services}" >
+                            <CollectionView.Header>
+                                <Border Padding="10" Margin="4" Style="{StaticResource HeaderBorder}">
+                                    <Grid ColumnDefinitions="3*,2*">
+                                        <Label Text="Serviço" FontSize="20" Style="{StaticResource HeaderText}" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="Center"/>
+                                        <Label Text="#" FontSize="20" Style="{StaticResource HeaderText}" FontAttributes="Bold" Grid.Column="1" HorizontalOptions="Center"/>
+                                    </Grid>
+                                </Border>
+                            </CollectionView.Header>
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" Span="1"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Padding="5" Margin="4">
+                                        <Grid ColumnDefinitions="3*,2*" HeightRequest="50">
+                                            <Label Text="{Binding ServiceFK.Name}" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                            <Button
+                                            Grid.Column="1"
+                                        Padding="1"
+                                        Margin="2"
+                                        MaximumWidthRequest="50"
+                                        HorizontalOptions="Center"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._commandDelService}"
+                                        CommandParameter="{Binding ID}">
+                                                <Button.ImageSource>
+                                                    <FontImageSource Glyph="&#xf2ed;" FontFamily="FontAwesomeSolid" Size="24"/>
+                                                </Button.ImageSource>
+                                            </Button>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </ScrollView>
+                    <Button 
+                    Grid.Row="2"
+                        Command="{Binding TrocarAbaCommand}" CommandParameter="ServiceAdd"
+                        TextColor="#0078D7"
+                        Padding="10"
+                        HorizontalOptions="End"
+                        VerticalOptions="End"
+                        Style="{StaticResource Circle}"
+                        Margin="10">
+                        <Button.ImageSource>
+                            <FontImageSource Glyph="&#x2b;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+                        </Button.ImageSource>
+                    </Button>
+                </Grid>
+                <Grid Grid.Column="1" IsVisible="{Binding IsServiceADD}">
+                    <Border Padding="10" Margin="10" VerticalOptions="Center" MaximumWidthRequest="600" MaximumHeightRequest="1000">
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="Adicionar Serviço" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center"/>
+                            <Label Text="Serviço:" FontAttributes="Italic"/>
+                            <Picker ItemsSource="{Binding Service}" ItemDisplayBinding="{Binding Name}" SelectedIndex="{Binding _IndexService}" SelectedItem="{Binding _SelectedService}"/>
+                            <Button Text="Enviar" Command="{Binding _commandADDService}" HorizontalOptions="Center" WidthRequest="200"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="1" IsVisible="{Binding IsCheckList}">
+                    <ScrollView>
+                        <CollectionView ItemsSource="{Binding CheckList}" >
+                            <CollectionView.Header>
+                                <Border Padding="10" Margin="4" Style="{StaticResource HeaderBorder}">
+                                    <Grid ColumnDefinitions="3*,2*,2*,2*">
+                                        <Label Text="Check" FontSize="20" Style="{StaticResource HeaderText}" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="Center"/>
+                                        <Label Text="Verificado" FontSize="20" Style="{StaticResource HeaderText}" FontAttributes="Bold" Grid.Column="1" HorizontalOptions="Center"/>
+                                        <Label Text="Obs." FontSize="20" Style="{StaticResource HeaderText}" FontAttributes="Bold" Grid.Column="2" HorizontalOptions="Center"/>
+                                        <Label Text="#" FontSize="20" Style="{StaticResource HeaderText}" FontAttributes="Bold" Grid.Column="3" HorizontalOptions="Center"/>
+                                    </Grid>
+                                </Border>
+                            </CollectionView.Header>
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" Span="1"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Padding="5" Margin="4">
+                                        <Grid ColumnDefinitions="3*,2*,2*,2*" HeightRequest="50">
+                                            <Label Text="{Binding CheckListFK.Check}" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                            <Label Text="&#xf00c;" FontSize="20" FontFamily="FontAwesomeSolid" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding Checked,Converter={StaticResource BoolInverterConverter}}"/>
+                                            <Button Text="Verificar" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding Checked,Converter={StaticResource BoolInverterConverter}, ConverterParameter=invertido}" 
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._commandChecked}"
+                                            CommandParameter="{Binding ID}"/>
+                                            <Label Text="{Binding Note}" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                            <Button
+                                            Grid.Column="3"
+                                        Padding="1"
+                                        Margin="2"
+                                        MaximumWidthRequest="50"
+                                        HorizontalOptions="Center"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._commandDelCheck}"
+                                        CommandParameter="{Binding ID}">
+                                                <Button.ImageSource>
+                                                    <FontImageSource Glyph="&#xf2ed;" FontFamily="FontAwesomeSolid" Size="24"/>
+                                                </Button.ImageSource>
+                                            </Button>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </ScrollView>
+                    <Button 
+                    Grid.Row="2"
+                        Command="{Binding TrocarAbaCommand}" CommandParameter="CheckListAdd"
+                        TextColor="#0078D7"
+                        Padding="10"
+                        HorizontalOptions="End"
+                        VerticalOptions="End"
+                        Style="{StaticResource Circle}"
+                        Margin="10">
+                        <Button.ImageSource>
+                            <FontImageSource Glyph="&#x2b;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+                        </Button.ImageSource>
+                    </Button>
+                </Grid>
+                <Grid Grid.Column="1" IsVisible="{Binding IsCheckListADD}">
+                    <Border Padding="10" Margin="10" VerticalOptions="Center" MaximumWidthRequest="600" MaximumHeightRequest="1000">
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="Adicionar Produto" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center"/>
+                            <Label Text="CheckList:" FontAttributes="Italic"/>
+                            <Picker ItemsSource="{Binding CheckLists}" ItemDisplayBinding="{Binding Check}" SelectedIndex="{Binding _IndexCheck}" SelectedItem="{Binding _SelectedCheck}"/>
+                            <Button Text="Enviar" Command="{Binding _commandADDCheck}" HorizontalOptions="Center" WidthRequest="200"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

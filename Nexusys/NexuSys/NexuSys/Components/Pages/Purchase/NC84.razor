@@ -1,0 +1,243 @@
+﻿@page "/NC84"
+@using NexuSys.DTOs.Purchase
+@using NexuSys.DTOs.Purchase_Items
+@using NexuSys.DTOs.Suppliers
+@using NexuSys.DTOs.Products
+@using NexuSys.Helper
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IPurchase _service
+@inject IPurchase _supplierService
+@inject IProducts _productService
+@inject IJSRuntime JS
+@inject IUserContext _userContext
+
+<EditForm Model="Model" OnValidSubmit="Salvar">
+
+    <div class="container-fluid py-4 bg-white">
+
+        <h3 class="fw-bold mb-4">Nova Compra</h3>
+
+        <div class="row">
+
+
+            <div class="col-md-3">
+                <div class="list-group shadow-sm">
+
+                    <button type="button"
+                    class="list-group-item list-group-item-action @(AbaAtiva == "compra" ? "active" : "")"
+                    @onclick='() => AbaAtiva = "compra"'>
+                        Nova Compra
+                    </button>
+
+                    <button type="button"
+                    class="list-group-item list-group-item-action @(AbaAtiva == "itens" ? "active" : "")"
+                    @onclick='() => AbaAtiva = "itens"'>
+                        Itens da Compra
+                    </button>
+
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="card shadow-sm p-4">
+
+                    @if (AbaAtiva == "compra")
+                    {
+                        <h5 class="mb-3">Dados da Compra</h5>
+
+                        <div class="row">
+
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">NF</label>
+                                <InputNumber class="form-control"
+                                @bind-Value="Model.NF" />
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Fornecedor</label>
+                                <InputSelect class="form-select"
+                                @bind-Value="Model.Supplier">
+                                    <option value="0">Selecione</option>
+                                    @foreach (var f in Fornecedores)
+                                    {
+                                        <option value="@f.ID">@f.Name</option>
+                                    }
+                                </InputSelect>
+                            </div>
+
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Data</label>
+                                <InputDate class="form-control"
+                                @bind-Value="Model.Date" />
+                            </div>
+
+                        </div>
+                    }
+
+                    @if (AbaAtiva == "itens")
+                    {
+                        <h5 class="mb-3">Itens da Compra</h5>
+
+                        @foreach (var item in Itens)
+                        {
+                            <div class="row g-2 mb-2 align-items-end">
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Produto</label>
+                                    <InputSelect class="form-select"
+                                    @bind-Value="item.Products">
+                                        <option value="0">Selecione</option>
+                                        @foreach (var p in Produtos)
+                                        {
+                                            <option value="@p.ID">
+                                                @p.ID - @p.Family
+                                            </option>
+                                        }
+                                    </InputSelect>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label">Quantidade</label>
+                                    <InputNumber class="form-control"
+                                    @bind-Value="item.Amount" />
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label">Valor</label>
+                                    <InputNumber class="form-control"
+                                    @bind-Value="item.Value" />
+                                </div>
+
+                            </div>
+                        }
+
+                        <button type="button"
+                        class="btn btn-outline-secondary mb-3"
+                        @onclick="AdicionarItem">
+                            + Adicionar Item
+                        </button>
+                    }
+
+                    <hr />
+
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-success me-2">
+                            Salvar
+                        </button>
+
+                        <button type="button"
+                        class="btn btn-secondary"
+                        @onclick="Cancelar">
+                            Cancelar
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</EditForm>
+
+@code {
+
+    private string AbaAtiva = "compra";
+
+    private NewPurchaseDTO Model = new()
+    {
+        Date = DateTime.Now
+    };
+
+    private List<NewPurchase_ItemsDTO> Itens = new();
+    private List<SuppliersDTO> Fornecedores = new();
+    private List<ProductsDTO> Produtos = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Fornecedores = await _supplierService.SuppliersList();
+        Produtos = await _productService.ProductsList();
+    }
+
+    void TrocarAba(string aba)
+    {
+        AbaAtiva = aba;
+        StateHasChanged();
+    }
+
+    void AdicionarItem()
+    {
+        Itens.Add(new NewPurchase_ItemsDTO
+        {
+            Products = 0,
+            Amount = 1,
+            Value = 0
+        });
+    }
+
+    async Task Salvar()
+    {
+        Model.CreateBy = _userContext.UserId;
+        Model.DateCreate = DateTime.Now;
+        try
+        {
+            if (Model.NF <= 0)
+            {
+                await JS.InvokeVoidAsync("alert", "Informe a NF!");
+                AbaAtiva = "compra";
+                return;
+            }
+
+            if (Model.Supplier == 0)
+            {
+                await JS.InvokeVoidAsync("alert", "Selecione o fornecedor!");
+                AbaAtiva = "compra";
+                return;
+            }
+
+            if (!Itens.Any())
+            {
+                await JS.InvokeVoidAsync("alert", "Adicione pelo menos um item!");
+                AbaAtiva = "itens";
+                return;
+            }
+
+            if (Itens.Any(i => i.Products == 0 || i.Amount <= 0 || i.Value <= 0))
+            {
+                await JS.InvokeVoidAsync("alert", "Preencha corretamente todos os itens!");
+                AbaAtiva = "itens";
+                return;
+            }
+
+            foreach(var item in Itens)
+            {
+                var valor = item.Value * item.Amount;
+                Model.Value_total = Model.Value_total + valor;
+            }
+
+            var purchaseId = await _service.NewPurchase(Model);
+            if (purchaseId != null)
+                foreach (var item in Itens)
+                {
+                    item.Purchase = purchaseId;
+                    await _service.NewPurchase_Items(item);
+                }
+            else
+                await JS.InvokeVoidAsync("alert", "erro!");
+            await JS.InvokeVoidAsync("alert", "Compra cadastrada com sucesso!");
+            Navigation.NavigateTo("/NC83", true);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+            await JS.InvokeVoidAsync("alert", "Erro ao salvar a compra. Verifique os dados.");
+        }
+    }
+
+    void Cancelar()
+    {
+        Navigation.NavigateTo("/NC83", true);
+    }
+}

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Agnus.ViewModels"
+             x:Class="Agnus.Views.SG351"
+             Title="">
+    <Grid Padding="10">
+        <HorizontalStackLayout VerticalOptions="End">
+            <Label Text="SG351"
+               FontSize="20"
+               Opacity="0.3"
+               Rotation="0"
+               TextColor="Gray"
+               HorizontalOptions="Start"
+               VerticalOptions="End"
+               InputTransparent="True"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="End" VerticalOptions="Start">
+            <SearchBar Text="{Binding Search, Mode=TwoWay}"
+                   Placeholder="Buscar Usuario..."
+                       HeightRequest="10"
+                       MaximumWidthRequest="1000"
+                       HorizontalOptions="End"
+                       />
+        </HorizontalStackLayout>
+
+        <Grid>
+            <!-- Desktop View -->
+            <CollectionView ItemsSource="{Binding Filter}" x:Name="DesktopList"
+                     IsVisible="{OnPlatform Android=False, WinUI=True, MacCatalyst=True}">
+                <CollectionView.Header>
+                    <Border Padding="10" Style="{StaticResource HeaderBorder}">
+                        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto">
+
+                            <BoxView Grid.Row="0" Grid.Column="0" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+
+
+                            <Label Text="ID" Grid.Column="0" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                            <Label Text="Nome" Grid.Column="1" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+
+                        </Grid>
+                    </Border>
+                </CollectionView.Header>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Padding="10">
+                            <StackLayout>
+                                <!-- Linha principal -->
+                                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto" BackgroundColor="Transparent">
+
+                                    <BoxView Grid.Row="0" Grid.Column="0" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+
+
+                                    <Label Text="{Binding value.ID}" Grid.Column="0" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Text="{Binding value.Check}" Grid.Column="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                                </Grid>
+                                <!-- Detalhes extras -->
+                                <Grid Padding="10" BackgroundColor="Transparent"
+                           IsVisible="{Binding IsChecked}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Button
+                                        Grid.Row="2"
+                                        Padding="1"
+                                        Margin="1"
+                                        WidthRequest="50"
+                                        Style="{StaticResource Circle}"
+                                        IsEnabled="{Binding IsNotBusy}"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._commandSG211}"
+                                        CommandParameter="{Binding value.ID}">
+                                        <Button.ImageSource>
+                                            <FontImageSource Glyph="&#xf304;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+                                        </Button.ImageSource>
+                                    </Button>
+                                </Grid>
+
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.ToggleExpandCommand, Source={x:Reference DesktopList}}"
+                           CommandParameter="{Binding .}"/>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Mobile View -->
+            <CollectionView ItemsSource="{Binding Filter}" x:Name="MobileList"
+                     IsVisible="{OnPlatform Android=True, WinUI=False, MacCatalyst=False}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" Spacing="5" BackgroundColor="Transparent">
+                            <Border>
+                                <Grid ColumnDefinitions="1*,2*" HeightRequest="30">
+                                    <Label Text="{Binding value.ID}" Grid.Column="0" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Text="{Binding value.Check}" Grid.Column="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Grid>
+                            </Border>
+                            <!-- Detalhes expansíveis -->
+                            <StackLayout IsVisible="{Binding IsChecked}" BackgroundColor="Transparent" Padding="5">
+                                <Button
+                                        Grid.Row="3"
+                                        Grid.Column="1"
+                                        Padding="1"
+                                        Margin="1"
+                                        WidthRequest="50"
+                                        Style="{StaticResource Circle}"
+                                    IsEnabled="{Binding IsNotBusy}"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._commandSG211}"
+                                        CommandParameter="{Binding value.ID}">
+                                    <Button.ImageSource>
+                                        <FontImageSource Glyph="&#xf304;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+                                    </Button.ImageSource>
+                                </Button>
+                            </StackLayout>
+
+                            <!-- Toque para expandir -->
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding BindingContext.ToggleExpandCommand, Source={x:Reference MobileList}}"
+                           CommandParameter="{Binding .}"/>
+                            </StackLayout.GestureRecognizers>
+
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </Grid>
+
+
+        <Button 
+            Padding="10"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+                Style="{StaticResource Circle}"
+            Margin="10"
+            x:Name="FabBtn"
+            IsEnabled="{Binding IsNotBusy}"
+            Command="{Binding _commandSG741}">
+            <Button.ImageSource>
+                <FontImageSource Glyph="&#x2b;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+            </Button.ImageSource>
+        </Button>
+    </Grid>
+</ContentPage>

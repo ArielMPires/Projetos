@@ -1,0 +1,52 @@
+﻿@page "/NW02/{Codigo}"
+@rendermode InteractiveServer
+
+<div class="container py-4 bg-white">
+    <h2 class="fw-bold mb-4">Visualização do Equipamento</h2>
+
+    <div class="card shadow-sm p-3 mb-4">
+        <h5 class="fw-bold">@equipamento.Nome (@equipamento.Codigo)</h5>
+        <p><strong>Tipo:</strong> @equipamento.Tipo</p>
+        <p><strong>Unidade:</strong> @equipamento.Localizacao</p>
+        <p><strong>Situação:</strong> @equipamento.Situacao</p>
+    </div>
+
+    <div class="alert @(equipamento.NecessitaReparo ? "alert-danger" : "alert-success")">
+        @(equipamento.NecessitaReparo ? "Necessita reparo imediato!" : "Equipamento em boas condições.")
+    </div>
+
+    <!-- Botões de ação -->
+    <div class="d-flex gap-2 mt-3">
+        <a class="btn btn-primary" href="@($"/NW03/{equipamento.Codigo}")">Registrar Revisão</a>
+        <a class="btn btn-secondary" href="@($"/NW04/{equipamento.Codigo}")">Histórico de Revisões</a>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string Codigo { get; set; }
+    private Equipamento equipamento = new();
+
+    public class Equipamento
+    {
+        public string Codigo { get; set; }
+        public string Nome { get; set; }
+        public string Tipo { get; set; }
+        public string Localizacao { get; set; }
+        public string Situacao { get; set; }
+        public bool NecessitaReparo { get; set; }
+    }
+
+    protected override void OnInitialized()
+    {
+        // Simulação de dados
+        equipamento = new Equipamento
+        {
+            Codigo = Codigo,
+            Nome = "Motor Principal",
+            Tipo = "Motor",
+            Localizacao = "Linha 1",
+            Situacao = "Operacional",
+            NecessitaReparo = false
+        };
+    }
+}

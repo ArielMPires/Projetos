@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="Agnus.Views.SD641"
+             Title="">
+    <Grid Padding="1">
+        <HorizontalStackLayout>
+            <Button
+        IsVisible="{OnPlatform Android=true, iOS=true, WinUI=false}"
+        Command="{Binding _ReturnCommand}"
+        TextColor="#0078D7"
+        Padding="10"
+        HorizontalOptions="StartAndExpand"
+        VerticalOptions="Start"
+        Margin="10">
+                <Button.ImageSource>
+                    <FontImageSource Glyph="&#xf060;" FontFamily="FontAwesomeSolid" Size="24"/>
+                </Button.ImageSource>
+            </Button>
+            <Label Text="SD641"
+           FontSize="20"
+           Opacity="0.3"
+           Rotation="0"
+           TextColor="Gray"
+           HorizontalOptions="End"
+           VerticalOptions="End"
+           InputTransparent="True"/>
+        </HorizontalStackLayout>
+        <Label Margin="10" Text="Personalização de Tema e Foto" HorizontalOptions="Center" FontSize="28" FontAttributes="Bold"/>
+        <ScrollView Margin="50">
+            <Grid RowDefinitions="*,*" ColumnDefinitions="*,auto" >
+                <Border Grid.Column="0" Padding="10" Margin="10">
+                    <VerticalStackLayout Margin="10" HorizontalOptions="Center" Grid.Column="0" Grid.Row="0">
+                        <Image MaximumWidthRequest="500" MaximumHeightRequest="500" Aspect="AspectFit" Source="{Binding Photo}" Grid.Column="0"/>
+                        <Button Text="Alterar Foto de Perfil"  Command="{Binding _SelectImagePerfilCommand}" Margin="3" Grid.Column="0">
+                            <Button.ImageSource>
+                                <FontImageSource Glyph="&#xf2c2;" FontFamily="FontAwesomeSolid" Size="24"/>
+                            </Button.ImageSource>
+                        </Button>
+                    </VerticalStackLayout>
+                </Border>
+                <Border Grid.Column="{OnPlatform Android=0,WinUI=1}" Grid.Row="{OnPlatform Android=1,WinUI=0}" Padding="10" Margin="10">
+                    <VerticalStackLayout>
+                        <Label Text="Cor primaria(HEX):" Margin="10" FontAttributes="Italic"/>
+                        <Entry  Placeholder="Cor primaria"  Text="{Binding ThemeDTO.Primary}"/>
+                        <Label Text="Cor Secundaria(HEX):"  Margin="10" FontAttributes="Italic"/>
+                        <Entry  Placeholder="Cor Secundaria"  Text="{Binding ThemeDTO.Secondary}"/>
+                        <Label Text="Cor do Form(HEX):"  Margin="10" FontAttributes="Italic"/>
+                        <Entry  Placeholder="Cor primaria Dark"  Text="{Binding ThemeDTO.PrimaryDark}"/>
+                        <Label Text="Cor primaria Texto(HEX):"  Margin="10" FontAttributes="Italic"/>
+                        <Entry  Placeholder="Cor primaria Texto"  Text="{Binding ThemeDTO.PrimaryDarkText}"/>
+                        <Label Text="Cor secundaria Texto(HEX):"  Margin="10" FontAttributes="Italic"/>
+                        <Entry  Placeholder="Cor Secundaria Texto"  Text="{Binding ThemeDTO.SecondaryDarkText}"/>
+                        <Label Text="Cor de fundo(HEX):"  Margin="10" FontAttributes="Italic"/>
+                        <Entry  Placeholder="Cor de Fundo"  Text="{Binding ThemeDTO.Tertiary}"/>
+                        <Button Margin="10" Text="Alterar" Command="{Binding _ThemeCommand}" CornerRadius="3" MaximumWidthRequest="300"/>
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,24 @@
+using System.ComponentModel.DataAnnotations;
+using Agnus.Models.DB;
+
+namespace Agnus.Models.DB{
+    public class Checklist{
+
+        #region Property
+        [Key]
+        public int ID {get; set;}
+        public string Check {get; set;}
+        public int? CreateBy {get; set;}
+        public DateTime? DateCreate {get; set;}
+        public int? ChangedBy {get; set;}
+        public DateTime? DateChanged {get; set;}
+        #endregion
+
+        #region Navigation
+        public Users? CreateByFK {get; set;}
+        public Users? ChangedByFK {get; set;}
+        public ICollection<Service_CheckList>? Service_CheckListFK {get; set;}
+        public ICollection<Maintenance_CheckList>? Maintenance_CheckListFK {get; set;}
+        #endregion
+    }
+}

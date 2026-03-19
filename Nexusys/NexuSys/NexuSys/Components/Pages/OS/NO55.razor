@@ -1,0 +1,503 @@
+﻿@page "/NO55"
+@using NexuSys.DTOs.Customers
+@using NexuSys.DTOs.Departament
+@using NexuSys.DTOs.Equipment
+@using NexuSys.DTOs.Files
+@using NexuSys.DTOs.Nfs
+@using NexuSys.DTOs.SItuation
+@using NexuSys.DTOs.ServiceEquipment
+@using NexuSys.DTOs.ServiceOrder
+@using NexuSys.DTOs.Type_Service
+@using NexuSys.DTOs.Unit
+@using NexuSys.Helper
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@inject IService _service
+@inject IProducts _show
+@inject IUsers _department
+@inject INFs _nf
+@inject IFiles _files
+@inject IUserContext UserContext
+@inject FileService FileService
+
+<PageTitle>Nova OS</PageTitle>
+
+<div class="container-fluid p-4">
+
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="mb-0">Nova Ordem de Serviço</h3>
+            <small class="text-muted">Cadastro de nova OS</small>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <ul class="list-group">
+                <li class="list-group-item @(etapaAtual == 1 ? "active" : "")" @onclick="() => etapaAtual = 1">Dados Básicos</li>
+                <li class="list-group-item @(etapaAtual == 2 ? "active" : "")" @onclick="() => etapaAtual = 2">Nota de Remessa</li>
+                <li class="list-group-item @(etapaAtual == 3 ? "active" : "")" @onclick="() => etapaAtual = 3">Fotos</li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            @if (etapaAtual == 1)
+            {
+                <div class="card shadow-sm mt-2">
+                    <div class="card-body">
+
+                        <div class="row g-3">
+
+                            <div class="col-md-8 justify-content-between">
+                                <label class="form-label">Cliente*</label>
+
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <InputSelect class="form-select"
+                                                 @bind-Value="Model.Customer"
+                                                 @bind-Value:after="getEquipament">
+                                        <option value="0">Selecione o cliente</option>
+
+                                        @if (Cliente != null)
+                                        {
+                                            @foreach (var v in Cliente)
+                                            {
+                                                <option value="@v.ID">
+                                                    @v.Name
+                                                </option>
+                                            }
+                                        }
+                                    </InputSelect>
+
+
+                                    <NavLink class="btn btn-sm btn-success mt-1 ms-2 text-nowrap" href="/NC01">
+                                        <i class="bi bi-plus-circle"></i>
+                                    </NavLink>
+                                </div>
+
+                            </div>
+                            <div class="col-md-8 justify-content-between">
+                                <label class="form-label">Equipamento*</label>
+
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <InputSelect class="form-select"
+                                                 @bind-Value="ModelEquip.Equipment">
+                                        <option value="0">Selecione o Equipamento</option>
+
+                                        @if (equipamento != null)
+                                        {
+                                            @foreach (var v in equipamento)
+                                            {
+                                                <option value="@v.ID">
+                                                    @v.Product #@v.Serial
+                                                </option>
+                                            }
+                                        }
+                                    </InputSelect>
+
+                                    <NavLink class="btn btn-sm btn-success mt-1 ms-2 text-nowrap" href="/NE01">
+                                        <i class="bi bi-plus-circle"></i>
+                                    </NavLink>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-8">
+                                <label class="form-label">Departamento*</label>
+                                <InputSelect class="form-select"
+                                             @bind-Value="Model.Department">
+                                    <option value="0">Selecione o Departamento</option>
+
+                                    @if (departamento != null)
+                                    {
+                                        @foreach (var v in departamento)
+                                        {
+                                            <option value="@v.ID">
+                                                @v.Name
+                                            </option>
+                                        }
+                                    }
+                                </InputSelect>
+                            </div>
+                            <div class="col-md-8">
+                                <label class="form-label">Tipo de Serviço*</label>
+                                <InputSelect class="form-select"
+                                             @bind-Value="Model.Type_Service">
+                                    <option value="0">Selecione o Tipo de Serviço</option>
+
+                                    @if (type != null)
+                                    {
+                                        @foreach (var v in type)
+                                        {
+                                            <option value="@v.ID">
+                                                @v.Name
+                                            </option>
+                                        }
+                                    }
+                                </InputSelect>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Problema Relatado*</label>
+                                <InputText class="form-control" @bind-Value="Model.Problem" />
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Status</label>
+                                <InputSelect class="form-select"
+                                             @bind-Value="Model.Situation">
+
+                                    <option value="0">Selecione</option>
+                                    @if (Situacao != null)
+                                    {
+                                        @foreach (var s in Situacao)
+                                        {
+                                            <option value="@s.ID">
+                                                @s.Name
+                                            </option>
+                                        }
+                                    }
+                                </InputSelect>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Unidade*</label>
+                                <InputSelect class="form-select"
+                                             @bind-Value="Model.Unit">
+
+                                    <option value="0">Selecione</option>
+                                    @if (unidade != null)
+                                    {
+                                        @foreach (var s in unidade)
+                                        {
+                                            <option value="@s.ID">
+                                                @s.Name
+                                            </option>
+                                        }
+                                    }
+                                </InputSelect>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Prioridade*</label>
+                                <InputSelect class="form-select"
+                                             @bind-Value="Model.Priority">
+                                    <option value="5">Selecione</option>
+                                    <option value="0">Urgente</option>
+                                    <option value="1">Alta</option>
+                                    <option value="2">Media</option>
+                                    <option value="3">Baixa</option>
+                                </InputSelect>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Observações</label>
+                                <InputTextArea class="form-control"
+                                               rows="4"
+                                               @bind-Value="Model.Note" />
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+            @if (etapaAtual == 2)
+            {
+                <div class="col-md-6">
+                    <label class="form-label">Nº NF</label>
+                    <InputNumber class="form-control" @bind-Value="ModelNote.Number" />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Valor Total</label>
+                    <InputNumber class="form-control" @bind-Value="ModelNote.Total_Value" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Imagens</label>
+                    <InputFile class="form-control" OnChange="OnFilesChangenf" multiple />
+                </div>
+
+            }
+            @if (etapaAtual == 3)
+            {
+
+                <div class="mb-3">
+                    <label class="form-label">Imagens</label>
+                    <InputFile class="form-control" OnChange="OnFilesChange" multiple />
+                </div>
+
+            }
+            <div class="mt-3 d-flex justify-content-between">
+                <button class="btn btn-secondary" @onclick="Cancelar">Cancelar</button>
+                <div>
+                    <button class="btn btn-outline-secondary me-2" @onclick="Anterior" disabled="@(etapaAtual == 1)">Voltar</button>
+                    <button class="btn btn-success" type="submit" @onclick="Proximo">@((etapaAtual == 3) ? "Finalizar" : "Avançar")</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@code {
+
+    private int etapaAtual = 1;
+
+    private void Proximo()
+    {
+        if (etapaAtual < 3) etapaAtual++;
+        else Salvar();
+    }
+
+    private void Anterior()
+    {
+        if (etapaAtual > 1) etapaAtual--;
+    }
+
+    private void Cancelar()
+    {
+
+        Navigation.NavigateTo("/NO01");
+    }
+
+    private NewServiceOrderDTO Model = new();
+    private NewNFsDTO ModelNote = new();
+    private NewServiceEquipmentDTO ModelEquip = new();
+    private List<CustomersDTO> Cliente;
+    private List<EquipmentDTO> equipamento;
+    private List<SituationDTO> Situacao;
+    private List<Type_ServiceDTO> type;
+    private List<DepartamentDTO> departamento;
+    private List<UnitDTO> unidade;
+
+    private List<byte[]> files = new List<byte[]>();
+
+    private async Task OnFilesChange(InputFileChangeEventArgs e)
+    {
+        files.Clear();
+
+        foreach (var file in e.GetMultipleFiles())
+        {
+            using var ms = new MemoryStream();
+            await file.OpenReadStream(10 * 1024 * 1024).CopyToAsync(ms);
+
+            files.Add(ms.ToArray());
+        }
+    }
+
+    private List<byte[]> filesnf = new List<byte[]>();
+
+    private async Task OnFilesChangenf(InputFileChangeEventArgs e)
+    {
+        filesnf.Clear();
+
+        foreach (var file in e.GetMultipleFiles())
+        {
+            using var ms = new MemoryStream();
+            await file.OpenReadStream(10 * 1024 * 1024).CopyToAsync(ms);
+
+            filesnf.Add(ms.ToArray());
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        Situacao = await _service.SituationList();
+        Cliente = await _show.CustomersList();
+        type = await _service.Type_ServiceList();
+        departamento = await _department.DepartamentList();
+        unidade = await _department.UnitList();
+    }
+
+    public async void getEquipament()
+    {
+        equipamento = await _show.EquipmentListByClient(Model.Customer);
+        StateHasChanged();
+    }
+
+    async void Salvar()
+    {
+        Model.CreateBy = UserContext.UserId;
+        Model.DateCreate = DateTime.Now;
+        Model.Date_Receipt = DateTime.Now;
+        ModelNote.Customers = Model.Customer;
+        ModelNote.Type = 0;
+        ModelNote.Tax = 0;
+        ModelNote.DateIn = DateTime.Now;
+        try
+        {
+            if (ModelNote.ID != 0)
+            {
+
+                var response = await _files.NewFolder(new FileFolder
+                {
+                    Name = $"Nota {ModelNote.Number}",
+                    historyFK = new History
+                    {
+                        CreateBy = UserContext.UserId,
+                        DateCreate = DateTime.Now,
+                    },
+                });
+
+                if (response.Result)
+                {
+                    var folder = response.Data as FileFolder;
+                    ModelNote.Folder = folder.ID;
+
+                    if (filesnf.Any())
+                    {
+                        var paths = await FileService.SaveFilesAsync(filesnf, folder.ID.ToString());
+                        List<NewFileDTO> arqs = new();
+                        foreach (var path in paths)
+                        {
+                            arqs.Add(new NewFileDTO
+                            {
+                                Name = path,
+                                Folder = folder.ID,
+                                CreateBy = UserContext.UserId,
+                                DateCreate = DateTime.Now,
+
+                            });
+                        }
+
+                        await _files.NewFilesAll(arqs);
+                    }
+
+
+
+                    var nf = await _nf.NewNFs(ModelNote);
+
+                    if (nf.Result)
+                    {
+                        var nfd = nf.Data as NFs;
+                        Model.Delivery_Note = nfd.ID;
+
+                        var response2 = await _files.NewFolder(new FileFolder
+                        {
+                            Name = $"OS",
+                            historyFK = new History
+                            {
+                                CreateBy = UserContext.UserId,
+                                DateCreate = DateTime.Now,
+                            },
+                        });
+
+                        if (response2.Result)
+                        {
+                            var folder2 = response2.Data as FileFolder;
+                            Model.FileFolder = folder2.ID;
+
+                            if (files.Any())
+                            {
+                                var paths = await FileService.SaveFilesAsync(files, folder2.ID.ToString());
+                                List<NewFileDTO> arqs = new();
+                                foreach (var path in paths)
+                                {
+                                    arqs.Add(new NewFileDTO
+                                    {
+                                        Name = path,
+                                        Folder = folder2.ID,
+                                        CreateBy = UserContext.UserId,
+                                        DateCreate = DateTime.Now,
+                                    });
+                                }
+
+                                await _files.NewFilesAll(arqs);
+                            }
+
+                            var producto = await _service.NewServiceOrder(Model);
+
+                            if (producto.Result)
+                            {
+
+                                var order = producto.Data as Service_Order;
+
+                                ModelEquip.OS = order.ID;
+
+                                var equip = await _service.NewServiceEquipment(ModelEquip);
+
+                                if (equip.Result)
+                                {
+
+                                    await JS.InvokeVoidAsync("alert", producto.Message);
+                                    Navigation.NavigateTo("/NO06");
+                                }
+                                else
+                                {
+                                    await JS.InvokeVoidAsync("alert", producto.Error);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                var response2 = await _files.NewFolder(new FileFolder
+                {
+                    Name = $"OS",
+                    historyFK = new History
+                    {
+                        CreateBy = UserContext.UserId,
+                        DateCreate = DateTime.Now,
+                    },
+                });
+
+                if (response2.Result)
+                {
+                    var folder2 = response2.Data as FileFolder;
+                    Model.FileFolder = folder2.ID;
+
+                    if (files.Any())
+                    {
+                        var paths = await FileService.SaveFilesAsync(files, folder2.ID.ToString());
+                        List<NewFileDTO> arqs = new();
+                        foreach (var path in paths)
+                        {
+                            arqs.Add(new NewFileDTO
+                            {
+                                Name = path,
+                                Folder = folder2.ID,
+                                CreateBy = UserContext.UserId,
+                                DateCreate = DateTime.Now,
+                            });
+                        }
+
+                        await _files.NewFilesAll(arqs);
+                    }
+
+                    var producto = await _service.NewServiceOrder(Model);
+
+                    if (producto.Result)
+                    {
+
+                        var order = producto.Data as Service_Order;
+
+                        ModelEquip.OS = order.ID;
+
+                        var equip = await _service.NewServiceEquipment(ModelEquip);
+
+                        if (equip.Result)
+                        {
+
+                            await JS.InvokeVoidAsync("alert", producto.Message);
+                            Navigation.NavigateTo("/NO01");
+                        }
+                        else
+                        {
+                            await JS.InvokeVoidAsync("alert", producto.Error);
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.InnerException?.Message);
+        }
+    }
+
+}

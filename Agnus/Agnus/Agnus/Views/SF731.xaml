@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Agnus.ViewModels"
+             x:Class="Agnus.Views.SF731"
+             Title="">
+
+    <Grid Padding="10">
+        <HorizontalStackLayout >
+            <Button
+            IsVisible="{OnPlatform Android=true, iOS=true, WinUI=false}"
+            Command="{Binding _ReturnCommand}"
+            TextColor="#0078D7"
+            Padding="10"
+            HorizontalOptions="StartAndExpand"
+            VerticalOptions="Start"
+            Margin="10">
+                <Button.ImageSource>
+                    <FontImageSource Glyph="&#xf060;" FontFamily="FontAwesomeSolid" Size="24"/>
+                </Button.ImageSource>
+            </Button>
+            <Label Text="SF731"
+               FontSize="20"
+               Opacity="0.4"
+               Rotation="0"
+               TextColor="Gray"
+               HorizontalOptions="End"
+               VerticalOptions="Start"
+               InputTransparent="True"/>
+        </HorizontalStackLayout>
+        <Grid>
+            <Grid  IsVisible="{Binding IsItem}" RowDefinitions="1*,12*,2*">
+                        <HorizontalStackLayout Grid.Row="0" HorizontalOptions="EndAndExpand" VerticalOptions="Start">
+                            <Label Text="Valor Total:" FontAttributes="Bold" VerticalOptions="Center"/>
+                            <Entry  Placeholder="Valor Total" IsEnabled="False"  MinimumWidthRequest="80" Keyboard="Numeric" Text="{Binding Output.Total_Value}"/>
+                        </HorizontalStackLayout>
+                <Border Grid.Row="1">
+                    <Grid>
+                        <ScrollView>
+                            <CollectionView ItemsSource="{Binding Items}" >
+                                <CollectionView.Header>
+                                    <Border Padding="10" Margin="4" Style="{StaticResource HeaderBorder}">
+                                        <Grid ColumnDefinitions="3*,2*,2*,2*">
+                                            <Label Text="Produto" FontSize="20" Style="{StaticResource HeaderText}" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="Center"/>
+                                            <Label Text="Quantidade" FontSize="20" Style="{StaticResource HeaderText}" FontAttributes="Bold" Grid.Column="1" HorizontalOptions="Center"/>
+                                            <Label Text="Valor Unitario" FontSize="20" Style="{StaticResource HeaderText}" FontAttributes="Bold" Grid.Column="2" HorizontalOptions="Center"/>
+                                            <Label Text="#" FontSize="20" Style="{StaticResource HeaderText}" FontAttributes="Bold" Grid.Column="3" HorizontalOptions="Center"/>
+                                        </Grid>
+                                    </Border>
+                                </CollectionView.Header>
+                                <CollectionView.ItemsLayout>
+                                    <GridItemsLayout Orientation="Vertical" Span="1"/>
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Padding="5" Margin="4">
+                                            <Grid ColumnDefinitions="3*,2*,2*,2*" HeightRequest="50">
+                                                <Label Text="{Binding ProductFK.Description}" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                                <Label Text="{Binding Amount}" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                                <Label Text="{Binding Usage_Value}" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                                <Button
+                                            Grid.Column="3"
+                                        Padding="1"
+                                        Margin="2"
+                                        MaximumWidthRequest="50"
+                                        HorizontalOptions="Center"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._commandDelItem}"
+                                        CommandParameter="{Binding Product}">
+                                                    <Button.ImageSource>
+                                                        <FontImageSource Glyph="&#xf2ed;" FontFamily="FontAwesomeSolid" Size="24"/>
+                                                    </Button.ImageSource>
+                                                </Button>
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </ScrollView>
+                    </Grid>
+                </Border>
+                <Button 
+                    Grid.Row="2"
+    Command="{Binding TrocarAbaCommand}" CommandParameter="ItemAdd"
+    TextColor="#0078D7"
+    Padding="10"
+    HorizontalOptions="End"
+    VerticalOptions="End"
+     Style="{StaticResource Circle}"
+    Margin="10"
+    x:Name="FabBtn">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="&#x2b;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+                    </Button.ImageSource>
+                </Button>
+            </Grid>
+            <Grid IsVisible="{Binding IsItemADD}" VerticalOptions="Start" Grid.Row="1">
+                <Border Grid.Column="0" Padding="10" Margin="10">
+                    <VerticalStackLayout>
+                        <Label Text="Informações " FontAttributes="Bold" FontSize="24" HorizontalOptions="Center"/>
+                        <Label Text="Produto:" FontAttributes="Italic"/>
+                        <Picker ItemsSource="{Binding Products}" ItemDisplayBinding="{Binding Description}" SelectedIndex="{Binding _IndexProduct}" SelectedItem="{Binding _SelectedProduct}"/>
+                        <BoxView Margin="10"/>
+                        <Label Text="Quantidade:" FontAttributes="Italic"/>
+                        <Entry  Placeholder="Quantidade" Text="{Binding NewItem.Amount}" Keyboard="Numeric"/>
+                        <BoxView Margin="10"/>
+                        <Label Text="Valor Unitário:" FontAttributes="Italic"/>
+                        <Entry  Placeholder="Valor Unitario" Text="{Binding NewItem.Usage_Value}" Keyboard="Numeric"/>
+                        <BoxView Margin="10"/>
+                        <Button Text="Enviar" Command="{Binding _commandADDItem}" HorizontalOptions="Center" WidthRequest="200"/>
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+        </Grid>
+        <HorizontalStackLayout HorizontalOptions="Start" VerticalOptions="End">
+            <Button Text="Selecionar PDF" VerticalOptions="Center" HorizontalOptions="Start"  Command="{Binding _SelectImagesCommand}" Margin="3" >
+                <Button.ImageSource>
+                    <FontImageSource Glyph="&#xf2c2;" FontFamily="FontAwesomeSolid" Size="24"/>
+                </Button.ImageSource>
+            </Button>
+            <Label Text="{Binding count, StringFormat='Você Selecionou {0} Imagens'}" VerticalOptions="Center" TextColor="{AppThemeBinding Light=Black,Dark=White}"/>
+        </HorizontalStackLayout>
+        <Button Text="Enviar" Command="{Binding _commandAddNF}" IsEnabled="{Binding IsNotBusy}" VerticalOptions="End" HorizontalOptions="Center" WidthRequest="200"/>
+    </Grid>
+</ContentPage>

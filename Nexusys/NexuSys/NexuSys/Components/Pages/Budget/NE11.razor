@@ -1,0 +1,494 @@
+﻿@page "/NE11/{Id:int}"
+@using NexuSys.DTOs.Budget
+@using NexuSys.DTOs.Files
+@using NexuSys.DTOs.Possible_Defects
+@using NexuSys.DTOs.Products
+@using NexuSys.DTOs.Repair_Activities
+@using NexuSys.DTOs.Review
+@using NexuSys.DTOs.Review_Activies
+@using NexuSys.DTOs.Review_Defects
+@using NexuSys.DTOs.ServiceItems
+@using NexuSys.Helper
+@using NexuSys.Interfaces
+@using System.Threading.Tasks
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IUserContext _userContext
+@inject IService _service
+@inject IProducts _sProducts
+@inject IBudget _sBudget
+@inject IJSRuntime JS
+@inject IFiles _files
+@inject FileService FileService
+
+<PageTitle>Orçamento</PageTitle>
+
+<div class="container-fluid p-4">
+
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="mb-0">Orçamento</h3>
+            <small class="text-muted">Cadastro/Edição de Orçamento e Analise</small>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <ul class="list-group">
+                <li class="list-group-item @(etapaAtual == 1 ? "active" : "")" @onclick="() => etapaAtual = 1">Dados Orçamento</li>
+                <li class="list-group-item @(etapaAtual == 2 ? "active" : "")" @onclick="() => etapaAtual = 2">Materiais</li>
+                <li class="list-group-item @(etapaAtual == 3 ? "active" : "")" @onclick="() => etapaAtual = 3">Analise</li>
+
+            </ul>
+        </div>
+        <div class="col-md-9">
+            @if (etapaAtual == 1)
+            {
+                <div class="card shadow-sm mt-2">
+                    <div class="card-body">
+
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+                                <label class="form-label">Tipo de Orçamento</label>
+                                <InputSelect class="form-select"
+                                             @bind-Value="Model.Type">
+
+                                    <option value="0">Selecione</option>
+                                    <option value="1">Assistencia tecnica</option>
+                                    <option value="2">Paineis</option>
+                                </InputSelect>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Situação</label>
+                                <InputSelect class="form-select"
+                                             @bind-Value="Model.Situation">
+
+                                    <option>Em Andamento</option>
+                                    <option value="1">Aprovado</option>
+                                    <option value="0">Reprovado</option>
+                                </InputSelect>
+                            </div>
+                            <div class="col-md-9">
+                                <label class="form-label">Descrição do Defeito</label>
+                                <InputText class="form-control"
+                                           @bind-Value="Model.Description" />
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Observações</label>
+                                <InputTextArea class="form-control"
+                                               rows="4"
+                                               @bind-Value="Model.Note" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Imagens</label>
+                                <InputFile class="form-control" OnChange="OnFilesChange" multiple />
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+            @if (etapaAtual == 2)
+            {
+                <h5 class="mb-3">Itens para Reparo</h5>
+
+                @foreach (var item in Itens)
+                {
+                    <div class="row g-2 mb-2 align-items-end">
+
+                        <div class="col-md-6">
+                            <label class="form-label">Produto</label>
+                            <InputSelect class="form-select"
+                                         @bind-Value="item.Product">
+                                <option value="0">Selecione</option>
+                                @foreach (var p in Produtos)
+                                {
+                                    <option value="@p.ID">
+                                        @p.ID - @p.Family
+                                    </option>
+                                }
+                            </InputSelect>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="form-label">Quantidade</label>
+                            <InputNumber class="form-control"
+                                         @bind-Value="item.Amount" />
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="form-label">Valor</label>
+                            <InputNumber class="form-control"
+                                         @bind-Value="item.Value" />
+                        </div>
+                        <button class="btn btn-sm btn-outline-danger me-2"
+                                @onclick="() => RemoverItem(item.Product)">
+                            <i class="bi bi-dash-circle"></i>
+                        </button>
+                    </div>
+                }
+
+                <button type="button"
+                        class="btn btn-outline-secondary mb-3"
+                        @onclick="AdicionarItem">
+                    + Adicionar Item
+                </button>
+            }
+            @if (etapaAtual == 3)
+            {
+                <div class="col-md-6">
+                    <label class="form-label">Tipo de Defeito</label>
+                    <InputSelect class="form-select"
+                                 @bind-Value="ModelReview.Type_Defect">
+                        <option value="5">Selecione</option>
+                        @foreach (var p in DefectsTypes)
+                        {
+                            <option value="@p.ID">
+                                @p.ID - @p.Name
+                            </option>
+                        }
+                    </InputSelect>
+                </div>
+
+                <div class="col-md-9">
+                    <label class="form-label">Falhas Registradas na Memoria</label>
+                    <InputText class="form-control"
+                               @bind-Value="ModelReview.Logged_Faults" />
+                </div>
+
+                <div class="col-md-9">
+                    <label class="form-label">Defeito Reportado</label>
+                    <InputText class="form-control"
+                               @bind-Value="ModelReview.Defect_Reported" />
+                </div>
+
+                <h5 class="mb-3">Possiveis Causas Do(s) Defeito(s)</h5>
+
+                @foreach (var item in itemsDefectsPossible)
+                {
+                    <div class="row g-2 mb-2 align-items-end">
+
+                        <div class="col-md-6">
+                            <label class="form-label">Defeito</label>
+                            <InputSelect class="form-select"
+                                         @bind-Value="item.Defects">
+                                <option value="0">Selecione</option>
+                                @foreach (var p in PossibleDefects)
+                                {
+                                    <option value="@p.ID">
+                                        @p.ID - @p.Name
+                                    </option>
+                                }
+                            </InputSelect>
+
+                            <button class="btn btn-sm btn-outline-danger me-2"
+                                    @onclick="() => Removerdefect(item.Defects)">
+                                <i class="bi bi-dash-circle"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                }
+                <button type="button"
+                        class="btn btn-outline-secondary mb-3"
+                        @onclick="AdicionarItemDefect">
+                    + Adicionar Item
+                </button>
+
+                <h5 class="mb-3">Atividades De Reparo a Serem Eexecutada</h5>
+
+                @foreach (var item in itemsRepairActivites)
+                {
+                    <div class="row g-2 mb-2 align-items-end">
+
+                        <div class="col-md-6">
+                            <label class="form-label">Atividades</label>
+                            <InputSelect class="form-select"
+                                         @bind-Value="item.Activities">
+                                <option value="0">Selecione</option>
+                                @foreach (var p in RepairActivites)
+                                {
+                                    <option value="@p.ID">
+                                        @p.ID - @p.Name
+                                    </option>
+                                }
+                            </InputSelect>
+                            <button class="btn btn-sm btn-outline-danger me-2"
+                                    @onclick="() => Removeractivites(item.Activities)">
+                                <i class="bi bi-dash-circle"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                }
+                <button type="button"
+                        class="btn btn-outline-secondary mb-3"
+                        @onclick="AdicionarItemRepair">
+                    + Adicionar Item
+                </button>
+            }
+
+            <div class="mt-3 d-flex justify-content-between">
+                <button class="btn btn-secondary" @onclick="Cancelar">Cancelar</button>
+                <div>
+                    <button class="btn btn-outline-secondary me-2" @onclick="Anterior" disabled="@(etapaAtual == 1)">Voltar</button>
+                    <button class="btn btn-success" type="submit" @onclick="Proximo">@((etapaAtual == 3) ? "Finalizar" : "Avançar")</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+@code {
+    [Parameter] public int Id { get; set; }
+
+    private ByBudgetDTO Model { get; set; } = new();
+    private ByReviewDTO ModelReview { get; set; } = new();
+    private ByServiceItemsDTO item { get; set; } = new();
+    private List<ByServiceItemsDTO> Itens = new();
+    private ByReview_DefectsDTO itemDefectsPossible { get; set; } = new();
+    private List<ByReview_DefectsDTO> itemsDefectsPossible = new();
+    private ByReview_ActivitiesDTO itemRepairActivites { get; set; } = new();
+    private List<ByReview_ActivitiesDTO> itemsRepairActivites = new();
+    private List<ProductsDTO> Produtos = new();
+    private List<Possible_DefectsDTO> PossibleDefects = new();
+    private List<Repair_ActivitiesDTO> RepairActivites = new();
+
+    private List<DefectsType> DefectsTypes = DefectsType.Defects;
+
+    private List<byte[]> files = new List<byte[]>();
+
+    private async Task OnFilesChange(InputFileChangeEventArgs e)
+    {
+        files.Clear();
+
+        foreach (var file in e.GetMultipleFiles())
+        {
+            using var ms = new MemoryStream();
+            await file.OpenReadStream(10 * 1024 * 1024).CopyToAsync(ms);
+
+            files.Add(ms.ToArray());
+        }
+    }
+
+    private int etapaAtual = 1;
+
+    private void Proximo()
+    {
+        if (etapaAtual < 3) etapaAtual++;
+        else Salvar();
+    }
+
+    private void Anterior()
+    {
+        if (etapaAtual > 1) etapaAtual--;
+    }
+
+    private void Cancelar()
+    {
+
+        Navigation.NavigateTo("/NO01");
+    }
+
+    void RemoverItem(int id)
+    {
+        var search = Itens.FirstOrDefault(e => e.Product == id);
+        Itens.Remove(search);
+    }
+    void Removerdefect(int id)
+    {
+        var search = itemsDefectsPossible.FirstOrDefault(e => e.Defects == id);
+        itemsDefectsPossible.Remove(search);
+    }
+    void Removeractivites(int id)
+    {
+        var search = itemsRepairActivites.FirstOrDefault(e => e.Activities == id);
+        itemsRepairActivites.Remove(search);
+    }
+
+    void AdicionarItem()
+    {
+        item.OS = Id;
+        item.DateCreate = DateTime.Now;
+        item.CreateBy = _userContext.UserId;
+
+        Itens.Add(item);
+
+        item = new();
+    }
+    void AdicionarItemDefect()
+    {
+        itemDefectsPossible.DateCreate = DateTime.Now;
+        itemDefectsPossible.CreateBy = _userContext.UserId;
+
+        itemsDefectsPossible.Add(itemDefectsPossible);
+
+        itemDefectsPossible = new();
+    }
+    void AdicionarItemRepair()
+    {
+        itemRepairActivites.DateCreate = DateTime.Now;
+        itemRepairActivites.CreateBy = _userContext.UserId;
+
+        itemsRepairActivites.Add(itemRepairActivites);
+
+        itemRepairActivites = new();
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        Produtos = await _sProducts.ProductsList();
+        PossibleDefects = await _sBudget.Possible_DefectsList();
+        RepairActivites = await _sBudget.Repair_ActivitiesList();
+
+        var os = await _service.ServiceOrderByIDDetails(Id);
+
+        if (os.BudgetFK != null)
+        {
+            Model = os.BudgetFK;
+            Model.Value = 0;
+
+            if (os.ReviewFK != null)
+            {
+                ModelReview = os.ReviewFK;
+
+                if (os.reviewDefectsFK != null)
+                    itemsDefectsPossible = os.reviewDefectsFK;
+
+                if (os.ReviewActivitiesFK != null)
+                    itemsRepairActivites = os.ReviewActivitiesFK;
+
+            }
+
+            Itens = os.ItemsFK;
+
+        }
+        else
+        {
+            Model.CreateBy = _userContext.UserId;
+            Model.DateCreate = DateTime.Now;
+            Model.Date = DateTime.Now;
+            Model.OS = Id;
+        }
+
+
+    }
+
+    async Task Salvar()
+    {
+
+        var responseFolder = await _files.NewFolder(new FileFolder
+        {
+            Name = $"Orçamento da OS {Model.OS}",
+            historyFK = new History
+            {
+                CreateBy = _userContext.UserId,
+                DateCreate = DateTime.Now,
+            },
+        });
+
+        if (responseFolder.Result)
+        {
+            var folder = responseFolder.Data as FileFolder;
+            Model.FileFolder = folder.ID;
+
+            if (files.Any())
+            {
+                var paths = await FileService.SaveFilesAsync(files, folder.ID.ToString());
+                List<NewFileDTO> arqs = new();
+                foreach (var path in paths)
+                {
+                    arqs.Add(new NewFileDTO
+                    {
+                        Name = path,
+                        Folder = folder.ID,
+                        CreateBy = _userContext.UserId,
+                        DateCreate = DateTime.Now,
+
+                    });
+                }
+
+                await _files.NewFilesAll(arqs);
+            }
+        }
+
+
+        foreach (var item in Itens)
+        {
+            var valor = item.Value * item.Amount;
+            Model.Value = Model.Value + valor;
+        }
+
+        var response = await _sBudget.NewBudget(Model);
+
+        if (response.Result)
+        {
+            var budget = response.Data as Budget;
+
+            ModelReview.Budget_number = budget.ID;
+
+            var responseReview = await _sBudget.NewReview(ModelReview);
+
+            if (responseReview.Result)
+            {
+                var review = responseReview.Data as Review;
+
+                if (itemsDefectsPossible.Count > 0)
+                {
+                    foreach (var item in itemsDefectsPossible)
+                    {
+                        item.Review = review.ID;
+                        item.CreateBy = _userContext.UserId;
+                        item.DateCreate = DateTime.Now;
+                    }
+
+                    await _sBudget.NewReview_Defects(itemsDefectsPossible);
+                }
+
+                if (itemsRepairActivites.Count > 0)
+                {
+                    foreach (var item in itemsRepairActivites)
+                    {
+                        item.Review = review.ID;
+                        item.CreateBy = _userContext.UserId;
+                        item.DateCreate = DateTime.Now;
+                    }
+                    await _sBudget.NewReview_Activities(itemsRepairActivites);
+                }
+
+            }
+
+            var responseItems = await _service.NewServiceItems(Itens);
+
+            if (responseItems.Result)
+            {
+
+                await JS.InvokeVoidAsync("alert", response.Message);
+                Navigation.NavigateTo("/NO01");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("alert", response.Error);
+            }
+
+
+        }
+
+    }
+    void Voltar() => Navigation.NavigateTo("/NO99");
+}

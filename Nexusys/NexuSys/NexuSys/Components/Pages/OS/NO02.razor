@@ -1,0 +1,416 @@
+﻿@page "/NO02/{Id:int?}"
+@using NexuSys.DTOs.Customers
+@using NexuSys.DTOs.Departament
+@using NexuSys.DTOs.Equipment
+@using NexuSys.DTOs.Nfs
+@using NexuSys.DTOs.SItuation
+@using NexuSys.DTOs.ServiceEquipment
+@using NexuSys.DTOs.ServiceOrder
+@using NexuSys.DTOs.Type_Service
+@using NexuSys.DTOs.Unit
+@using NexuSys.Helper
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IService _service
+@inject IProducts _show
+@inject IUsers _department
+@inject INFs _nf
+@inject IFiles _files
+@inject IJSRuntime JS
+@inject IUserContext UserContext
+
+<PageTitle>Editar Ordem de Serviço</PageTitle>
+
+<div class="container-fluid p-4">
+
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="mb-0">Edição Ordem de Serviço</h3>
+            <small class="text-muted">Editar OS</small>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <ul class="list-group">
+                <li class="list-group-item @(etapaAtual == 1 ? "active" : "")" @onclick="() => etapaAtual = 1">Dados Básicos</li>
+                <li class="list-group-item @(etapaAtual == 2 ? "active" : "")" @onclick="() => etapaAtual = 2">Nota de Remessa</li>
+                <li class="list-group-item @(etapaAtual == 3 ? "active" : "")" @onclick="() => etapaAtual = 3">Nota de Serviço</li>
+                <li class="list-group-item @(etapaAtual == 4 ? "active" : "")" @onclick="() => etapaAtual = 4">Nota de Venda/Saida</li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            @if (etapaAtual == 1)
+            {
+                <div class="card shadow-sm mt-2">
+                    <div class="card-body">
+
+                        <div class="row g-3">
+
+                            <div class="col-md-8 justify-content-between">
+                                <label class="form-label">Cliente</label>
+
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <input readonly class="form-select"
+                                    @bind="Model.Customer" />
+                                </div>
+
+                            </div>
+                            <div class="col-md-8 justify-content-between">
+                                <label class="form-label">Equipamento</label>
+
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <input readonly class="form-select"
+                                           @bind="ModelEquip.EquipmentCompleto" />
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-8">
+                                <label class="form-label">Departamento</label>
+                                <InputSelect class="form-select"
+                                @bind-Value="Model.Department">
+                                    <option value="0">Selecione o Departamento</option>
+
+                                    @if (departamento != null)
+                                    {
+                                        @foreach (var v in departamento)
+                                        {
+                                            <option value="@v.ID">
+                                                @v.Name
+                                            </option>
+                                        }
+                                    }
+                                </InputSelect>
+                            </div>
+                            <div class="col-md-8">
+                                <label class="form-label">Tipo de Serviço</label>
+                                <InputSelect class="form-select"
+                                @bind-Value="Model.Type_Service">
+                                    <option value="0">Selecione o Tipo de Serviço</option>
+
+                                    @if (type != null)
+                                    {
+                                        @foreach (var v in type)
+                                        {
+                                            <option value="@v.ID">
+                                                @v.Name
+                                            </option>
+                                        }
+                                    }
+                                </InputSelect>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Problema Relatado</label>
+                                <input readonly class="form-control" @bind="Model.Problem" />
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Status</label>
+                                <InputSelect class="form-select"
+                                @bind-Value="Model.Situation">
+
+                                    <option value="0">Selecione</option>
+                                    @if (Situacao != null)
+                                    {
+                                        @foreach (var s in Situacao)
+                                        {
+                                            <option value="@s.ID">
+                                                @s.Name
+                                            </option>
+                                        }
+                                    }
+                                </InputSelect>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Unidade</label>
+                                <InputSelect class="form-select"
+                                @bind-Value="Model.Unit">
+
+                                    <option value="0">Selecione</option>
+                                    @if (unidade != null)
+                                    {
+                                        @foreach (var s in unidade)
+                                        {
+                                            <option value="@s.ID">
+                                                @s.Name
+                                            </option>
+                                        }
+                                    }
+                                </InputSelect>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Prioridade</label>
+                                <InputSelect class="form-select"
+                                @bind-Value="Model.Priority">
+                                    <option value="5">Selecione</option>
+                                    <option value="0">Urgente</option>
+                                    <option value="1">Alta</option>
+                                    <option value="2">Media</option>
+                                    <option value="3">Baixa</option>
+                                </InputSelect>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Estimativa de Entrega</label>
+                                <InputDate class="form-select"
+                                @bind-Value="Model.Estimated_Date" />
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Observações</label>
+                                <InputTextArea class="form-control"
+                                rows="4"
+                                @bind-Value="Model.Note" />
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+            @if (etapaAtual == 2)
+            {
+                <div class="col-md-6">
+                    <label class="form-label">Nº NF</label>
+                    <input readonly class="form-control" @bind="ModelNote.Number" />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Valor Total</label>
+                    <input readonly class="form-control" @bind="ModelNote.Total_Value" />
+                </div>
+            }
+            @if (etapaAtual == 3)
+            {
+
+                <div class="col-md-6">
+                    <label class="form-label">Nº NF</label>
+                    <InputNumber class="form-control" @bind-Value="ModelNoteS.Number" />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Valor Total</label>
+                    <InputNumber class="form-control" @bind-Value="ModelNoteS.Total_Value" />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Valor do Imposto</label>
+                    <InputNumber class="form-control" @bind-Value="ModelNoteS.Tax" />
+                </div>
+                <button class="btn btn-outline-secondary me-2" @onclick="SalvarNoteS" disabled="@BnoteS">Adicionar</button>
+            }
+            @if (etapaAtual == 4)
+            {
+                <div class="col-md-6">
+                    <label class="form-label">Nº NF</label>
+                    <InputNumber class="form-control" @bind-Value="ModelNoteV.Number" />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Valor Total</label>
+                    <InputNumber class="form-control" @bind-Value="ModelNoteV.Total_Value" />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Valor do Imposto</label>
+                    <InputNumber class="form-control" @bind-Value="ModelNoteV.Tax" />
+                </div>
+                <button class="btn btn-outline-secondary me-2" @onclick="SalvarNoteV" disabled="@BnoteV">Adicionar</button>
+            }
+
+            <div class="mt-3 d-flex justify-content-between">
+                <button class="btn btn-secondary" @onclick="Cancelar">Cancelar</button>
+                <div>
+                    <button class="btn btn-outline-secondary me-2" @onclick="Anterior" disabled="@(etapaAtual == 1)">Voltar</button>
+                    <button class="btn btn-success" type="submit" @onclick="Proximo">@((etapaAtual == 4) ? "Finalizar" : "Avançar")</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@code {
+
+    [Parameter] public int Id { get; set; }
+
+    private int etapaAtual = 1;
+
+    private void Proximo()
+    {
+        if (etapaAtual < 4) etapaAtual++;
+        else Salvar();
+    }
+
+    private void Anterior()
+    {
+        if (etapaAtual > 1) etapaAtual--;
+    }
+
+    private void Cancelar()
+    {
+
+        Navigation.NavigateTo("/NO01");
+    }
+
+    private bool BnoteS = true;
+    private bool BnoteV = true;
+
+    private NewNFsDTO ModelNoteS = new();
+    private NewNFsDTO ModelNoteV = new();
+    private ByNFsDTO ModelNote = new();
+    private ByServiceEquipmentDTO ModelEquip = new();
+    private ByServiceOrderDTO Model = new();
+    private List<CustomersDTO> Cliente;
+    private List<EquipmentDTO> equipamento;
+    private List<SituationDTO> Situacao;
+    private List<Type_ServiceDTO> type;
+    private List<DepartamentDTO> departamento;
+    private List<UnitDTO> unidade;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var serv = await _service.ServiceOrderByID(Id);
+
+        if (serv != null)
+        {
+            Model = serv;
+
+            ModelEquip = await _service.ServiceEquipmentByID(Model.ID);
+
+        }
+        if (Model.Delivery_Note != null)
+        {
+            ModelNote = await _nf.NFsByID(Convert.ToInt32(Model.Delivery_Note));
+        }
+        if (Model.Service_Note != null)
+        {
+            var noteS = await _nf.NFsByID(Convert.ToInt32(Model.Service_Note));
+            ModelNoteS.ID = noteS.ID;
+            ModelNoteS.Total_Value = noteS.Total_Value;
+            ModelNoteS.Tax = noteS.Tax;
+            BnoteS = false;
+        }
+        if (Model.Departure_Note != null)
+        {
+            var noteV = await _nf.NFsByID(Convert.ToInt32(Model.Departure_Note));
+            ModelNoteV.ID = noteV.ID;
+            ModelNoteV.Total_Value = noteV.Total_Value;
+            ModelNoteV.Tax = noteV.Tax;
+            BnoteS = false;
+
+        }
+        Situacao = await _service.SituationList();
+        Cliente = await _show.CustomersList();
+        type = await _service.Type_ServiceList();
+        departamento = await _department.DepartamentList();
+        unidade = await _department.UnitList();
+    }
+    public async void getEquipament()
+    {
+        equipamento = await _show.EquipmentListByClient(Model.Customer);
+        StateHasChanged();
+    }
+    private List<byte[]> files = new List<byte[]>();
+
+    private async Task OnFilesChange(InputFileChangeEventArgs e)
+    {
+        files.Clear();
+
+        foreach (var file in e.GetMultipleFiles())
+        {
+            using var ms = new MemoryStream();
+            await file.OpenReadStream(10 * 1024 * 1024).CopyToAsync(ms);
+
+            files.Add(ms.ToArray());
+        }
+    }
+
+    private List<byte[]> filesnf = new List<byte[]>();
+
+    private async Task OnFilesChangenf(InputFileChangeEventArgs e)
+    {
+        filesnf.Clear();
+
+        foreach (var file in e.GetMultipleFiles())
+        {
+            using var ms = new MemoryStream();
+            await file.OpenReadStream(10 * 1024 * 1024).CopyToAsync(ms);
+
+            filesnf.Add(ms.ToArray());
+        }
+    }
+
+    async Task SalvarNoteS()
+    {
+        ModelNoteS.Customers = Model.Customer;
+        ModelNoteS.Type = 1;
+        ModelNoteS.DateIn = DateTime.Now;
+
+        try
+        {
+            var response = await _nf.NewNFs(ModelNoteS);
+
+            if (response.Result)
+            {
+                await JS.InvokeVoidAsync("alert", response.Message);
+                BnoteS = false;
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.InnerException?.Message);
+        }
+
+    }
+    async Task SalvarNoteV()
+    {
+        ModelNoteV.Customers = Model.Customer;
+        ModelNoteV.Type = 2;
+        ModelNoteV.DateIn = DateTime.Now;
+
+        try
+        {
+            var response = await _nf.NewNFs(ModelNoteV);
+
+            if (response.Result)
+            {
+                await JS.InvokeVoidAsync("alert", response.Message);
+                BnoteV = false;
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.InnerException?.Message);
+        }
+    }
+
+    async Task Salvar()
+    {
+        Model.ChangedBy = 1;
+        Model.DateChanged = DateTime.Now;
+
+        try
+        {
+            var response = await _service.UpdateServiceOrder(Model);
+
+            if (response.Result)
+            {
+                await JS.InvokeVoidAsync("alert", response.Message);
+                Navigation.NavigateTo("/NO01");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("alert", response.Error);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.InnerException?.Message);
+        }
+    }
+
+    void Voltar() => Navigation.NavigateTo("/NO01");
+}

@@ -1,0 +1,100 @@
+﻿@page "/NN02"
+@using NexuSys.DTOs.Nfs
+@using NexuSys.Helper
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@inject INFs _service
+@inject IUserContext UserContext
+
+<div class="container py-4 bg-white">
+
+    <h3 class="fw-bold mb-4 text-primary">Notas Fiscais</h3>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">
+            <i class="bi bi-search"></i>
+        </span>
+
+        <input type="text"
+               class="form-control"
+               placeholder="Pesquisar por cliente ou nº da NF"
+               @bind="termoPesquisa"
+               @bind:event="oninput" />
+    </div>
+
+    <div class="card shadow-sm p-3">
+
+        <table class="table table-striped align-middle">
+
+            <thead class="table-light">
+                <tr>
+                    <th>NF</th>
+                    <th>Data</th>
+                    <th>Cliente</th>
+                    <th>Total (R$)</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @if (notasFiltradas.Any())
+                {
+                    @foreach (var nf in notasFiltradas)
+                    {
+                        <tr>
+
+                            <td>@nf.Number</td>
+
+                            <td>@nf.DateIn.ToString("dd/MM/yyyy")</td>
+
+                            <td>@nf.Customers</td>
+
+                            <td>@nf.Total_Value?.ToString("C")</td>
+
+                            <td>@nf.Type</td>
+
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5" class="text-center">
+                            Nenhuma nota encontrada
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+@code {
+
+    private string termoPesquisa = "";
+
+    private List<NFsDTO> notas = new();
+
+    IEnumerable<NFsDTO> notasFiltradas =>
+        notas.Where(n =>
+            string.IsNullOrWhiteSpace(termoPesquisa) ||
+
+            n.Number.ToString().Contains(termoPesquisa, StringComparison.OrdinalIgnoreCase) ||
+
+            (n.Customers != null &&
+             n.Customers.Contains(termoPesquisa, StringComparison.OrdinalIgnoreCase)));
+
+    protected override async Task OnInitializedAsync()
+    {
+        notas = await _service.NFsList();
+    }
+
+}

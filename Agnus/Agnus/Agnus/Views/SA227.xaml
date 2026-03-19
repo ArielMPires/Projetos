@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Agnus.ViewModels"
+             x:Class="Agnus.Views.SA227"
+             Title="">
+
+    <Grid Padding="10">
+        <!-- Topo -->
+        <HorizontalStackLayout>
+            <Button
+                IsVisible="{OnPlatform Android=true, iOS=true, WinUI=false}"
+                Command="{Binding _ReturnCommand}"
+                TextColor="#0078D7"
+                Padding="10"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="Start"
+                Margin="10">
+                <Button.ImageSource>
+                    <FontImageSource Glyph="&#xf060;" FontFamily="FontAwesomeSolid" Size="24"/>
+                </Button.ImageSource>
+            </Button>
+            <Label Text="SA227"
+                   FontSize="20"
+                   Opacity="0.4"
+                   TextColor="Gray"
+                   HorizontalOptions="End"
+                   VerticalOptions="Start"
+                   InputTransparent="True"/>
+        </HorizontalStackLayout>
+
+        <!-- Conteúdo central com dois quadrados -->
+        <ScrollView Margin="0,60,0,60">
+            <Grid ColumnDefinitions="*,*" Padding="10" ColumnSpacing="20">
+
+                <!-- Coluna Esquerda -->
+                <Border Grid.Column="0" Padding="10" Margin="10">
+                    <VerticalStackLayout>
+                        <Label TextColor="White" Text="Placa Mãe"/>
+                        <Entry Placeholder="Placa-Mãe" Text="{Binding Computers.MotherBoard}"/>
+                        <BoxView Margin="10"/>
+                        <Label TextColor="White" Text="Processador"/>
+                        <Entry Placeholder="Processador" Text="{Binding Computers.Processor}"/>
+                        <BoxView Margin="10"/>
+                        <Label TextColor="White" Text="Memórias"/>
+                        <Entry Placeholder="Memoria Ram" Text="{Binding Computers.Memory}"/>
+                        <BoxView Margin="10"/>
+                        <Label TextColor="White" Text="Coolers"/>
+                        <Entry Placeholder="Cooler" Text="{Binding Computers.Cooler}"/>
+                        <BoxView Margin="10"/>
+                        <Label TextColor="White" Text="HD e SSD"/>
+                        <Entry Placeholder="HD/SSD" Text="{Binding Computers.Storage}"/>
+                        <Button Text="Enviar"
+                Command="{Binding _EditComputerCommand}"
+                                IsEnabled="{Binding IsNotBusy}"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Margin="20"
+                WidthRequest="200"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Coluna Direita -->
+                <Border Grid.Column="{OnPlatform Android=0,WinUI=1}" Grid.Row="{OnPlatform Android=1,WinUI=0}" Padding="10" Margin="10">
+                    <VerticalStackLayout>
+                        <Label TextColor="White" Text="Fonte de Alimentação"/>
+                        <Entry Placeholder="Fonte de Alimentação" Text="{Binding Computers.Power_Supply}"/>
+                        <BoxView Margin="10"/>
+                        <Label TextColor="White" Text="DVD"/>
+                        <Entry Placeholder="DVD" Text="{Binding Computers.DVD}"/>
+                        <BoxView Margin="10"/>
+                        <Label TextColor="White" Text="Gabinete"/>
+                        <Entry Placeholder="Gabinete" Text="{Binding Computers.Cabinet}"/>
+                        <BoxView Margin="10"/>
+                        <Label TextColor="White" Text="Sistema Operacional"/>
+                        <Entry Placeholder="Sistema Operacional" Text="{Binding Computers.SO}"/>
+                        <BoxView Margin="10"/>
+                        <Label TextColor="White" Text="PCI"/>
+                        <Entry Placeholder="PCI" Text="{Binding Computers.PCI}"/>
+                        <BoxView Margin="10"/>
+                        <Label TextColor="White" Text="PCI-EX"/>
+                        <Entry Placeholder="PCI-EX" Text="{Binding Computers.PCI_EX}"/>
+                        <BoxView Margin="10"/>
+                        <Label TextColor="White" Text="PCI-X16"/>
+                        <Entry Placeholder="PCI-X16" Text="{Binding Computers.PCI_X16}"/>
+                    </VerticalStackLayout>
+                </Border>
+
+            </Grid>
+        </ScrollView>
+
+    </Grid>
+</ContentPage>

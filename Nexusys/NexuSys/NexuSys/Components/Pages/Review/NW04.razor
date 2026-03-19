@@ -1,0 +1,59 @@
+﻿@page "/NW04/{Codigo}"
+@rendermode InteractiveServer
+
+<div class="container py-4 bg-white">
+    <h2 class="fw-bold mb-4">Histórico de Revisões</h2>
+
+    <div class="card shadow-sm p-3 mb-4">
+        <h5 class="fw-bold">Equipamento: @Codigo</h5>
+    </div>
+
+    <!-- Tabela de Revisões -->
+    <div class="card shadow-sm p-3">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Situação</th>
+                    <th>Observações</th>
+                    <th>Técnico</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var rev in revisoes)
+                {
+                    <tr>
+                        <td>@rev.Data.ToShortDateString()</td>
+                        <td>@rev.Situacao</td>
+                        <td>@rev.Observacoes</td>
+                        <td>@rev.Tecnico</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string Codigo { get; set; }
+    private List<Revisao> revisoes = new();
+
+    public class Revisao
+    {
+        public DateTime Data { get; set; }
+        public string Situacao { get; set; }
+        public string Observacoes { get; set; }
+        public string Tecnico { get; set; }
+    }
+
+    protected override void OnInitialized()
+    {
+        // Simulação de dados
+        revisoes = new List<Revisao>
+        {
+            new Revisao { Data = DateTime.Today.AddDays(-10), Situacao="Operacional", Observacoes="Tudo OK", Tecnico="João" },
+            new Revisao { Data = DateTime.Today.AddDays(-5), Situacao="Em Manutenção", Observacoes="Troca de rolamento", Tecnico="Maria" },
+            new Revisao { Data = DateTime.Today, Situacao="Necessita Reparo", Observacoes="Ruído excessivo", Tecnico="Carlos" }
+        };
+    }
+}

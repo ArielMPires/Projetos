@@ -1,0 +1,100 @@
+﻿@page "/NF05"
+@using NexuSys.DTOs.Suppliers
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IPurchase _service
+@inject IJSRuntime JS
+
+<PageTitle>Fornecedores</PageTitle>
+
+<div class="container py-4 bg-white">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h3 class="fw-bold">Fornecedores</h3>
+
+        <button class="btn btn-success" @onclick="NovoFornecedor">
+            <i class="bi bi-plus-circle"></i> Novo Fornecedor
+        </button>
+
+    </div>
+
+    <!-- Área de Pesquisa -->
+    <div class="input-group mb-3 ">
+        <span class="input-group-text"><i class="bi bi-search"></i></span>
+        <input type="text" class="form-control w-50" placeholder="Pesquisar serviço..." @bind="Filtro" @bind:event="oninput" />
+    </div>
+    
+  <div class="card shadow-sm p-3">
+        <table class="table align-middle">
+            <thead class="table-light p-0 align-middle">
+            <tr>
+                <th>Nome</th>
+                <th>CNPJ</th>
+                <th class="text-end pe-3">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forn in FornecedoresFiltrados)
+            {
+                <tr>
+                    <td>@forn.Name</td>
+                    <td>@forn.CNPJ_CPF</td>
+                    <td class="text-end pe-3">
+                        <button class="btn btn-sm btn-outline-primary me-1"
+                                @onclick="() => Editar(forn.ID)">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-danger"
+                                @onclick="() => Excluir(forn.ID)">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            }
+
+            @if (!FornecedoresFiltrados.Any())
+            {
+                <tr>
+                    <td colspan="4" class="text-center text-muted py-4">
+                        Nenhum fornecedor encontrado
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+ </div>
+</div>
+
+@code {
+
+    string Filtro = "";
+
+    private List<SuppliersDTO> Fornecedores = new();
+
+    IEnumerable<SuppliersDTO> FornecedoresFiltrados =>
+        Fornecedores.Where(f =>
+            string.IsNullOrWhiteSpace(Filtro) ||
+            f.Name.Contains(Filtro, StringComparison.OrdinalIgnoreCase));
+
+    void NovoFornecedor() => Navigation.NavigateTo("/NA92");
+    void Editar(int id) => Navigation.NavigateTo($"/NE29/{id}");
+
+    async void Excluir(int id)
+    {
+        bool confirmar = await JS.InvokeAsync<bool>("confirm", "Deseja excluir este Fornecedor?");
+        if (confirmar)
+        {
+            await _service.DeleteSuppliers(id);
+            Fornecedores.RemoveAll(e => e.ID == id);
+        }
+
+        StateHasChanged();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Fornecedores = await _service.SuppliersList();
+    }
+}

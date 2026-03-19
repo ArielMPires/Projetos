@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Agnus.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Agnus"
+    xmlns:views="clr-namespace:Agnus.Views"
+    xmlns:model="clr-namespace:Agnus.Models"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Agnus">
+
+    <ShellContent
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+
+    <!--Paginas Avulsas-->
+    <!--SA000 Paginas do Dashboard-->
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SD641}"
+        Route="SD641" />
+    <ShellContent/>
+    <!--SA000 Paginas do Administrativo-->
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SA264}"
+        Route="SA264" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SA713}"
+        Route="SA713" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SA173}"
+        Route="SA173" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SA337}"
+        Route="SA337" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SA191}"
+        Route="SA191" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SA227}"
+        Route="SA227" />
+    <!--SC000 Paginas do Chamados-->
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SC273}"
+        Route="SC273" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SC683}"
+        Route="SC683" />
+    <!--SF000 Paginas do Financeiro-->
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SF136}"
+        Route="SF136" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SF731}"
+        Route="SF731" />
+    <!--SH000 Paginas do Compras-->
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SH908}"
+        Route="SH908" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SH474}"
+        Route="SH474" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SH492}"
+        Route="SH492" />
+    <!--SP000 Paginas do Fornecedores-->
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SP794}"
+        Route="SP794" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SP823}"
+        Route="SP823" />
+    <!--SK000 Paginas do Produtos-->
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SK991}"
+        Route="SK991" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SK172}"
+        Route="SK172" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SK323}"
+        Route="SK323" />
+    <!--SS000 Paginas da Configurações-->
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SS751}"
+        Route="SS751" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SS634}"
+        Route="SS634" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SS159}"
+        Route="SS159" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SS815}"
+        Route="SS815" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SS617}"
+        Route="SS617" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SS582}"
+        Route="SS582" />
+    <!--SG000 Paginas do Gerencial-->
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SG472}"
+        Route="SG472" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SG644}"
+        Route="SG644" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SG970}"
+        Route="SG970" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SG842}"
+        Route="SG842" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SG677}"
+        Route="SG677" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SG884}"
+        Route="SG884" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SG699}"
+        Route="SG699" />
+    <ShellContent
+        ContentTemplate="{DataTemplate views:SG974}"
+        Route="SG974" />
+
+</Shell>

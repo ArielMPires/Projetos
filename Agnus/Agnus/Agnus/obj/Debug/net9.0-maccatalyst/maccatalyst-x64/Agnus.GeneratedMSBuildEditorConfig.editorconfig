@@ -1,0 +1,429 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net9.0-maccatalyst
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v9.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Agnus
+build_property.ProjectDir = C:\Users\ariel\source\repos\Agnus\Agnus\Agnus\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SA001.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SA001.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SA001.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SA001.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SA173.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SA173.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SA173.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SA173.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SA191.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SA191.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SA191.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SA191.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SA221.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SA221.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SA221.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SA221.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SA227.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SA227.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SA227.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SA227.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SA264.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SA264.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SA264.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SA264.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SA278.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SA278.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SA278.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SA278.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SA337.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SA337.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SA337.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SA337.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SA559.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SA559.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SA559.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SA559.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SA568.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SA568.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SA568.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SA568.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SA645.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SA645.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SA645.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SA645.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SA713.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SA713.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SA713.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SA713.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SA803.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SA803.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SA803.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SA803.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SA961.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SA961.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SA961.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SA961.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SC001.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SC001.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SC001.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SC001.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SC273.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SC273.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SC273.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SC273.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SC683.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SC683.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SC683.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SC683.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SD001.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SD001.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SD001.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SD001.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SD641.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SD641.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SD641.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SD641.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SF001.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SF001.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SF001.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SF001.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SF136.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SF136.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SF136.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SF136.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SF731.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SF731.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SF731.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SF731.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SF852.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SF852.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SF852.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SF852.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SG001.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SG001.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SG001.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SG001.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SG351.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SG351.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SG351.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SG351.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SG429.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SG429.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SG429.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SG429.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SG472.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SG472.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SG472.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SG472.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SG644.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SG644.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SG644.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SG644.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SG677.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SG677.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SG677.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SG677.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SG699.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SG699.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SG699.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SG699.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SG737.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SG737.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SG737.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SG737.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SG842.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SG842.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SG842.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SG842.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SG884.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SG884.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SG884.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SG884.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SG897.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SG897.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SG897.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SG897.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SG970.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SG970.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SG970.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SG970.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SG974.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SG974.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SG974.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SG974.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SH001.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SH001.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SH001.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SH001.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SH261.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SH261.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SH261.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SH261.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SH474.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SH474.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SH474.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SH474.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SH492.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SH492.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SH492.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SH492.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SH853.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SH853.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SH853.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SH853.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SH908.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SH908.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SH908.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SH908.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SK001.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SK001.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SK001.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SK001.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SK172.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SK172.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SK172.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SK172.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SK323.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SK323.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SK323.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SK323.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SK472.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SK472.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SK472.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SK472.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SK538.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SK538.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SK538.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SK538.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SK872.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SK872.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SK872.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SK872.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SK991.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SK991.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SK991.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SK991.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SM001.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SM001.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SM001.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SM001.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SP001.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SP001.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SP001.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SP001.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SP794.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SP794.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SP794.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SP794.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SP823.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SP823.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SP823.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SP823.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SS001.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SS001.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SS001.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SS001.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SS159.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SS159.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SS159.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SS159.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SS328.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SS328.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SS328.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SS328.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SS573.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SS573.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SS573.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SS573.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SS582.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SS582.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SS582.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SS582.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SS603.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SS603.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SS603.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SS603.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SS617.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SS617.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SS617.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SS617.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SS634.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SS634.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SS634.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SS634.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SS751.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SS751.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SS751.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SS751.xaml
+
+[C:/Users/ariel/source/repos/Agnus/Agnus/Agnus/Views/SS815.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Agnus.Views.SS815.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SS815.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SS815.xaml

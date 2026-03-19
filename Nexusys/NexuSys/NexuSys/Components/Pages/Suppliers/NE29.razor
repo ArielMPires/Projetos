@@ -1,0 +1,84 @@
+﻿@page "/NE29/{Id:int}"
+@using NexuSys.DTOs.Suppliers
+@using NexuSys.Helper
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IPurchase _service
+@inject IJSRuntime JS
+@inject IUserContext UserContext
+
+<PageTitle>Editar Fornecedor</PageTitle>
+
+<div class="container p-4">
+
+    <h3 class="mb-4">Editar Fornecedor</h3>
+
+    <EditForm Model="Model" OnValidSubmit="Salvar">
+
+        <div class="mb-3">
+            <label class="form-label">Nome</label>
+            <InputText class="form-control" @bind-Value="Model.Name" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">CNPJ</label>
+            <InputNumber class="form-control" @bind-Value="Model.CNPJ_CPF" />
+        </div>
+
+
+
+        <div class="d-flex justify-content-end gap-2">
+            <button class="btn btn-secondary" type="button" @onclick="Voltar">
+                Voltar
+            </button>
+
+            <button class="btn btn-success" type="submit">
+                Salvar
+            </button>
+        </div>
+
+    </EditForm>
+
+</div>
+
+@code {
+
+    [Parameter] public int Id { get; set; }
+
+    private BySuppliersDTO Model = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var forn = await _service.SuppliersByID(Id);
+
+        Model.ID = forn.ID;
+        Model.Name = forn.Name;
+        Model.CNPJ_CPF = forn.CNPJ_CPF;
+        Model.CreateBy = forn.CreateBy;
+        Model.DateCreate = forn.DateCreate;
+    }
+
+    async void Salvar()
+    {
+        Model.ChangedBy = UserContext.UserId;
+        Model.DateChanged = DateTime.Now;
+
+        var response = await _service.UpdateSuppliers(Model);
+
+        if (response.Result)
+        {
+            await JS.InvokeVoidAsync("alert", response.Message);
+            Navigation.NavigateTo("/NF05");
+        }
+        else
+        {
+            await JS.InvokeVoidAsync("alert", response.Message);
+        }
+    }
+
+    void Voltar()
+    {
+        Navigation.NavigateTo("/NF05");
+    }
+}

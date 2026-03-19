@@ -1,0 +1,125 @@
+﻿@page "/NS02"
+@using NexuSys.DTOs.Seller
+@using NexuSys.Helper
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@inject IUsers _service
+@inject IUserContext UserContext
+
+<PageTitle>Novo Vendedor</PageTitle>
+
+@if (IsLoading)
+{
+    <div class="loading-overlay">
+        <div class="spinner-border text-light" role="status"></div>
+        <p class="mt-3 text-light fw-bold">Cadastrando vendedor...</p>
+    </div>
+}
+
+<div class="container py-4">
+
+    <h3 class="fw-bold mb-1">Novo Vendedor</h3>
+    <p class="text-muted">Preencha os dados para cadastrar um novo vendedor</p>
+
+    <EditForm Model="Model" OnValidSubmit="Salvar">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <fieldset disabled="@IsLoading">
+
+            <div class="card shadow-sm p-4 mt-3">
+
+                <div class="mb-3">
+                    <label class="form-label">Nome</label>
+                    <InputText class="form-control"
+                               @bind-Value="Model.Name"
+                               placeholder="Digite aqui o nome do vendedor" />
+                </div>
+
+            </div>
+
+            <div class="d-flex justify-content-end mt-3">
+                <button type="button"
+                        class="btn btn-secondary me-2"
+                        @onclick="Cancelar"
+                        disabled="@IsLoading">
+                    Cancelar
+                </button>
+
+                <button type="submit"
+                        class="btn btn-success"
+                        disabled="@IsLoading">
+                    @if (IsLoading)
+                    {
+                        <span class="spinner-border spinner-border-sm me-2"></span>
+           
+                    }
+                    else
+                    {
+                        <span>Cadastrar Vendedor</span>
+                    }
+                </button>
+            </div>
+
+        </fieldset>
+
+    </EditForm>
+
+</div>
+
+@code {
+
+    private NewSellerDTO Model = new();
+    private bool IsLoading = false;
+
+    async Task Salvar()
+    {
+        if (IsLoading)
+            return;
+
+        if (string.IsNullOrWhiteSpace(Model.Name))
+        {
+            await JS.InvokeVoidAsync("alert", "Informe o nome do vendedor.");
+            return;
+        }
+
+        IsLoading = true;
+        StateHasChanged();
+
+        Model.CreateBy = UserContext.UserId;
+        Model.DateCreate = DateTime.Now;
+
+        try
+        {
+            var response = await _service.NewSeller(Model);
+
+            if (response.Result)
+            {
+                await JS.InvokeVoidAsync("alert", "Vendedor cadastrado com sucesso!");
+                Navigation.NavigateTo("/NS01");
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("alert", response.Error);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+            await JS.InvokeVoidAsync("alert", "Erro ao cadastrar vendedor.");
+        }
+        finally
+        {
+            IsLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    void Cancelar()
+    {
+        if (!IsLoading)
+            Navigation.NavigateTo("/NS01");
+    }
+}

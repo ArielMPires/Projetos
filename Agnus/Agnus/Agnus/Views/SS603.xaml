@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:Agnus.ViewModels"
+             x:Class="Agnus.Views.SS603"
+             Title="">
+
+
+    <Grid Padding="10">
+        <HorizontalStackLayout VerticalOptions="Start">
+            <Button
+                IsVisible="{OnPlatform Android=true, iOS=true, WinUI=false}"
+            Command="{Binding _ReturnCommand}"
+            Padding="10"
+            HorizontalOptions="Start"
+            VerticalOptions="Start"
+            Style="{StaticResource Circle}"
+            Margin="10">
+                <Button.ImageSource>
+                    <FontImageSource Glyph="&#xf060;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+                </Button.ImageSource>
+            </Button>
+            <Label Text="SS603"
+               FontSize="20"
+               Opacity="0.4"
+               Rotation="0"
+               TextColor="Gray"
+               HorizontalOptions="End"
+               VerticalOptions="Start"
+               InputTransparent="True"/>
+        </HorizontalStackLayout>
+
+        <ScrollView Margin="0,60,0,0" >
+
+            <CollectionView ItemsSource="{Binding pages}">
+                <CollectionView.Header>
+                    <Border Padding="10" Margin="4" Style="{StaticResource HeaderBorder}">
+                        <Grid ColumnDefinitions="2*,2*,3*">
+                            <Label Text="#" Grid.Column="0" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                            <Label Text="Cod." Grid.Column="1" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                            <Label Text="Descrição" Grid.Column="2" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                        </Grid>
+                    </Border>
+                </CollectionView.Header>
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="1"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Padding="5" Margin="4">
+                            <Grid ColumnDefinitions="2*,2*,3*" HeightRequest="50">
+                                <CheckBox IsChecked="{Binding IsChecked}"/>
+                                <Label Text="{Binding value.Codigo}" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label Text="{Binding value.Description}" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </ScrollView>
+        <Button 
+            Padding="10"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+                Style="{StaticResource Circle}"
+            Margin="10"
+            x:Name="FabBtn"
+            IsEnabled="{Binding IsNotBusy}"
+            Command="{Binding _commandNew}">
+            <Button.ImageSource>
+                <FontImageSource Glyph="&#x2b;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+            </Button.ImageSource>
+        </Button>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,185 @@
+﻿@page "/NE77/{Id:int}"
+
+@using NexuSys.DTOs.Customers
+@using NexuSys.DTOs.Seller
+@using NexuSys.Helper
+@using NexuSys.Interfaces
+
+@rendermode InteractiveServer
+
+@inject IJSRuntime JS
+@inject IProducts _service
+@inject NavigationManager Navigation
+@inject IUserContext userContext
+@inject IUsers _serviceSeller
+
+<PageTitle>Editar Cliente</PageTitle>
+
+<div class="container-fluid p-4">
+
+	<div class="d-flex justify-content-between mb-4">
+		<h3>Editar Cliente</h3>
+
+		<button class="btn btn-outline-secondary" @onclick="Voltar">
+			Voltar
+		</button>
+	</div>
+
+	<div class="container-fluid p-4">
+
+		<div class="d-flex align-items-center gap-2 mb-4">
+			<button type="button" class="btn btn-link p-0" @onclick="Voltar">←</button>
+			<div>
+				<h4>Novo Cliente</h4>
+				<small>
+					Preencha os dados para cadastrar um novo cliente
+				</small>
+			</div>
+		</div>
+
+		<div class="card shadow-sm border-0 mb-4">
+			<div class="card-body">
+
+				<h6 class="mb-3">Dados da Empresa</h6>
+
+				<input readonly class="form-control mb-3"
+							 placeholder="ID*"
+							 @bind="Model.ID" />
+
+				<InputText class="form-control mb-3"
+						   placeholder="Razão Social / Nome*"
+						   @bind-Value="Model.Name" />
+
+				<InputText class="form-control mb-3"
+						   placeholder="Nome Fantasia"
+						   @bind-Value="Model.Name_Fantasy" />
+
+				<div class="row g-3">
+
+					<div class="col-md-6">
+						<InputNumber class="form-control"
+									 placeholder="CNPJ / CPF*"
+									 @bind-Value="Model.CNPJ_CPF" />
+					</div>
+
+					<div class="col-md-6">
+						<InputNumber class="form-control"
+									 placeholder="CEP"
+									 @bind-Value="Model.CEP" />
+					</div>
+
+					<div class="col-md-12">
+						<InputText class="form-control"
+								   placeholder="Endereço"
+								   @bind-Value="Model.Address" />
+					</div>
+
+					<div class="col-md-6">
+						<InputText class="form-control"
+								   placeholder="Bairro"
+								   @bind-Value="Model.Neighborhood" />
+					</div>
+
+					<div class="col-md-4">
+						<InputText class="form-control"
+								   placeholder="Cidade"
+								   @bind-Value="Model.City" />
+					</div>
+
+					<div class="col-md-2">
+						<InputText class="form-control"
+								   placeholder="UF"
+								   maxlength="2"
+								   @bind-Value="Model.UF" />
+					</div>
+
+					<!-- SELECT VENDEDOR -->
+					<div class="col-md-6">
+						<label class="form-label">Vendedor*</label>
+
+						<InputSelect class="form-select"
+									 @bind-Value="Model.Seller">
+							<option value="0">Selecione um vendedor</option>
+
+							@if (Vendedores != null)
+							{
+								@foreach (var v in Vendedores)
+								{
+									<option value="@v.ID">
+										@v.Name
+									</option>
+								}
+							}
+						</InputSelect>
+					</div>
+
+				</div>
+				<!-- BOTÕES -->
+				<div class="d-flex justify-content-end gap-2">
+					<button type="button"
+							class="btn btn-outline-secondary"
+							@onclick="Voltar">
+						Cancelar
+					</button>
+
+					<button type="submit"
+						@onclick="Salvar"
+							class="btn btn-success">
+						Salvar
+					</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+@code {
+
+	[Parameter] public int Id { get; set; }
+
+	private ByCustomersDTO Model = new();
+	private List<SellerDTO> Vendedores;
+
+	protected override async Task OnInitializedAsync()
+	{
+		Vendedores = await _serviceSeller.SellerList();
+		Model = await _service.CustomersByID(Id);
+	}
+
+	async Task Salvar()
+	{
+		if (string.IsNullOrWhiteSpace(Model.Name_Fantasy))
+		{
+			Model.Name_Fantasy = Model.Name;
+		}
+
+		Model.ChangedBy = userContext.UserId;
+		Model.DateChanged = DateTime.Now;
+
+		try
+		{
+			var response = await _service.UpdateCustomers(Model);
+
+			if (response.Result)
+			{
+				await JS.InvokeVoidAsync("alert", response.Message);
+				Navigation.NavigateTo("/NC75");
+			}
+			else
+			{
+				await JS.InvokeVoidAsync("alert", response.Error);
+			}
+		}
+		catch (Exception ex)
+		{
+			await JS.InvokeVoidAsync("alert", ex.Message);
+		}
+	}
+
+	void Voltar()
+	{
+		Navigation.NavigateTo("/NC75");
+	}
+
+}

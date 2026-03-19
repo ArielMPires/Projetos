@@ -1,0 +1,69 @@
+﻿@page "/NA92"
+@using NexuSys.DTOs.Suppliers
+@using NexuSys.Helper
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IPurchase _service
+@inject IJSRuntime JS
+@inject IUserContext UserContext
+
+<PageTitle>Novo Fornecedor</PageTitle>
+
+<div class="container p-4">
+
+    <h3 class="mb-4">Novo Fornecedor</h3>
+
+    <EditForm Model="Model" OnValidSubmit="Salvar">
+
+        <div class="mb-3">
+            <label class="form-label">Nome</label>
+            <InputText class="form-control" @bind-Value="Model.Name" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">CNPJ</label>
+            <InputNumber class="form-control" @bind-Value="Model.CNPJ_CPF" />
+        </div>
+
+ 
+        <div class="d-flex justify-content-end gap-2">
+            <button class="btn btn-secondary" type="button" @onclick="Voltar">
+                Voltar
+            </button>
+
+            <button class="btn btn-success" type="submit">
+                Cadastrar Fornecedor
+            </button>
+        </div>
+
+    </EditForm>
+
+</div>
+
+
+
+   @code {
+
+    private NewSuppliersDTO Model = new();
+
+    private async Task Salvar()
+    {
+        var response = await _service.NewSuppliers(Model);
+
+        if (response.Result)
+        {
+            await JS.InvokeVoidAsync("alert", response.Message);
+            Navigation.NavigateTo("/NF05");
+        }
+        else
+        {
+            await JS.InvokeVoidAsync("alert", response.Message);
+        }
+    }
+
+    private void Voltar()
+    {
+        Navigation.NavigateTo("/NF05");
+    }
+}

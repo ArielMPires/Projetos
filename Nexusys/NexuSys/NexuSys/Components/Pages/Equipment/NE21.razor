@@ -1,0 +1,177 @@
+﻿@page "/NE21"
+@using NexuSys.DTOs.Equipment
+@using NexuSys.Interfaces
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+@inject IProducts _service
+
+<PageTitle>Equipamentos</PageTitle>
+
+<div class="container-fluid p-4">
+
+    
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h3>Equipamentos</h3>
+            <small class="text-muted">Gerencie o cadastro de equipamentos</small>
+        </div>
+
+        <button class="btn btn-success" @onclick="NovoEquipamento">
+            <i class="bi bi-plus-circle"></i> Novo Equipamento
+        </button>
+    </div>
+
+    <!-- CARDS -->
+    <div class="row g-3 mb-4">
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 text-white bg-primary">
+                <div class="card-body">
+                    <small>Total</small>
+                    <h3 class="fw-bold">@Equipamentos.Count</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 text-white bg-success">
+                <div class="card-body">
+                    <small>Com Histórico</small>
+                    <h3 class="fw-bold">@Equipamentos.Count(e => e.History > 0)</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 text-dark bg-warning">
+                <div class="card-body">
+                    <small>Sem Histórico</small>
+                    <h3 class="fw-bold">@Equipamentos.Count(e => e.History == 0)</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0 text-white bg-danger">
+                <div class="card-body">
+                    <small>Com Observação</small>
+                    <h3 class="fw-bold">@Equipamentos.Count(e => !string.IsNullOrEmpty(e.Optional))</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- PESQUISA -->
+    <div class="mb-3">
+        <input class="form-control"
+        placeholder="Pesquisar por Serial ou Cliente..."
+        @bind="Filtro"
+        @bind:event="oninput" />
+    </div>
+
+    <!-- TABELA -->
+    <div class="card shadow-sm p-3">
+        <table class="table table-striped align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>Produto</th>
+                        <th>Serial</th>
+                        <th>Data Fabricação</th>
+                       
+                        <th class="text-end pe-4">Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var e in EquipamentosFiltrados)
+                    {
+                        <tr>
+                            <td>@e.ID</td>
+                            <td>@e.Customer</td>
+                            <td>@e.Product</td>
+                            <td>@e.Serial</td>
+                            <td>@e.Manufacturing_Date.ToString("dd/MM/yyyy")</td>
+                           
+
+                            <td class="text-end pe-2">
+                                <button class="btn btn-sm btn-outline-primary me-1"
+                                title="Editar"
+                                @onclick="() => Editar(e.ID)">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+
+                                <button class="btn btn-sm btn-outline-danger"
+                                title="Excluir"
+                                @onclick="() => ConfirmarExclusao(e.ID)">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+
+                    @if (!EquipamentosFiltrados.Any())
+                    {
+                        <tr>
+                            <td colspan="7" class="text-center text-muted py-4">
+                                Nenhum equipamento encontrado
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+
+@code {
+
+    private string Filtro = "";
+    private List<EquipmentDTO> Equipamentos = new();
+
+    IEnumerable<EquipmentDTO> EquipamentosFiltrados =>
+        Equipamentos.Where(e =>
+            string.IsNullOrWhiteSpace(Filtro) ||
+            e.Serial.ToString().Contains(Filtro) ||
+            e.Customer.ToString().Contains(Filtro)
+        );
+
+    protected override async Task OnInitializedAsync()
+    {
+        Equipamentos = await _service.EquipmentList();
+    }
+
+    void NovoEquipamento() =>
+        Navigation.NavigateTo("/NE47");
+
+    void Editar(int id) =>
+        Navigation.NavigateTo($"/NE12/{id}");
+
+    async Task ConfirmarExclusao(int id)
+    {
+        bool confirmar = await JS.InvokeAsync<bool>(
+            "confirm",
+            "Deseja excluir este equipamento?"
+        );
+
+        if (confirmar)
+        {
+            var result = await _service.DeleteEquipment(id);
+
+            if (result.Result)
+            {
+                Equipamentos.RemoveAll(e => e.ID == id);
+            }
+            else
+            {
+                await JS.InvokeVoidAsync("alert", result.Message);
+            }
+        }
+    }
+}

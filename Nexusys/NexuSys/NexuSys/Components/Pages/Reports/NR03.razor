@@ -1,0 +1,164 @@
+﻿@page "/NR03"
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+
+<div class="container py-4 bg-white">
+    <h2 class="fw-bold mb-4">Relatório Detalhado</h2>
+
+    <!-- Botões de Exportação -->
+    <div class="mb-4 d-flex justify-content-end">
+        <button class="btn btn-success me-2 d-flex j" @onclick="ExportarCsv">Exportar CSV</button>
+        <button class="btn btn-danger" @onclick="ExportarPdf">Exportar PDF</button>
+    </div>
+
+    <!-- Filtros -->
+    <div class="card shadow-sm mb-4 p-3">
+        <div class="row g-3">
+            <div class="col-md-2">
+                <label class="form-label">Data Início</label>
+                <InputDate class="form-control" @bind-Value="filtro.DataInicio" />
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Data Fim</label>
+                <InputDate class="form-control" @bind-Value="filtro.DataFim" />
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Tipo Equipamento</label>
+                <InputSelect class="form-control" @bind-Value="filtro.TipoEquipamento">
+                    <option value="Todos">Todos</option>
+                    <option value="Inversores">Inversores</option>
+                    <option value="Soft-Starters">Soft-Starters</option>
+                </InputSelect>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Status</label>
+                <InputSelect class="form-control" @bind-Value="filtro.Status">
+                    <option value="Todos">Todos</option>
+                    <option value="Aberto">Aberto</option>
+                    <option value="Em Andamento">Em Andamento</option>
+                    <option value="Aguardando Peças">Aguardando Peças</option>
+                    <option value="Aguardando Aprovação">Aguardando Aprovação</option>
+                    <option value="Concluído">Concluído</option>
+                </InputSelect>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Técnico</label>
+                <InputSelect class="form-control" @bind-Value="filtro.Tecnico">
+                    <option value="Todos">Todos</option>
+                    <option value="João">João</option>
+                    <option value="Maria">Maria</option>
+                    <option value="Carlos">Carlos</option>
+                </InputSelect>
+            </div>
+            <div class="col-md-2 d-flex align-items-end">
+                <button class="btn btn-primary w-100" @onclick="AplicarFiltros">Aplicar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Abas -->
+    <ul class="nav nav-tabs mb-3" id="relatorioTabs">
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="NR01">Visão Geral</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="NR02">Por Técnico</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="NR03">Detalhado</a>
+        </li>
+    </ul>
+
+    <!-- Tabela Detalhada -->
+    <div class="card shadow-sm p-3">
+        <h5 class="fw-bold">Lista Detalhada de OS</h5>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nº OS</th>
+                    <th>Data</th>
+                    <th>Técnico</th>
+                    <th>Equipamento</th>
+                    <th>Status</th>
+                    <th>Orçamento</th>
+                    <th>Faturado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>10/01/2024</td>
+                    <td>João</td>
+                    <td>Inversor</td>
+                    <td>Concluído</td>
+                    <td>R$ 3.000,00</td>
+                    <td>R$ 2.500,00</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>15/01/2024</td>
+                    <td>Maria</td>
+                    <td>Soft-Starter</td>
+                    <td>Em Andamento</td>
+                    <td>R$ 2.000,00</td>
+                    <td>R$ 0,00</td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>20/01/2024</td>
+                    <td>Carlos</td>
+                    <td>Inversor</td>
+                    <td>Aguardando Peças</td>
+                    <td>R$ 1.500,00</td>
+                    <td>R$ 0,00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@code {
+    private Filtro filtro = new();
+    private List<OrdemServico> ordens = new();
+
+    public class Filtro
+    {
+        public DateTime DataInicio { get; set; } = new DateTime(2024, 1, 1);
+        public DateTime DataFim { get; set; } = new DateTime(2024, 12, 31);
+        public string TipoEquipamento { get; set; } = "Todos";
+        public string Status { get; set; } = "Todos";
+        public string Tecnico { get; set; } = "Todos";
+    }
+
+    public class OrdemServico
+    {
+        public int Numero { get; set; }
+        public DateTime Data { get; set; }
+        public string Tecnico { get; set; }
+        public string Equipamento { get; set; }
+        public string Status { get; set; }
+        public decimal Orcamento { get; set; }
+        public decimal Faturado { get; set; }
+    }
+
+    private void AplicarFiltros()
+    {
+        // Aqui você faria a consulta no banco ou API
+        ordens = new List<OrdemServico>
+        {
+            new OrdemServico { Numero = 1, Data = new DateTime(2024,1,10), Tecnico="João", Equipamento="Inversor", Status="Concluído", Orcamento=3000, Faturado=2500 },
+            new OrdemServico { Numero = 2, Data = new DateTime(2024,1,15), Tecnico="Maria", Equipamento="Soft-Starter", Status="Em Andamento", Orcamento=2000, Faturado=0 },
+            new OrdemServico { Numero = 3, Data = new DateTime(2024,1,20), Tecnico="Carlos", Equipamento="Inversor", Status="Aguardando Peças", Orcamento=1500, Faturado=0 }
+        };
+    }
+
+    private void ExportarCsv()
+    {
+        // Lógica para exportar CSV
+    }
+
+    private void ExportarPdf()
+    {
+        // Lógica para exportar PDF
+    }
+}

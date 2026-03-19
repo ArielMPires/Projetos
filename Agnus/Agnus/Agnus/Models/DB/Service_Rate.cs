@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Agnus.Models.DB
+{
+    public class Service_Rate
+    {
+        #region Property
+        [Key]
+        public int ID { get; set; }
+        public int Order { get; set; }
+        public int Score { get; set; }
+        public string? Reason { get; set; }
+        #endregion
+
+        #region Navigation
+        public Service_Order OrderFK { get; set; }
+        #endregion
+    }
+}

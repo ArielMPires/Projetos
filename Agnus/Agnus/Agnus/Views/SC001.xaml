@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:model="clr-namespace:Agnus.ViewModels"
+             x:Class="Agnus.Views.SC001"
+             Title="">
+
+    <Grid Padding="10">
+        <HorizontalStackLayout>
+            <Label Text="SC001"
+                   FontSize="20"
+                   Opacity="0.4"
+                   Rotation="0"
+                   TextColor="Gray"
+           HorizontalOptions="EndAndExpand"
+    VerticalOptions="End"
+    InputTransparent="True"/>
+        </HorizontalStackLayout>
+        <Grid ColumnDefinitions="1*,15*">
+
+            <VerticalStackLayout Spacing="10" Margin="10" HorizontalOptions="Start" VerticalOptions="Start">
+                <Button  Style="{StaticResource Circle}" Command="{Binding TrocarAbaCommand}" CommandParameter="Orders"  BorderWidth="0"
+                    BackgroundColor="{Binding AbaSelecionada, Converter={StaticResource TabColorConverter}, ConverterParameter=Orders}">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="&#xf590;" Color="{DynamicResource Tertiary}" FontFamily="FontAwesomeSolid" Size="24"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button Style="{StaticResource Circle}" Command="{Binding TrocarAbaCommand}" CommandParameter="Pending"  BorderWidth="0" 
+                    BackgroundColor="{Binding AbaSelecionada, Converter={StaticResource TabColorConverter}, ConverterParameter=Pending}">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="&#xf01c;" Color="{DynamicResource Tertiary}" FontFamily="FontAwesomeSolid" Size="24"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button Style="{StaticResource Circle}" Command="{Binding TrocarAbaCommand}" CommandParameter="ByTechnical" BorderWidth="0" 
+                    BackgroundColor="{Binding AbaSelecionada, Converter={StaticResource TabColorConverter}, ConverterParameter=ByTechnical}">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="&#xf0ae;" Color="{DynamicResource Tertiary}" FontFamily="FontAwesomeSolid" Size="24"/>
+                    </Button.ImageSource>
+                </Button>
+            </VerticalStackLayout>
+            <Grid IsVisible="{Binding IsOrders}" Grid.Column="1">
+                <!-- Desktop View -->
+                <CollectionView ItemsSource="{Binding Orders}" x:Name="DesktopList"
+     IsVisible="{OnPlatform Android=False, WinUI=True, MacCatalyst=True}">
+                    <CollectionView.Header>
+                        <Border Padding="10" Style="{StaticResource HeaderBorder}">
+                            <Grid ColumnDefinitions="*,*,*,*,*" RowDefinitions="Auto">
+
+                                <BoxView Grid.Row="0" Grid.Column="0" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                <BoxView Grid.Row="0" Grid.Column="1" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                <BoxView Grid.Row="0" Grid.Column="2" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                <BoxView Grid.Row="0" Grid.Column="3" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+
+                                <Label Text="NºOS" Grid.Column="0" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Solicitante" Grid.Column="1" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Tecnico" Grid.Column="2" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Data Solicitada" Grid.Column="3" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Data de Conclusão" Grid.Column="4" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                            </Grid>
+                        </Border>
+                    </CollectionView.Header>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Padding="10">
+                                <StackLayout>
+                                    <!-- Linha principal -->
+                                    <Grid ColumnDefinitions="*,*,*,*,*" RowDefinitions="Auto" BackgroundColor="Transparent">
+
+                                        <BoxView Grid.Row="0" Grid.Column="0" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                        <BoxView Grid.Row="0" Grid.Column="1" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                        <BoxView Grid.Row="0" Grid.Column="2" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                        <BoxView Grid.Row="0" Grid.Column="3" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+
+                                        <Label Text="{Binding value.ID}" Grid.Column="0" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Request}" Grid.Column="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Technical}" Grid.Column="2" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Requested_Date}" Grid.Column="3" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Conclude_Date}" Grid.Column="4" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </Grid>
+                                    <!-- Detalhes extras -->
+                                    <Grid Padding="10" BackgroundColor="Transparent"
+           IsVisible="{Binding IsChecked}">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding value.Computer,StringFormat='PC ID: {0}'}" Grid.Row="0" Grid.Column="1"/>
+                                        <Label Text="{Binding value.Problem, StringFormat='Problema Relatado: {0}'}" Grid.Row="1" Grid.Column="1"/>
+                                        <Label Text="{Binding value.Service, StringFormat='Serviço feito: {0}'}" Grid.Row="2" Grid.Column="1"/>
+                                        <Label Text="{Binding value.Note, StringFormat='Obs: {0}'}" Grid.Row="3" Grid.Column="1"/>
+                                        <Label Text="{Binding value.Contact_Date, StringFormat='Data de Contato: {0}'}" Grid.Row="4" Grid.Column="1"/>
+                                    </Grid>
+
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BindingContext.ToggleExpandCommand, Source={x:Reference DesktopList}}"
+           CommandParameter="{Binding .}"/>
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- Mobile View -->
+                <CollectionView ItemsSource="{Binding Orders}" x:Name="MobileList"
+     IsVisible="{OnPlatform Android=True, WinUI=False, MacCatalyst=False}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10" Spacing="5" BackgroundColor="Transparent">
+                                <Border>
+                                    <Grid ColumnDefinitions="*,*" HeightRequest="30">
+                                        <Label Text="{Binding value.ID}" Grid.Column="0" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Request}" Grid.Column="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </Grid>
+                                </Border>
+                                <!-- Detalhes expansíveis -->
+                                <StackLayout IsVisible="{Binding IsChecked}" BackgroundColor="Transparent" Padding="5">
+                                    <Label Text="{Binding value.Technical,StringFormat='Tecnico: {0}'}" Grid.Row="0" Grid.Column="1"/>
+                                    <Label Text="{Binding value.Requested_Date, StringFormat='Data Solicitada: {0}'}" Grid.Row="1" Grid.Column="1"/>
+                                    <Label Text="{Binding value.Conclude_Date, StringFormat='Data de Conclusão: {0}'}" Grid.Row="2" Grid.Column="1"/>
+                                    <Label Text="{Binding value.Computer,StringFormat='PC ID: {0}'}" Grid.Row="3" Grid.Column="1"/>
+                                    <Label Text="{Binding value.Problem, StringFormat='Problema relatado: {0}'}" Grid.Row="4" Grid.Column="1"/>
+                                    <Label Text="{Binding value.Service, StringFormat='Serviço Feito: {0}'}" Grid.Row="5" Grid.Column="5"/>
+                                    <Label Text="{Binding value.Note, StringFormat='Obs: {0}'}" Grid.Row="6" Grid.Column="5"/>
+                                    <Label Text="{Binding value.Contact_Date, StringFormat='Data de Contato: {0}'}" Grid.Row="7" Grid.Column="5"/>
+                                </StackLayout>
+
+                                <!-- Toque para expandir -->
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.ToggleExpandCommand, Source={x:Reference MobileList}}"
+           CommandParameter="{Binding .}"/>
+                                </StackLayout.GestureRecognizers>
+
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+            <Grid IsVisible="{Binding IsPending}" Grid.Column="1">
+                <!-- Desktop View -->
+                <CollectionView ItemsSource="{Binding OrdersPending}" x:Name="DesktopListP"
+     IsVisible="{OnPlatform Android=False, WinUI=True, MacCatalyst=True}">
+                    <CollectionView.Header>
+                        <Border Padding="10" Style="{StaticResource HeaderBorder}">
+                            <Grid ColumnDefinitions="*,*,*,*,*" RowDefinitions="Auto">
+
+                                <BoxView Grid.Row="0" Grid.Column="0" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                <BoxView Grid.Row="0" Grid.Column="1" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                <BoxView Grid.Row="0" Grid.Column="2" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                <BoxView Grid.Row="0" Grid.Column="3" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+
+                                <Label Text="NºOS" Grid.Column="0" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Solicitante" Grid.Column="1" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Tecnico" Grid.Column="2" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Prioridade" Grid.Column="3" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Data Solicitada" Grid.Column="4" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                            </Grid>
+                        </Border>
+                    </CollectionView.Header>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Padding="10">
+                                <StackLayout>
+                                    <!-- Linha principal -->
+                                    <Grid ColumnDefinitions="*,*,*,*,*" RowDefinitions="Auto" BackgroundColor="Transparent">
+
+                                        <BoxView Grid.Row="0" Grid.Column="0" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                        <BoxView Grid.Row="0" Grid.Column="1" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                        <BoxView Grid.Row="0" Grid.Column="2" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                        <BoxView Grid.Row="0" Grid.Column="3" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+
+                                        <Label Text="{Binding value.ID}" Grid.Column="0" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Request}" Grid.Column="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Technical}" Grid.Column="2" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding Technical,Converter={StaticResource ButtonConverter}, ConverterParameter=invertido}"/>
+                                        <Button Text="Pegar OS" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding Technical,Converter={StaticResource ButtonConverter}}" 
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._CatchOSCommand}"
+                                        CommandParameter="{Binding value.ID}"/>
+                                        <Label Text="{Binding value.Priority, StringFormat='N{0}'}" Grid.Column="3" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Requested_Date}" Grid.Column="4" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </Grid>
+                                    <!-- Detalhes extras -->
+                                    <Grid Padding="10" BackgroundColor="Transparent"
+           IsVisible="{Binding IsChecked}">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding value.Computer,StringFormat='PC ID: {0}'}" Grid.Row="0" Grid.Column="1"/>
+                                        <Label Text="{Binding value.Problem, StringFormat='Problema Relatado: {0}'}" Grid.Row="1" Grid.Column="1"/>
+                                        <Label Text="{Binding value.Service, StringFormat='Serviço feito: {0}'}" Grid.Row="2" Grid.Column="1"/>
+                                        <Label Text="{Binding value.Note, StringFormat='Obs: {0}'}" Grid.Row="3" Grid.Column="1"/>
+                                    </Grid>
+
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BindingContext.ToggleExpandCommand, Source={x:Reference DesktopListP}}"
+           CommandParameter="{Binding .}"/>
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- Mobile View -->
+                <CollectionView ItemsSource="{Binding OrdersPending}" x:Name="MobileListP"
+     IsVisible="{OnPlatform Android=True, WinUI=False, MacCatalyst=False}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10" Spacing="5" BackgroundColor="Transparent">
+                                <Border>
+                                    <Grid ColumnDefinitions="*,*" HeightRequest="30">
+                                        <Label Text="{Binding value.ID}" Grid.Column="0" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.RequestFK.Name}" Grid.Column="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </Grid>
+                                </Border>
+                                <!-- Detalhes expansíveis -->
+                                <StackLayout IsVisible="{Binding IsChecked}" BackgroundColor="Transparent" Padding="5">
+                                    <Label Text="{Binding value.Technical,StringFormat='Tecnico: {0}'}" Grid.Row="0" Grid.Column="1" IsVisible="{Binding Technical,Converter={StaticResource ButtonConverter}, ConverterParameter=invertido}"/>
+                                    <Button Text="Pegar OS" Grid.Column="4" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding Technical,Converter={StaticResource ButtonConverter}}" 
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._CatchOSCommand}"
+                                        CommandParameter="{Binding value.ID}"/>
+                                    <Label Text="{Binding value.Requested_Date, StringFormat='Data Solicitada: {0}'}" Grid.Row="1" Grid.Column="1"/>
+                                    <Label Text="{Binding value.Priority, StringFormat='Prioridade: N{0}'}" Grid.Row="2" Grid.Column="1"/>
+                                    <Label Text="{Binding value.Computer,StringFormat='PC ID: {0}'}" Grid.Row="3" Grid.Column="1"/>
+                                    <Label Text="{Binding value.Problem, StringFormat='Problema relatado: {0}'}" Grid.Row="4" Grid.Column="1"/>
+                                    <Label Text="{Binding value.Service, StringFormat='Serviço Feito: {0}'}" Grid.Row="5" Grid.Column="5"/>
+                                    <Label Text="{Binding value.Note, StringFormat='Obs: {0}'}" Grid.Row="6" Grid.Column="5"/>
+                                </StackLayout>
+
+                                <!-- Toque para expandir -->
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.ToggleExpandCommand, Source={x:Reference MobileListP}}"
+           CommandParameter="{Binding .}"/>
+                                </StackLayout.GestureRecognizers>
+
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+            <Grid IsVisible="{Binding IsTechnical}" Grid.Column="1">
+                <!-- Desktop View -->
+                <CollectionView ItemsSource="{Binding OrdersByTechnical}" x:Name="DesktopListT"
+     IsVisible="{OnPlatform Android=False, WinUI=True, MacCatalyst=True}">
+                    <CollectionView.Header>
+                        <Border Padding="10" Style="{StaticResource HeaderBorder}">
+                            <Grid ColumnDefinitions="*,*,*,*,*,*" RowDefinitions="Auto">
+
+                                <BoxView Grid.Row="0" Grid.Column="0" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                <BoxView Grid.Row="0" Grid.Column="1" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                <BoxView Grid.Row="0" Grid.Column="2" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                <BoxView Grid.Row="0" Grid.Column="3" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                <BoxView Grid.Row="0" Grid.Column="4" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+
+                                <Label Text="NºOS" Grid.Column="0" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Solicitante" Grid.Column="1" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Tecnico" Grid.Column="2" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Prioridade" Grid.Column="3" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Data Solicitada" Grid.Column="4" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Data de Contato" Grid.Column="5" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                            </Grid>
+                        </Border>
+                    </CollectionView.Header>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Padding="10">
+                                <StackLayout>
+                                    <!-- Linha principal -->
+                                    <Grid ColumnDefinitions="*,*,*,*,*,*" RowDefinitions="Auto" BackgroundColor="Transparent">
+
+                                        <BoxView Grid.Row="0" Grid.Column="0" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                        <BoxView Grid.Row="0" Grid.Column="1" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                        <BoxView Grid.Row="0" Grid.Column="2" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                        <BoxView Grid.Row="0" Grid.Column="3" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                        <BoxView Grid.Row="0" Grid.Column="4" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+
+                                        <Label Text="{Binding value.ID}" Grid.Column="0" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Request}" Grid.Column="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Technical}" Grid.Column="2" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Priority, StringFormat='N{0}'}" Grid.Column="3" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Requested_Date}" Grid.Column="4" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Contact_Date}" Grid.Column="5" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding value.Contact_Date,Converter={StaticResource ButtonConverter}, ConverterParameter=invertido}"/>
+                                        <Button Text="Feito Contato" Grid.Column="5" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding value.Contact_Date,Converter={StaticResource ButtonConverter}}" 
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._ContactCommand}"
+                                        CommandParameter="{Binding value.ID}"/>
+                                    </Grid>
+                                    <!-- Detalhes extras -->
+                                    <Grid Padding="10" BackgroundColor="Transparent"
+           IsVisible="{Binding IsChecked}">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding value.Computer,StringFormat='PC ID: {0}'}" Grid.Row="0" Grid.Column="1"/>
+                                        <Label Text="{Binding value.Problem, StringFormat='Problema Relatado: {0}'}" Grid.Row="1" Grid.Column="1"/>
+                                        <Label Text="{Binding value.Service, StringFormat='Serviço feito: {0}'}" Grid.Row="2" Grid.Column="1"/>
+                                        <Label Text="{Binding value.Note, StringFormat='Obs: {0}'}" Grid.Row="3" Grid.Column="1"/>
+                                        <HorizontalStackLayout Grid.Row="4" HorizontalOptions="Center">
+                                            <Button
+                                        Padding="1"
+                                        Margin="2"
+                                                Style="{StaticResource Circle}"
+                                        WidthRequest="50"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._commandSC683}"
+                                        CommandParameter="{Binding value.ID}">
+                                                <Button.ImageSource>
+                                                    <FontImageSource Glyph="&#xf304;" FontFamily="FontAwesomeSolid" Size="24"/>
+                                                </Button.ImageSource>
+                                            </Button>
+                                            <Button
+                                        Padding="1"
+                                        Margin="2"
+                                                Style="{StaticResource Circle}"
+                                        WidthRequest="50"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._EndOSCommand}"
+                                        CommandParameter="{Binding value.ID}">
+                                                <Button.ImageSource>
+                                                    <FontImageSource Glyph="&#xf3dd;" FontFamily="FontAwesomeSolid" Size="24"/>
+                                                </Button.ImageSource>
+                                            </Button>
+                                        </HorizontalStackLayout>
+                                    </Grid>
+
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BindingContext.ToggleExpandCommand, Source={x:Reference DesktopListT}}"
+           CommandParameter="{Binding .}"/>
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- Mobile View -->
+                <CollectionView ItemsSource="{Binding OrdersByTechnical}" x:Name="MobileListT"
+     IsVisible="{OnPlatform Android=True, WinUI=False, MacCatalyst=False}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10" Spacing="5" BackgroundColor="Transparent">
+                                <Border>
+                                    <Grid ColumnDefinitions="*,*" HeightRequest="30">
+                                        <Label Text="{Binding value.ID}" Grid.Column="0" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Request}" Grid.Column="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </Grid>
+                                </Border>
+                                <!-- Detalhes expansíveis -->
+                                <StackLayout IsVisible="{Binding IsChecked}" BackgroundColor="Transparent" Padding="5">
+                                    <Label Text="{Binding value.Technical,StringFormat='Tecnico: {0}'}" Grid.Row="0" Grid.Column="1"/>
+                                    <Label Text="{Binding value.Requested_Date, StringFormat='Data Solicitada: {0}'}" Grid.Row="1" Grid.Column="1"/>
+                                    <Label Text="{Binding value.Priority, StringFormat='Prioridade: N{0}'}" Grid.Row="2" Grid.Column="1"/>
+                                    <Label Text="{Binding value.Computer,StringFormat='PC ID: {0}'}" Grid.Row="3" Grid.Column="1"/>
+                                    <Label Text="{Binding value.Problem, StringFormat='Problema relatado: {0}'}" Grid.Row="4" Grid.Column="1"/>
+                                    <Label Text="{Binding value.Service, StringFormat='Serviço Feito: {0}'}" Grid.Row="5" Grid.Column="5"/>
+                                    <Label Text="{Binding value.Note, StringFormat='Obs: {0}'}" Grid.Row="6" Grid.Column="5"/>
+                                    <Label Text="{Binding Contact_Date}" Grid.Column="7" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding Contact_Date,Converter={StaticResource ButtonConverter}, ConverterParameter=invertido}"/>
+                                    <Button Text="Feito Contato" Grid.Column="7" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding Contact_Date,Converter={StaticResource ButtonConverter}}" 
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._ContactCommand}"
+                                        CommandParameter="{Binding value.ID}"/>
+                                    <HorizontalStackLayout Grid.Row="8" HorizontalOptions="Center">
+                                        <Button
+                                        Padding="1"
+                                        Margin="2"
+                                        WidthRequest="50"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._commandSC683}"
+                                        CommandParameter="{Binding value.ID}">
+                                            <Button.ImageSource>
+                                                <FontImageSource Glyph="&#xf304;" FontFamily="FontAwesomeSolid" Size="24"/>
+                                            </Button.ImageSource>
+                                        </Button>
+                                        <Button
+                                        Padding="1"
+                                        Margin="2"
+                                        WidthRequest="50"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._EndOSCommand}"
+                                        CommandParameter="{Binding value.ID}">
+                                            <Button.ImageSource>
+                                                <FontImageSource Glyph="&#xf3dd;" FontFamily="FontAwesomeSolid" Size="24"/>
+                                            </Button.ImageSource>
+                                        </Button>
+                                    </HorizontalStackLayout>
+                                </StackLayout>
+
+                                <!-- Toque para expandir -->
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.ToggleExpandCommand, Source={x:Reference MobileListT}}"
+           CommandParameter="{Binding .}"/>
+                                </StackLayout.GestureRecognizers>
+
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </Grid>
+
+            <Button Text="+"
+            Command="{Binding _SC273Command}"
+                    Style="{StaticResource Circle}"
+            Padding="10"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            Margin="10"
+            x:Name="FabBtn"/>
+    </Grid>
+</ContentPage>

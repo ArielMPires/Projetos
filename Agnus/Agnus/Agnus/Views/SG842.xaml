@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Agnus.ViewModels"
+             x:Class="Agnus.Views.SG842"
+             Title="">
+
+    <Grid Padding="10">
+        <HorizontalStackLayout>
+            <Button
+                IsVisible="{OnPlatform Android=true, iOS=true, WinUI=false}"
+                Command="{Binding _ReturnCommand}"
+                TextColor="#0078D7"
+                Padding="10"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="Start"
+                Margin="10">
+                <Button.ImageSource>
+                    <FontImageSource Glyph="&#xf060;" FontFamily="FontAwesomeSolid" Size="24"/>
+                </Button.ImageSource>
+            </Button>
+
+            <Label Text="SG842"
+                   FontSize="20"
+                   Opacity="0.4"
+                   TextColor="Gray"
+                   HorizontalOptions="End"
+                   VerticalOptions="End"
+                   InputTransparent="True"/>
+        </HorizontalStackLayout>
+
+        <ScrollView Margin="50">
+
+            <!-- Conteúdo -->
+            <Border Padding="10" Margin="10" VerticalOptions="Center" MaximumWidthRequest="600" MaximumHeightRequest="1000">
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="Informações" 
+                               FontAttributes="Bold" 
+                               FontSize="24" 
+                               HorizontalOptions="Center" />
+
+                    <Label Text="Nome do Tipo:" FontAttributes="Italic"/>
+                    <Entry Placeholder="Nome do Tipo" 
+                               Text="{Binding _type.Name}"/>
+
+                    <Label Text="Categoria:" FontAttributes="Italic"/>
+                    <Picker 
+                                ItemsSource="{Binding Category}" 
+                                ItemDisplayBinding="{Binding Name}" 
+                                SelectedItem="{Binding _SelectedCategory}"/>
+
+                    <Label Text="Prioridade:" FontAttributes="Italic"/>
+                    <Picker 
+                                ItemsSource="{Binding Priority}" 
+                                ItemDisplayBinding="{Binding Name}" 
+                                SelectedItem="{Binding _SelectedPriority}"/>
+                    <Button
+                        Text="Enviar" 
+                        Command="{Binding _NewTypeCommand}" 
+                        IsEnabled="{Binding IsNotBusy}"
+                        HorizontalOptions="Center" 
+                        WidthRequest="200"/>
+                </VerticalStackLayout>
+            </Border>
+        </ScrollView>
+    </Grid>
+</ContentPage>

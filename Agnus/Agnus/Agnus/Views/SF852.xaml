@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Agnus.ViewModels"
+             x:Class="Agnus.Views.SF852"
+             Title="">
+
+    <Grid Padding="10">
+        <HorizontalStackLayout>
+            <Label Text="SF852"
+               FontSize="20"
+               Opacity="0.4"
+               Rotation="0"
+               TextColor="Gray"
+               HorizontalOptions="End"
+               VerticalOptions="End"
+               InputTransparent="True"/>
+        </HorizontalStackLayout>
+
+        <Grid ColumnDefinitions="1*,15*">
+
+            <VerticalStackLayout Spacing="10" HorizontalOptions="Start" Grid.Column="0">
+                <Button  Style="{StaticResource Circle}"  Command="{Binding TrocarAbaCommand}" CommandParameter="Input"
+                    BackgroundColor="{Binding AbaSelecionada, Converter={StaticResource TabColorConverter}, ConverterParameter=Input}">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="&#xf2f6;" Color="{DynamicResource Tertiary}" FontFamily="FontAwesomeSolid" Size="22"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button  Style="{StaticResource Circle}" Command="{Binding TrocarAbaCommand}" CommandParameter="Output"   
+                    BackgroundColor="{Binding AbaSelecionada, Converter={StaticResource TabColorConverter}, ConverterParameter=Output}">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="&#xf08b;" Color="{DynamicResource Tertiary}" FontFamily="FontAwesomeSolid" Size="22"/>
+                    </Button.ImageSource>
+                </Button>
+            </VerticalStackLayout>
+            <Grid IsVisible="{Binding IsInput}" Grid.Column="1">
+                <!-- Desktop View -->
+                <CollectionView ItemsSource="{Binding NFInput}" x:Name="DesktopList"
+IsVisible="{OnPlatform Android=False, WinUI=True, MacCatalyst=True}">
+                    <CollectionView.Header>
+                        <Border Padding="10" Style="{StaticResource HeaderBorder}">
+                            <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="Auto">
+
+                                <BoxView Grid.Row="0" Grid.Column="0" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                <BoxView Grid.Row="0" Grid.Column="1" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                <BoxView Grid.Row="0" Grid.Column="2" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+
+                                <Label Text="Nº NF" Grid.Column="0" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Fornecedor" Grid.Column="1" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Valor total" Grid.Column="2" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Data de Entrada" Grid.Column="3" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                            </Grid>
+                        </Border>
+                    </CollectionView.Header>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Padding="10">
+                                <StackLayout>
+                                    <!-- Linha principal -->
+                                    <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="Auto" BackgroundColor="Transparent">
+
+                                        <BoxView Grid.Row="0" Grid.Column="0" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                        <BoxView Grid.Row="0" Grid.Column="1" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                        <BoxView Grid.Row="0" Grid.Column="2" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+
+                                        <Label Text="{Binding value.Numero}" Grid.Column="0" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Supplier}" Grid.Column="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Total_Value}" Grid.Column="2" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.DateIn}" Grid.Column="3" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </Grid>
+                                    <!-- Detalhes extras -->
+                                    <Grid Padding="10" BackgroundColor="Transparent"
+      IsVisible="{Binding IsChecked}">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding value.ID,StringFormat='Nº DOC: {0}'}" Grid.Row="0" Grid.Column="1"/>
+                                        <Label Text="{Binding value.Label, StringFormat='Informação Adicional: {0}'}" Grid.Row="1" Grid.Column="1"/>
+                                    </Grid>
+
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BindingContext.ToggleExpandCommand, Source={x:Reference DesktopList}}"
+      CommandParameter="{Binding .}"/>
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- Mobile View -->
+                <CollectionView ItemsSource="{Binding NFInput}" x:Name="MobileList"
+IsVisible="{OnPlatform Android=True, WinUI=False, MacCatalyst=False}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10" Spacing="5" BackgroundColor="Transparent">
+                                <Border>
+                                    <Grid ColumnDefinitions="*,*" HeightRequest="30">
+                                        <Label Text="{Binding value.Numero}" Grid.Column="0" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Supplier}" Grid.Column="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </Grid>
+                                </Border>
+                                <!-- Detalhes expansíveis -->
+                                <StackLayout IsVisible="{Binding IsChecked}" BackgroundColor="Transparent" Padding="5">
+                                    <Label Text="{Binding value.Total_Value, StringFormat='ValorTotal: {0}'}" Grid.Row="0" Grid.Column="1"/>
+                                    <Label Text="{Binding value.DateIn, StringFormat='Data de Entrega: {0}'}" Grid.Row="1" Grid.Column="1"/>
+                                    <Label Text="{Binding value.ID, StringFormat='Nº DOC: {0}'}" Grid.Row="2" Grid.Column="1"/>
+                                    <Label Text="{Binding value.Label,StringFormat='Informações adicionais: {0}'}" Grid.Row="3" Grid.Column="1"/>
+                                </StackLayout>
+
+                                <!-- Toque para expandir -->
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.ToggleExpandCommand, Source={x:Reference MobileList}}"
+      CommandParameter="{Binding .}"/>
+                                </StackLayout.GestureRecognizers>
+
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Button 
+            Command="{Binding _commandSF136}"
+            TextColor="#0078D7"
+            Padding="10"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+             Style="{StaticResource Circle}"
+            Margin="10">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="&#x2b;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+                    </Button.ImageSource>
+                </Button>
+            </Grid>
+            <Grid IsVisible="{Binding IsOutput}" Grid.Column="1">
+                <!-- Desktop View -->
+                <CollectionView ItemsSource="{Binding NFOutput}" x:Name="DesktopListO"
+IsVisible="{OnPlatform Android=False, WinUI=True, MacCatalyst=True}">
+                    <CollectionView.Header>
+                        <Border Padding="10" Style="{StaticResource HeaderBorder}">
+                            <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="Auto">
+
+                                <BoxView Grid.Row="0" Grid.Column="0" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                <BoxView Grid.Row="0" Grid.Column="1" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                <BoxView Grid.Row="0" Grid.Column="2" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+
+                                <Label Text="Nº NF" Grid.Column="0" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Empresa" Grid.Column="1" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Valor total" Grid.Column="2" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                                <Label Text="Data de Emissão" Grid.Column="3" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" Style="{StaticResource HeaderText}" />
+                            </Grid>
+                        </Border>
+                    </CollectionView.Header>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Padding="10">
+                                <StackLayout>
+                                    <!-- Linha principal -->
+                                    <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="Auto" BackgroundColor="Transparent">
+
+                                        <BoxView Grid.Row="0" Grid.Column="0" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                        <BoxView Grid.Row="0" Grid.Column="1" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+                                        <BoxView Grid.Row="0" Grid.Column="2" WidthRequest="1" HorizontalOptions="End" BackgroundColor="#CCC"/>
+
+                                        <Label Text="{Binding value.ID}" Grid.Column="0" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Unit}" Grid.Column="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Total_Value}" Grid.Column="2" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.DateOut}" Grid.Column="3" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </Grid>
+                                    <!-- Detalhes extras -->
+                                    <Grid Padding="10" BackgroundColor="Transparent"
+      IsVisible="{Binding IsChecked}">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding value.Label, StringFormat='Informação Adicional: {0}'}" Grid.Row="0" Grid.Column="1"/>
+                                    </Grid>
+
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BindingContext.ToggleExpandCommand2, Source={x:Reference DesktopListO}}"
+      CommandParameter="{Binding .}"/>
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- Mobile View -->
+                <CollectionView ItemsSource="{Binding NFOutput}" x:Name="MobileListO"
+IsVisible="{OnPlatform Android=True, WinUI=False, MacCatalyst=False}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10" Spacing="5" BackgroundColor="Transparent">
+                                <Border>
+                                    <Grid ColumnDefinitions="*,*" HeightRequest="30">
+                                        <Label Text="{Binding value.ID}" Grid.Column="0" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="{Binding value.Unit}" Grid.Column="1" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </Grid>
+                                </Border>
+                                <!-- Detalhes expansíveis -->
+                                <StackLayout IsVisible="{Binding IsChecked}" BackgroundColor="Transparent" Padding="5">
+                                    <Label Text="{Binding value.Total_Value, StringFormat='ValorTotal: {0}'}" Grid.Row="0" Grid.Column="1"/>
+                                    <Label Text="{Binding value.DateOut, StringFormat='Data de Emissão: {0}'}" Grid.Row="1" Grid.Column="1"/>
+                                    <Label Text="{Binding value.Label,StringFormat='Informações adicionais: {0}'}" Grid.Row="2" Grid.Column="1"/>
+                                </StackLayout>
+
+                                <!-- Toque para expandir -->
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.ToggleExpandCommand2, Source={x:Reference MobileListO}}"
+      CommandParameter="{Binding .}"/>
+                                </StackLayout.GestureRecognizers>
+
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Button 
+            Command="{Binding _commandSF731}"
+            TextColor="#0078D7"
+            Padding="10"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+             Style="{StaticResource Circle}"
+            Margin="10">
+                        <Button.ImageSource>
+                            <FontImageSource Glyph="&#x2b;" Color="White" FontFamily="FontAwesomeSolid" Size="24"/>
+                        </Button.ImageSource>
+                    </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

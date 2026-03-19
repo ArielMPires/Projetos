@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel ="clr-namespace:Agnus.ViewModels"
+             x:Class="Agnus.Views.SA221"
+             Title="">
+
+    <Grid Padding="10">
+        <HorizontalStackLayout>
+            <Button
+           Command="{Binding _ReturnCommand}"
+           TextColor="#0078D7"
+           Padding="10"
+           HorizontalOptions="StartAndExpand"
+           VerticalOptions="Start"
+           Margin="10">
+                <Button.ImageSource>
+                    <FontImageSource Glyph="&#xf060;" FontFamily="FontAwesomeSolid" Size="24"/>
+                </Button.ImageSource>
+            </Button>
+
+            <BoxView Color="Transparent" HorizontalOptions="FillAndExpand" />
+
+            <Label Text="SA221"
+                  FontSize="20"
+                  Opacity="0.4"
+                  Rotation="0"
+                  TextColor="Gray"
+          HorizontalOptions="EndAndExpand"
+   VerticalOptions="Start"
+   InputTransparent="True"/>
+        </HorizontalStackLayout>
+        <ScrollView Margin="0,60,0,0">
+
+            <CollectionView ItemsSource="{Binding Providers}" >
+                <CollectionView.Header>
+                    <Border Padding="10" Margin="4" Style="{StaticResource HeaderBorder}">
+                        <Grid ColumnDefinitions="*,2*,3*,3*,3*">
+                            <Label Text="ID" FontSize="25" Style="{StaticResource HeaderText}" Grid.Column="0" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label Text="Name" FontSize="25" Style="{StaticResource HeaderText}" FontAttributes="Bold" Grid.Column="1" HorizontalOptions="Center"/>
+                            <Label Text="CNPJ" FontSize="25" Style="{StaticResource HeaderText}" FontAttributes="Bold" Grid.Column="2" HorizontalOptions="Center"/>
+                            <Label Text="Email" FontSize="25" Style="{StaticResource HeaderText}" FontAttributes="Bold" Grid.Column="3" HorizontalOptions="Center"/>
+                            <Label Text="Phone" FontSize="25" Style="{StaticResource HeaderText}" FontAttributes="Bold" Grid.Column="4" HorizontalOptions="Center"/>
+                         
+                        </Grid>
+                    </Border>
+                </CollectionView.Header>
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="1"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Padding="5" Margin="4">
+                            <Grid ColumnDefinitions="*,2*,3*,3*,3*">
+                                <HorizontalStackLayout Grid.Column="0">
+                                    <Button
+                                        Padding="1"
+                                        Margin="2"
+                                        MaximumWidthRequest="50"
+                                        HorizontalOptions="StartAndExpand"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._commandSK172}"
+                                        CommandParameter="{Binding ID}">
+                                        <Button.ImageSource>
+                                            <FontImageSource Glyph="&#xf304;" FontFamily="FontAwesomeSolid" Size="24"/>
+                                        </Button.ImageSource>
+                                    </Button>
+                                    <Button
+                                        Padding="1"
+                                        Margin="2"
+                                        MaximumWidthRequest="50"
+                                        HorizontalOptions="StartAndExpand"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext._commandSK323}"
+                                        CommandParameter="{Binding ID}">
+                                        <Button.ImageSource>
+                                            <FontImageSource Glyph="&#xf07c;" FontFamily="FontAwesomeSolid" Size="24"/>
+                                        </Button.ImageSource>
+                                    </Button>
+                                </HorizontalStackLayout>
+                                <Label Text="{Binding ID}" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label Text="{Binding Name}" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label Text="{Binding CNPJ}" Grid.Column="4" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <HorizontalStackLayout Grid.Column="5" HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Label Text="{Binding Email}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Text="{Binding Phone}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </HorizontalStackLayout>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </ScrollView>
+        <Button Text="+"
+            Padding="10"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            Margin="10"
+            x:Name="FabBtn"
+            Command="{Binding _commandSK991}"/>
+    </Grid>
+</ContentPage>
